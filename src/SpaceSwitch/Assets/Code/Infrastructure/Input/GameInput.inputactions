@@ -1,0 +1,34 @@
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "11a6b3e2-712b-4148-8018-bfe023ab7ca0",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "a8e94af4-0c1b-4968-974d-7b3dd848f67d",
+                    "expectedControlType": "Axis",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ba7fc5ac-929e-4d5e-af16-6fcc2b2784b5",
+                    "path": "<Sensor>/{Forward}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
