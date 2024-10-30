@@ -6,12 +6,18 @@ namespace Code.Infrastructure.Systems
 {
   public class SystemFactory : ISystemFactory
   {
-    private readonly IObjectResolver _resolver;
+    private readonly IObjectResolver _objectResolver;
 
-    public SystemFactory(IObjectResolver resolver) => 
-      _resolver = resolver;
+    public SystemFactory(IObjectResolver objectResolver) => 
+      _objectResolver = objectResolver;
 
-    public T Create<T>() where T : ISystem =>
-      _resolver.Resolve<T>();
+    public T Create<T>(Lifetime lifetime = Lifetime.Scoped) where T : ISystem
+    {
+      RegistrationBuilder registrationBuilder = new RegistrationBuilder(typeof(T), lifetime)
+        .AsImplementedInterfaces()
+        .AsSelf();
+      
+      return (T) _objectResolver.Resolve(registrationBuilder.Build());
+    }
   }
 }

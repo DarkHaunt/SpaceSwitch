@@ -1,3 +1,4 @@
+using System;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
@@ -9,7 +10,6 @@ using Code.Gameplay.StaticData;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
-using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
@@ -17,13 +17,20 @@ using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
+using Project.Code.Common.Infrastructure.CoroutineRunner;
+using Project.Code.Common.Infrastructure.SceneLoader;
+using Project.Code.Common.UI.LoadingCurtain;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
 namespace Code.Infrastructure.Installers
 {
-  public class BootstrapInstaller : LifetimeScope, ICoroutineRunner
+  public class ProjectInstaller : LifetimeScope
   {
+    [SerializeField] private CoroutineRunner _coroutineRunner;
+    [SerializeField] private LoadingCurtain _loadingCurtain;
+    
     private IContainerBuilder _builder;
 
     protected override void Configure(IContainerBuilder builder)
@@ -39,26 +46,18 @@ namespace Code.Infrastructure.Installers
       BindGameplayFactories();
       
       BindUIServices();
-      BindUIFactories();
+      BindCommonUI();
+
+      BindGameStateMachine();
+    }
+
+    private void BindGameStateMachine()
+    {
+      _builder.Register<GameStateMachine>(Lifetime.Singleton).AsImplementedInterfaces();
+      _builder.Register<StateFactory>(Lifetime.Singleton).As<IStateFactory>();
       
-      BindStateMachine();
-      BindStateFactory();
-      BindGameStates();
-    }
-
-    private void BindStateMachine()
-    {
-      _builder.Register<GameStateMachine>(Lifetime.Singleton);
-    }
-
-    private void BindStateFactory()
-    {
-      _builder.Register<StateFactory>(Lifetime.Singleton);
-    }
-
-    private void BindGameStates()
-    {
       _builder.Register<BootstrapState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
+      _builder.Register<MenuLoopState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
       _builder.Register<GameLoopState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
       _builder.Register<GameOverState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
     }
@@ -74,7 +73,8 @@ namespace Code.Infrastructure.Installers
 
     private void BindGameplayServices()
     {
-      _builder.Register<StandaloneInputService>(Lifetime.Singleton).As<IInputService>();
+      _builder.Register<GameInput>(Lifetime.Singleton).As<IDisposable>().AsSelf();
+      _builder.Register<GameInputService>(Lifetime.Singleton).AsImplementedInterfaces();
       _builder.Register<ProgressProvider>(Lifetime.Singleton).As<IProgressProvider>();
       _builder.Register<CameraProvider>(Lifetime.Singleton).As<ICameraProvider>().AsSelf();
       _builder.Register<StaticDataService>(Lifetime.Singleton).As<IStaticDataService>();
@@ -92,9 +92,11 @@ namespace Code.Infrastructure.Installers
       _builder.Register<SaveLoadService>(Lifetime.Singleton).As<ISaveLoadService>();
       _builder.Register<AssetProvider>(Lifetime.Singleton).As<IAssetProvider>();
       _builder.Register<IdentifierService>(Lifetime.Singleton).As<IIdentifierService>();
-      _builder.Register<GameBootstrapper>(Lifetime.Singleton).AsImplementedInterfaces();
-      
-      _builder.RegisterInstance(this).AsImplementedInterfaces();
+      _builder.RegisterEntryPoint<GameBootstrapper>();
+       
+      _builder
+        .RegisterComponentInNewPrefab(_coroutineRunner, Lifetime.Singleton)
+        .As<ICoroutineRunner>();
     }
 
     private void BindCommonServices()
@@ -108,16 +110,13 @@ namespace Code.Infrastructure.Installers
 
     private void BindUIServices()
     {
-      _builder
-        .Register<WindowService>(Lifetime.Singleton)
-        .As<IWindowService>();
+      _builder.Register<WindowService>(Lifetime.Singleton).As<IWindowService>();
+      _builder.Register<WindowFactory>(Lifetime.Singleton).As<IWindowFactory>();
     }
 
-    private void BindUIFactories()
+    private void BindCommonUI()
     {
-      _builder
-        .Register<WindowFactory>(Lifetime.Singleton)
-        .As<IWindowFactory>();
+      _builder.RegisterComponentInNewPrefab(_loadingCurtain, Lifetime.Singleton).As<ILoadingCurtain>();
     }
   }
 }

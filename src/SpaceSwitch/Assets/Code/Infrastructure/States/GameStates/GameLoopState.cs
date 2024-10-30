@@ -1,10 +1,11 @@
 using Code.Gameplay;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
+using UnityEngine;
 
 namespace Code.Infrastructure.States.GameStates
 {
-  public class GameLoopState : EndOfFrameExitState, IUpdateable
+  public class GameLoopState : EndOfFrameExitState
   {
     private readonly ISystemFactory _systems;
     private BattleFeature _battleFeature;

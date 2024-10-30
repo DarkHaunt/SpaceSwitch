@@ -23,10 +23,7 @@ namespace Code.Gameplay.StaticData
 
     private void LoadWindows()
     {
-      _windowPrefabsById = Resources
-        .Load<WindowsConfig>("Configs/Windows/windowsConfig")
-        .WindowConfigs
-        .ToDictionary(x => x.Id, x => x.Prefab);
+
     }
   }
 }

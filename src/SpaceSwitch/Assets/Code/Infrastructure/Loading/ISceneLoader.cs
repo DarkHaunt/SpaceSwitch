@@ -1,9 +1,11 @@
-using System;
+﻿using System;
+using Code.Infrastructure.Loading;
+using Cysharp.Threading.Tasks;
 
-namespace Code.Infrastructure.Loading
+namespace Project.Code.Common.Infrastructure.SceneLoader
 {
-  public interface ISceneLoader
-  {
-    void LoadScene(string name, Action onLoaded = null);
-  }
+    public interface ISceneLoader
+    {
+        public UniTask Load(SceneName scene, bool force = false, Action onLoaded = null);
+    }
 }

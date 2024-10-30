@@ -20,9 +20,15 @@ namespace Code.Gameplay.Input.Systems
       foreach (InputEntity input in _inputs)
       {
         if (_inputService.HasAxisInput())
-          input.ReplaceAxisInput(new Vector2(_inputService.GetHorizontalAxis(), _inputService.GetVerticalAxis()));
+          input.ReplaceAxisInput(_inputService.GetInputDirection());
         else if (input.hasAxisInput)
           input.RemoveAxisInput();
+
+        if (_inputService.HasAttackInput)
+          input.isAttackRequested = true;
+        
+        if(_inputService.HasSwitchInput)
+          input.isSwitchRequested = true;
       }
     }
   }

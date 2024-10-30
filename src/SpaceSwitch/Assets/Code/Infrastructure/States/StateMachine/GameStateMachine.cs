@@ -1,6 +1,7 @@
 ﻿using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.StateInfrastructure;
 using RSG;
+using VContainer;
 using VContainer.Unity;
 
 namespace Code.Infrastructure.States.StateMachine
@@ -67,7 +68,7 @@ namespace Code.Infrastructure.States.StateMachine
 
       private IPromise<TState> GetState<TState>() where TState : class, IExitableState
       {
-         TState state = _stateFactory.GetState<TState>();
+         TState state = _stateFactory.Create<TState>(Lifetime.Scoped);
 
          return Promise<TState>.Resolved(state);
       }

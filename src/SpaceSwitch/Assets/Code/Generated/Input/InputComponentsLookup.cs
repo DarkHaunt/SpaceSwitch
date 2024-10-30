@@ -8,18 +8,24 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
-    public const int AxisInput = 0;
-    public const int Input = 1;
+    public const int AttackRequested = 0;
+    public const int AxisInput = 1;
+    public const int Input = 2;
+    public const int SwitchRequested = 3;
 
-    public const int TotalComponents = 2;
+    public const int TotalComponents = 4;
 
     public static readonly string[] componentNames = {
+        "AttackRequested",
         "AxisInput",
-        "Input"
+        "Input",
+        "SwitchRequested"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Gameplay.Input.AttackRequested),
         typeof(Code.Gameplay.Input.AxisInput),
-        typeof(Code.Gameplay.Input.Input)
+        typeof(Code.Gameplay.Input.Input),
+        typeof(Code.Gameplay.Input.SwitchRequested)
     };
 }

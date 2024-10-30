@@ -4,13 +4,12 @@ namespace Code.Gameplay.Input.Service
 {
   public interface IInputService
   {
-    float GetVerticalAxis();
-    float GetHorizontalAxis();
     bool HasAxisInput();
-    
-    bool GetLeftMouseButtonDown();
-    Vector2 GetScreenMousePosition();
-    Vector2 GetWorldMousePosition();
-    bool GetLeftMouseButtonUp();
+    bool HasAttackInput { get; }
+    bool HasSwitchInput { get; }
+     
+    Vector2 GetInputDirection();
+    void EnableInput(bool enabled);
+    void CleanupInput();
   }
 }
