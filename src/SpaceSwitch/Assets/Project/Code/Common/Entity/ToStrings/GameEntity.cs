@@ -32,6 +32,10 @@ public sealed partial class GameEntity : INamedEntity
       {
         switch (component.GetType().Name)
         {
+          case "Player":
+            return PrintPlayer();
+          case "Enemy":
+            return PrintEnemy();
         }
       }
     }
@@ -43,9 +47,9 @@ public sealed partial class GameEntity : INamedEntity
     return components.First().GetType().Name;
   }
 
-  private string PrintHero()
+  private string PrintPlayer()
   {
-    return new StringBuilder($"Hero ")
+    return new StringBuilder($"Player ")
       .With(s => s.Append($"Id:{Id}"), when: hasId)
       .ToString();
   }

@@ -22,7 +22,7 @@ namespace Code.Gameplay.StaticData
       private Dictionary<ProjectileTypeId, ProjectileConfig> _projectileConfigs;
       private Dictionary<EnemyTypeId, EnemyConfig> _enemyConfigs;
 
-      public PlayerConfig GetPlayerConfig { get; private set; }
+      public PlayerConfig PlayerConfig { get; private set; }
 
       public StaticDataService(IAssetProvider assetProvider)
       {
@@ -68,7 +68,7 @@ namespace Code.Gameplay.StaticData
       }
 
       private async UniTask LoadPlayerConfig() =>
-         GetPlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetLabel.Player);
+         PlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetLabel.Player);
 
       private async UniTask LoadEnemyConfigs()
       {

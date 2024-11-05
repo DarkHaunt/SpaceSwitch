@@ -28,13 +28,12 @@ namespace Code.Gameplay.StateMachine.States
 
       public override async void Enter()
       {
-         _curtain.HideImmediate();
+         _curtain.ShowImmediate();
+         await _staticDataService.LoadAll();
 
-         _playerFactory.CreateHero(Vector3.zero);
-
+         _playerFactory.CreateHero(Vector3.zero, _staticDataService.PlayerConfig);
          _cameraProvider.SetMainCamera(Camera.main);
 
-         await _staticDataService.LoadAll();
          await _curtain.Hide();
 
          _stateMachine.Enter<GameLoopState>();

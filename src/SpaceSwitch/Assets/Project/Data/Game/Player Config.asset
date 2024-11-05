@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1608a4ae039841afbfa551ce37d57263, type: 3}
   m_Name: Player Config
   m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 3
   <Prefab>k__BackingField:
     m_AssetGUID: 919f82d0087f6f94ab4072eeb578c397
     m_SubObjectName: 

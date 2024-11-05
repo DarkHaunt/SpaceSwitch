@@ -14,6 +14,8 @@ namespace Code.Gameplay.Features.Movement
       Add(systems.Create<TurnAlongDirectionSystem>());
       
       Add(systems.Create<UpdateTransformPositionSystem>());
+      Add(systems.Create<VelocityUpdateSystem>());
+      
       Add(systems.Create<RotateAlongDirectionSystem>());
     }
   }

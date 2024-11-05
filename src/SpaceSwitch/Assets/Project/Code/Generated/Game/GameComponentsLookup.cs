@@ -42,20 +42,22 @@ public static class GameComponentsLookup {
     public const int RotationAlignedAlongDirection = 31;
     public const int Speed = 32;
     public const int TurnedAlongDirection = 33;
-    public const int Player = 34;
-    public const int PlayerAnimator = 35;
-    public const int Projectile = 36;
-    public const int ProjectileTypeId = 37;
-    public const int CollectingTargetsContinuously = 38;
-    public const int CollectTargetsInterval = 39;
-    public const int CollectTargetsTimer = 40;
-    public const int ProcessedTargets = 41;
-    public const int Reached = 42;
-    public const int ReadyToCollectTargets = 43;
-    public const int TargetBuffer = 44;
-    public const int TargetLimit = 45;
+    public const int Velocity = 34;
+    public const int Player = 35;
+    public const int PlayerAnimator = 36;
+    public const int Projectile = 37;
+    public const int ProjectileTypeId = 38;
+    public const int CollectingTargetsContinuously = 39;
+    public const int CollectTargetsInterval = 40;
+    public const int CollectTargetsTimer = 41;
+    public const int ProcessedTargets = 42;
+    public const int Reached = 43;
+    public const int ReadyToCollectTargets = 44;
+    public const int TargetBuffer = 45;
+    public const int TargetLimit = 46;
+    public const int ProcessingAsyncSpawn = 47;
 
-    public const int TotalComponents = 46;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -92,6 +94,7 @@ public static class GameComponentsLookup {
         "RotationAlignedAlongDirection",
         "Speed",
         "TurnedAlongDirection",
+        "Velocity",
         "Player",
         "PlayerAnimator",
         "Projectile",
@@ -103,7 +106,8 @@ public static class GameComponentsLookup {
         "Reached",
         "ReadyToCollectTargets",
         "TargetBuffer",
-        "TargetLimit"
+        "TargetLimit",
+        "ProcessingAsyncSpawn"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -141,6 +145,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.RotationAlignedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
+        typeof(Code.Gameplay.Features.Movement.Velocity),
         typeof(Code.Gameplay.Features.Player.Player),
         typeof(Code.Gameplay.Features.Player.PlayerAnimatorComponent),
         typeof(Code.Gameplay.Features.Projectiles.Projectile),
@@ -152,6 +157,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.Reached),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetBuffer),
-        typeof(Code.Gameplay.Features.TargetCollection.TargetLimit)
+        typeof(Code.Gameplay.Features.TargetCollection.TargetLimit),
+        typeof(Code.Infrastructure.View.ProcessingAsyncSpawn)
     };
 }

@@ -11,7 +11,7 @@ namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
-    PlayerConfig GetPlayerConfig { get; }
+    PlayerConfig PlayerConfig { get; }
     
     
     ProjectileConfig GetProjectileConfigById(ProjectileTypeId id);

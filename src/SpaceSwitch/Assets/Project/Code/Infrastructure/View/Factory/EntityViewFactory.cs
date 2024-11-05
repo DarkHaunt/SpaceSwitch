@@ -46,9 +46,10 @@ namespace Code.Infrastructure.View.Factory
       return view;
     }
 
-    public async UniTask<EntityBehaviour> CreateViewForEntityFromAsset(AssetReferenceGameObject entity)
+    public async UniTask<EntityBehaviour> CreateViewForEntityFromAsset(GameEntity entity)
     {
-      var prefab = await entity.LoadAssetAsync<EntityBehaviour>();
+      entity.isProcessingAsyncSpawn = true;
+      var prefab = await _assetProvider.Load<EntityBehaviour>(entity.AssetReference);
       
       EntityBehaviour view = _resolver.Instantiate<EntityBehaviour>(
         prefab,
@@ -56,8 +57,9 @@ namespace Code.Infrastructure.View.Factory
         Quaternion.identity,
         parent: null);
       
-      entity.ReleaseAsset();
+      view.SetEntity(entity);
       
+      entity.isProcessingAsyncSpawn = false;
       return view;
     }
   }

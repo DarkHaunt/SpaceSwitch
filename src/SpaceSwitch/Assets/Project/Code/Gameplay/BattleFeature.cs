@@ -1,6 +1,7 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.Player;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
@@ -14,6 +15,8 @@ namespace Code.Gameplay
     {
       Add(systems.Create<InputFeature>());
       Add(systems.Create<BindViewFeature>());
+      
+      Add(systems.Create<PlayerFeature>());
       
       Add(systems.Create<DeathFeature>());
       Add(systems.Create<MovementFeature>());

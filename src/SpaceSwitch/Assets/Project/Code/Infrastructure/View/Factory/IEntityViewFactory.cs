@@ -7,6 +7,6 @@ namespace Code.Infrastructure.View.Factory
   {
     EntityBehaviour CreateViewForEntity(GameEntity entity);
     EntityBehaviour CreateViewForEntityFromPrefab(GameEntity entity);
-    UniTask<EntityBehaviour> CreateViewForEntityFromAsset(AssetReferenceGameObject entity);
+    UniTask<EntityBehaviour> CreateViewForEntityFromAsset(GameEntity entity);
   }
 }
