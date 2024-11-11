@@ -1,5 +1,6 @@
 ﻿using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.ColorSwitch.StaticData;
 using Code.Gameplay.Features.Player.StaticData;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
@@ -26,6 +27,7 @@ namespace Code.Gameplay.Features.Player.Factories
                
                .AddAssetReference(config.Prefab)
                .AddSpeed(config.Speed)
+               .AddColorType(ColorType.Blue)
                
                .With(x => x.isPlayer = true)
                .With(x => x.isMovementAvailable = true)

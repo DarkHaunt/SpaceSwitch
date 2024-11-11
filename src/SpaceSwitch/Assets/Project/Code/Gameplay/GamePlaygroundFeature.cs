@@ -1,4 +1,5 @@
 ﻿using Code.Common.Destruct;
+using Code.Gameplay.Features.ColorSwitch;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
@@ -9,9 +10,9 @@ using Code.Infrastructure.View;
 
 namespace Code.Gameplay
 {
-  public class BattleFeature : Feature
+  public class GamePlaygroundFeature : Feature
   {
-    public BattleFeature(ISystemFactory systems)
+    public GamePlaygroundFeature(ISystemFactory systems)
     {
       Add(systems.Create<InputFeature>());
       Add(systems.Create<BindViewFeature>());
@@ -22,6 +23,8 @@ namespace Code.Gameplay
       Add(systems.Create<MovementFeature>());
  
       Add(systems.Create<CollectTargetsFeature>());
+      Add(systems.Create<ColorSwitchFeature>());
+      
       Add(systems.Create<ProcessDestructedFeature>());
     }
   }

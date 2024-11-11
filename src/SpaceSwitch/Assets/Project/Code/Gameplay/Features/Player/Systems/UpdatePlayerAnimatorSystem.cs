@@ -1,13 +1,16 @@
-﻿using Entitas;
+﻿using Code.Gameplay.Common.Time;
+using Entitas;
 
 namespace Code.Gameplay.Features.Player.Systems
 {
    public sealed class UpdatePlayerAnimatorSystem : IExecuteSystem
    {
+      private readonly ITimeService _time;
       private readonly IGroup<GameEntity> _players;
 
-      public UpdatePlayerAnimatorSystem(GameContext context)
+      public UpdatePlayerAnimatorSystem(GameContext context, ITimeService time)
       {
+         _time = time;
          _players = context.GetGroup(GameMatcher
             .AllOf(
                GameMatcher.PlayerAnimator,
@@ -19,7 +22,7 @@ namespace Code.Gameplay.Features.Player.Systems
       {
          foreach (GameEntity player in _players)
          {
-            player.PlayerAnimator.UpdateViewRotationFromVelocity(player.Velocity);
+            player.PlayerAnimator.UpdateViewRotationFromVelocity(player.Velocity, _time.DeltaTime);
          }
       }
    }

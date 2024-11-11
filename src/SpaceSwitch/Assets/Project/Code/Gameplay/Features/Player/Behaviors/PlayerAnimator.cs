@@ -1,6 +1,4 @@
-﻿using System;
-using Code.Common.Extensions;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Behaviors
 {
@@ -9,33 +7,34 @@ namespace Code.Gameplay.Features.Player.Behaviors
       [SerializeField] private Transform _view;
 
       [field: Space]
-      [SerializeField] private float _rightAngle;
-      [SerializeField] private float _leftAngle;
+      [SerializeField] private float _dampSpeed;
+      [SerializeField] private float _maxAngle;
 
-      private float _leftTargetSpeed;
-      private float _rightTargetSpeed;
-      private Vector3 _originRotation;
-
-      private void Awake()
-      {
-         _originRotation = _view.localRotation.eulerAngles;
-      }
+      private float _velocity;
+      private float _maxSpeed;
 
       public void Init(float speed)
       {
-         _leftTargetSpeed = -speed;
-         _rightTargetSpeed = speed;
+         _maxSpeed = speed;
       }
 
-      public void UpdateViewRotationFromVelocity(Vector2 velocity)
+      public void UpdateViewRotationFromVelocity(Vector2 velocity, float timeStep)
       {
-         var xSpeed = velocity.x;
-         var speedPercent = Mathf.InverseLerp(_leftTargetSpeed, _rightTargetSpeed, xSpeed);
-         var angle = Mathf.Lerp(_rightAngle, _leftAngle, speedPercent);
+         /*float sign = velocity.x > 0 ? 1 : -1;
+         float speed = Mathf.Abs(velocity.x);
 
-         Debug.Log($"<color=white>Angle - {angle} - {velocity}</color>");
-         
-         _view.eulerAngles = _originRotation.SetZ(angle);
+         float speedPercent = Mathf.InverseLerp(0f, _maxSpeed, speed);
+         float targetAngle = Mathf.Lerp(0f, _rightAngle, speedPercent) * sign;
+
+         float currentAngle = _view.eulerAngles.z;
+         float angleDelta = Mathf.DeltaAngle(currentAngle, targetAngle) * timeStep;
+         float smoothAngle = Mathf.SmoothDamp(currentAngle, currentAngle + angleDelta, ref _velocity, _dampSpeed * timeStep);
+
+         var clamped = Mathf.Clamp(smoothAngle, -_rightAngle, _rightAngle);
+
+         Debug.Log($"<color=white>{clamped}</color>");
+
+         _view.rotation = Quaternion.Euler(_view. ); new Vector3(-90f, 0f, clamped);*/
       }
    }
 }

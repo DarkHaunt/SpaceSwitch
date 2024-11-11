@@ -8,7 +8,7 @@ namespace Code.Gameplay.StateMachine.States
       private readonly ISystemFactory _systems;
       private readonly GameContext _gameContext;
     
-      private BattleFeature _battleFeature;
+      private GamePlaygroundFeature _gamePlaygroundFeature;
 
       public GameLoopState(ISystemFactory systems, GameContext gameContext)
       {
@@ -18,26 +18,26 @@ namespace Code.Gameplay.StateMachine.States
     
       public override void Enter()
       {
-         _battleFeature = _systems.Create<BattleFeature>();
-         _battleFeature.Initialize();
+         _gamePlaygroundFeature = _systems.Create<GamePlaygroundFeature>();
+         _gamePlaygroundFeature.Initialize();
       }
 
       protected override void OnUpdate()
       {
-         _battleFeature.Execute();
-         _battleFeature.Cleanup();
+         _gamePlaygroundFeature.Execute();
+         _gamePlaygroundFeature.Cleanup();
       }
 
       protected override void ExitOnEndOfFrame()
       {
-         _battleFeature.DeactivateReactiveSystems();
-         _battleFeature.ClearReactiveSystems();
+         _gamePlaygroundFeature.DeactivateReactiveSystems();
+         _gamePlaygroundFeature.ClearReactiveSystems();
 
          DestructEntities();
       
-         _battleFeature.Cleanup();
-         _battleFeature.TearDown();
-         _battleFeature = null;
+         _gamePlaygroundFeature.Cleanup();
+         _gamePlaygroundFeature.TearDown();
+         _gamePlaygroundFeature = null;
       }
 
       private void DestructEntities()

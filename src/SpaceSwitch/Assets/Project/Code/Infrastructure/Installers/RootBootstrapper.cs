@@ -35,7 +35,7 @@ namespace Code.Infrastructure.Installers
       
          await LoadAddressables();
       
-         await _sceneLoader.Load(SceneName.Menu);  
+         await _sceneLoader.Load(SceneName.Game);  
       }
 
       private async UniTask LoadAddressables()

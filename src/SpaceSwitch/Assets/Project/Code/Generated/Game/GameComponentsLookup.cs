@@ -23,41 +23,44 @@ public static class GameComponentsLookup {
     public const int SpriteRenderer = 12;
     public const int Transform = 13;
     public const int WorldPosition = 14;
-    public const int Cooldown = 15;
-    public const int CooldownLeft = 16;
-    public const int CooldownUp = 17;
-    public const int Enemy = 18;
-    public const int EnemyTypeId = 19;
-    public const int CurrentHp = 20;
-    public const int Dead = 21;
-    public const int MaxHp = 22;
-    public const int ProcessingDeath = 23;
-    public const int Direction = 24;
-    public const int MovementAvailable = 25;
-    public const int Moving = 26;
-    public const int OrbitCenterFollowTarget = 27;
-    public const int OrbitCenterPosition = 28;
-    public const int OrbitPhase = 29;
-    public const int OrbitRadius = 30;
-    public const int RotationAlignedAlongDirection = 31;
-    public const int Speed = 32;
-    public const int TurnedAlongDirection = 33;
-    public const int Velocity = 34;
-    public const int Player = 35;
-    public const int PlayerAnimator = 36;
-    public const int Projectile = 37;
-    public const int ProjectileTypeId = 38;
-    public const int CollectingTargetsContinuously = 39;
-    public const int CollectTargetsInterval = 40;
-    public const int CollectTargetsTimer = 41;
-    public const int ProcessedTargets = 42;
-    public const int Reached = 43;
-    public const int ReadyToCollectTargets = 44;
-    public const int TargetBuffer = 45;
-    public const int TargetLimit = 46;
-    public const int ProcessingAsyncSpawn = 47;
+    public const int ColorSwitchAnimator = 15;
+    public const int ColorSwitchRequest = 16;
+    public const int ColorType = 17;
+    public const int Cooldown = 18;
+    public const int CooldownLeft = 19;
+    public const int CooldownUp = 20;
+    public const int Enemy = 21;
+    public const int EnemyTypeId = 22;
+    public const int CurrentHp = 23;
+    public const int Dead = 24;
+    public const int MaxHp = 25;
+    public const int ProcessingDeath = 26;
+    public const int Direction = 27;
+    public const int MovementAvailable = 28;
+    public const int Moving = 29;
+    public const int OrbitCenterFollowTarget = 30;
+    public const int OrbitCenterPosition = 31;
+    public const int OrbitPhase = 32;
+    public const int OrbitRadius = 33;
+    public const int RotationAlignedAlongDirection = 34;
+    public const int Speed = 35;
+    public const int TurnedAlongDirection = 36;
+    public const int Velocity = 37;
+    public const int Player = 38;
+    public const int PlayerAnimator = 39;
+    public const int Projectile = 40;
+    public const int ProjectileTypeId = 41;
+    public const int CollectingTargetsContinuously = 42;
+    public const int CollectTargetsInterval = 43;
+    public const int CollectTargetsTimer = 44;
+    public const int ProcessedTargets = 45;
+    public const int Reached = 46;
+    public const int ReadyToCollectTargets = 47;
+    public const int TargetBuffer = 48;
+    public const int TargetLimit = 49;
+    public const int ProcessingAsyncSpawn = 50;
 
-    public const int TotalComponents = 48;
+    public const int TotalComponents = 51;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -75,6 +78,9 @@ public static class GameComponentsLookup {
         "SpriteRenderer",
         "Transform",
         "WorldPosition",
+        "ColorSwitchAnimator",
+        "ColorSwitchRequest",
+        "ColorType",
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
@@ -126,6 +132,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.ColorSwitch.ColorSwitchAnimatorComponent),
+        typeof(Code.Gameplay.Features.ColorSwitch.ColorSwitchRequest),
+        typeof(Code.Gameplay.Features.ColorSwitch.ColorTypeComponent),
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),

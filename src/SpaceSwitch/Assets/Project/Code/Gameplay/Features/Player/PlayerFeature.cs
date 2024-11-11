@@ -9,9 +9,11 @@ namespace Code.Gameplay.Features.Player
    {
       public PlayerFeature(ISystemFactory systems)
       {
-         Add(systems.Create<InitializePlayerSystem>());
+         //Add(systems.Create<InitializePlayerSystem>());
+         Add(systems.Create<PlayerAnimatorInitSystem>());
          
          Add(systems.Create<SetPlayerDirectionByInputSystem>());
+         Add(systems.Create<SetPlayerColorSwitchRequestByInputSystem>());
          
          Add(systems.Create<UpdatePlayerAnimatorSystem>());
       }
