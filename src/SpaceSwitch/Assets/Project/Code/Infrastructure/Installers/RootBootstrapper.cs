@@ -46,7 +46,9 @@ namespace Code.Infrastructure.Installers
          (
             _assetProvider.WarmupAssetsByLabel(AssetLabel.Player),
             _assetProvider.WarmupAssetsByLabel(AssetLabel.Enemies),
-            _assetProvider.WarmupAssetsByLabel(AssetLabel.Projectiles)
+            _assetProvider.WarmupAssetsByLabel(AssetLabel.Projectiles),
+            
+            _assetProvider.WarmupAssetsByLabel(AssetLabel.Gameplay)
          );
       }
 

@@ -32,6 +32,8 @@ public sealed partial class GameEntity : INamedEntity
       {
         switch (component.GetType().Name)
         {
+          case "Projectile":
+            return PrintProjectile();
           case "Player":
             return PrintPlayer();
           case "Enemy":
@@ -45,6 +47,13 @@ public sealed partial class GameEntity : INamedEntity
     }
 
     return components.First().GetType().Name;
+  }
+
+  private string PrintProjectile()
+  {
+    return new StringBuilder($"Projectile ")
+      .With(s => s.Append($"Id:{Id}"), when: hasId)
+      .ToString();
   }
 
   private string PrintPlayer()

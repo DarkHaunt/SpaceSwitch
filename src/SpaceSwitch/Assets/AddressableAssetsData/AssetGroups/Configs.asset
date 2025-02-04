@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - player
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97c3701cfd1127d4b8ab4d468a10b64b
+    m_Address: Simple Projectile Config
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - projectile
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8455031051f8f884b930312bbe7dbea6, type: 2}
   m_SchemaSet:

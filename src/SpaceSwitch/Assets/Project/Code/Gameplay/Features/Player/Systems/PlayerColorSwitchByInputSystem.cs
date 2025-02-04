@@ -3,12 +3,12 @@ using Entitas;
 
 namespace Project.Code.Gameplay.Features.Player.Systems
 {
-   public sealed class SetPlayerColorSwitchRequestByInputSystem : IExecuteSystem
+   public sealed class PlayerColorSwitchByInputSystem : IExecuteSystem
    {
       private readonly IGroup<GameEntity> _players;
       private readonly IGroup<InputEntity> _inputs;
 
-      public SetPlayerColorSwitchRequestByInputSystem(GameContext gameContext, InputContext inputContext)
+      public PlayerColorSwitchByInputSystem(GameContext gameContext, InputContext inputContext)
       {
          _inputs = inputContext.GetGroup(InputMatcher.Input);
          _players = gameContext.GetGroup(GameMatcher

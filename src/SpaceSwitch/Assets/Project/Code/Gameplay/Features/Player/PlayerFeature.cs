@@ -13,7 +13,8 @@ namespace Code.Gameplay.Features.Player
          Add(systems.Create<PlayerAnimatorInitSystem>());
          
          Add(systems.Create<SetPlayerDirectionByInputSystem>());
-         Add(systems.Create<SetPlayerColorSwitchRequestByInputSystem>());
+         Add(systems.Create<PlayerColorSwitchByInputSystem>());
+         Add(systems.Create<PlayerShootByInputSystem>());
          
          Add(systems.Create<UpdatePlayerAnimatorSystem>());
       }

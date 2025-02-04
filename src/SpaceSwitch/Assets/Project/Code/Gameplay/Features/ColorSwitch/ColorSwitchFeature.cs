@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.ColorSwitch
    {
       public ColorSwitchFeature(ISystemFactory systems)
       {
+         Add(systems.Create<ColorSetupSystem>());
          Add(systems.Create<ColorSwitchSystem>());
          
          Add(systems.Create<CleanupColorSwitchComponentsSystem>());

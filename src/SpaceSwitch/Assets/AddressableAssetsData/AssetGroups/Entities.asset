@@ -21,7 +21,13 @@ MonoBehaviour:
     m_Address: Player
     m_ReadOnly: 0
     m_SerializedLabels:
-    - player
+    - gameplay
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2cbce4db97438dd47a5c562571925e8d
+    m_Address: Simple Projectile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - gameplay
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8455031051f8f884b930312bbe7dbea6, type: 2}

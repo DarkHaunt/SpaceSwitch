@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _view: {fileID: 8625281509005898994}
-  _dampSpeed: 0.1
-  _maxAngle: 0
+  _dampSpeed: 0.15
+  _maxAngle: 15
 --- !u!114 &8963731789418146425
 MonoBehaviour:
   m_ObjectHideFlags: 0

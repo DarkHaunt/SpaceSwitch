@@ -48,19 +48,21 @@ public static class GameComponentsLookup {
     public const int Velocity = 37;
     public const int Player = 38;
     public const int PlayerAnimator = 39;
-    public const int Projectile = 40;
-    public const int ProjectileTypeId = 41;
-    public const int CollectingTargetsContinuously = 42;
-    public const int CollectTargetsInterval = 43;
-    public const int CollectTargetsTimer = 44;
-    public const int ProcessedTargets = 45;
-    public const int Reached = 46;
-    public const int ReadyToCollectTargets = 47;
-    public const int TargetBuffer = 48;
-    public const int TargetLimit = 49;
-    public const int ProcessingAsyncSpawn = 50;
+    public const int ProducerId = 40;
+    public const int Projectile = 41;
+    public const int ProjectileTypeId = 42;
+    public const int ShootDirection = 43;
+    public const int CollectingTargetsContinuously = 44;
+    public const int CollectTargetsInterval = 45;
+    public const int CollectTargetsTimer = 46;
+    public const int ProcessedTargets = 47;
+    public const int Reached = 48;
+    public const int ReadyToCollectTargets = 49;
+    public const int TargetBuffer = 50;
+    public const int TargetLimit = 51;
+    public const int ProcessingAsyncSpawn = 52;
 
-    public const int TotalComponents = 51;
+    public const int TotalComponents = 53;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -103,8 +105,10 @@ public static class GameComponentsLookup {
         "Velocity",
         "Player",
         "PlayerAnimator",
+        "ProducerId",
         "Projectile",
         "ProjectileTypeId",
+        "ShootDirection",
         "CollectingTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
@@ -157,8 +161,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Velocity),
         typeof(Code.Gameplay.Features.Player.Player),
         typeof(Code.Gameplay.Features.Player.PlayerAnimatorComponent),
+        typeof(Code.Gameplay.Features.Projectiles.ProducerId),
         typeof(Code.Gameplay.Features.Projectiles.Projectile),
         typeof(Code.Gameplay.Features.Projectiles.ProjectileTypeIdComponent),
+        typeof(Code.Gameplay.Features.Projectiles.ShootDirection),
         typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),

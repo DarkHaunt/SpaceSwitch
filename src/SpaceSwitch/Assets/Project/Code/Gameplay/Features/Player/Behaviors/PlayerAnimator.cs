@@ -12,6 +12,7 @@ namespace Code.Gameplay.Features.Player.Behaviors
 
       private float _velocity;
       private float _maxSpeed;
+      private float _lastAngle;
 
       public void Init(float speed)
       {
@@ -20,21 +21,19 @@ namespace Code.Gameplay.Features.Player.Behaviors
 
       public void UpdateViewRotationFromVelocity(Vector2 velocity, float timeStep)
       {
-         /*float sign = velocity.x > 0 ? 1 : -1;
+         float sign = velocity.x > 0 ? -1 : 1;
          float speed = Mathf.Abs(velocity.x);
 
          float speedPercent = Mathf.InverseLerp(0f, _maxSpeed, speed);
-         float targetAngle = Mathf.Lerp(0f, _rightAngle, speedPercent) * sign;
+         float targetAngle = Mathf.Lerp(0f, _maxAngle, speedPercent) * sign;
 
-         float currentAngle = _view.eulerAngles.z;
-         float angleDelta = Mathf.DeltaAngle(currentAngle, targetAngle) * timeStep;
-         float smoothAngle = Mathf.SmoothDamp(currentAngle, currentAngle + angleDelta, ref _velocity, _dampSpeed * timeStep);
+         float angleDelta = Mathf.DeltaAngle(_lastAngle, targetAngle) * timeStep;
+         float incomeAngle = Mathf.SmoothDamp(_lastAngle, _lastAngle + angleDelta, ref _velocity, _dampSpeed * timeStep);
 
-         var clamped = Mathf.Clamp(smoothAngle, -_rightAngle, _rightAngle);
+         var angle = Mathf.Clamp(incomeAngle, -_maxAngle, _maxAngle);
 
-         Debug.Log($"<color=white>{clamped}</color>");
-
-         _view.rotation = Quaternion.Euler(_view. ); new Vector3(-90f, 0f, clamped);*/
+         _lastAngle = angle;
+         _view.localRotation = Quaternion.Euler(-90f, angle, 0f);
       }
    }
 }

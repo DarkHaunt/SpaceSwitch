@@ -5,5 +5,7 @@
        public const string Player = "player";
        public const string Projectiles = "projectile";
        public const string Enemies = "enemy";
+       
+       public const string Gameplay = "gameplay";
    }
 }
