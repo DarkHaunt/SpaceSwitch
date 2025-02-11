@@ -13,6 +13,8 @@ namespace Code.Gameplay.Features.Player
          Add(systems.Create<PlayerAnimatorInitSystem>());
          
          Add(systems.Create<SetPlayerDirectionByInputSystem>());
+         Add(systems.Create<ClampMovementWithCameraBoundsSystem>());
+         
          Add(systems.Create<PlayerColorSwitchByInputSystem>());
          Add(systems.Create<PlayerShootByInputSystem>());
          

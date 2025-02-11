@@ -16,53 +16,54 @@ public static class GameComponentsLookup {
     public const int ViewPath = 5;
     public const int ViewPrefab = 6;
     public const int Active = 7;
-    public const int Damage = 8;
-    public const int EntityLink = 9;
-    public const int Id = 10;
-    public const int LayerMask = 11;
-    public const int SpriteRenderer = 12;
-    public const int Transform = 13;
-    public const int WorldPosition = 14;
-    public const int ColorSwitchAnimator = 15;
-    public const int ColorSwitchRequest = 16;
-    public const int ColorType = 17;
-    public const int Cooldown = 18;
-    public const int CooldownLeft = 19;
-    public const int CooldownUp = 20;
-    public const int Enemy = 21;
-    public const int EnemyTypeId = 22;
-    public const int CurrentHp = 23;
-    public const int Dead = 24;
-    public const int MaxHp = 25;
-    public const int ProcessingDeath = 26;
-    public const int Direction = 27;
-    public const int MovementAvailable = 28;
-    public const int Moving = 29;
-    public const int OrbitCenterFollowTarget = 30;
-    public const int OrbitCenterPosition = 31;
-    public const int OrbitPhase = 32;
-    public const int OrbitRadius = 33;
-    public const int RotationAlignedAlongDirection = 34;
-    public const int Speed = 35;
-    public const int TurnedAlongDirection = 36;
-    public const int Velocity = 37;
-    public const int Player = 38;
-    public const int PlayerAnimator = 39;
-    public const int ProducerId = 40;
-    public const int Projectile = 41;
-    public const int ProjectileTypeId = 42;
-    public const int ShootDirection = 43;
-    public const int CollectingTargetsContinuously = 44;
-    public const int CollectTargetsInterval = 45;
-    public const int CollectTargetsTimer = 46;
-    public const int ProcessedTargets = 47;
-    public const int Reached = 48;
-    public const int ReadyToCollectTargets = 49;
-    public const int TargetBuffer = 50;
-    public const int TargetLimit = 51;
-    public const int ProcessingAsyncSpawn = 52;
+    public const int Camera = 8;
+    public const int Damage = 9;
+    public const int EntityLink = 10;
+    public const int Id = 11;
+    public const int LayerMask = 12;
+    public const int SpriteRenderer = 13;
+    public const int Transform = 14;
+    public const int WorldPosition = 15;
+    public const int ColorSwitchAnimator = 16;
+    public const int ColorSwitchRequest = 17;
+    public const int ColorType = 18;
+    public const int Cooldown = 19;
+    public const int CooldownLeft = 20;
+    public const int CooldownUp = 21;
+    public const int Enemy = 22;
+    public const int EnemyTypeId = 23;
+    public const int CurrentHp = 24;
+    public const int Dead = 25;
+    public const int MaxHp = 26;
+    public const int ProcessingDeath = 27;
+    public const int Direction = 28;
+    public const int MovementAvailable = 29;
+    public const int Moving = 30;
+    public const int OrbitCenterFollowTarget = 31;
+    public const int OrbitCenterPosition = 32;
+    public const int OrbitPhase = 33;
+    public const int OrbitRadius = 34;
+    public const int RotationAlignedAlongDirection = 35;
+    public const int Speed = 36;
+    public const int TurnedAlongDirection = 37;
+    public const int Velocity = 38;
+    public const int Player = 39;
+    public const int PlayerAnimator = 40;
+    public const int ProducerId = 41;
+    public const int Projectile = 42;
+    public const int ProjectileTypeId = 43;
+    public const int ShootDirection = 44;
+    public const int CollectingTargetsContinuously = 45;
+    public const int CollectTargetsInterval = 46;
+    public const int CollectTargetsTimer = 47;
+    public const int ProcessedTargets = 48;
+    public const int Reached = 49;
+    public const int ReadyToCollectTargets = 50;
+    public const int TargetBuffer = 51;
+    public const int TargetLimit = 52;
+    public const int ProcessingAsyncSpawn = 53;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -73,6 +74,7 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Active",
+        "Camera",
         "Damage",
         "EntityLink",
         "Id",
@@ -129,6 +131,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Active),
+        typeof(Code.Gameplay.Common.CameraComponent),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),

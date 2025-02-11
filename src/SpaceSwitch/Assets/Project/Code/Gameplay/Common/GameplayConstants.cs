@@ -1,7 +1,9 @@
-﻿namespace Code.Gameplay.Common
+﻿using UnityEngine;
+
+namespace Code.Gameplay.Common
 {
   public class GameplayConstants
   {
-    public const float EnemySpawnTimer = 1;
+    public static readonly Vector2 CameraBoundsOffset = new Vector2(0.8f, 0.8f);
   }
 }
