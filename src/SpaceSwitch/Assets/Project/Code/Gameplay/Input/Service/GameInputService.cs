@@ -20,13 +20,17 @@ namespace Code.Gameplay.Input.Service
 
     public void Initialize()
     {
-      _input.Game.Attack.performed += SetAttackInput;
+      _input.Game.Attack.performed += EnableAttackInput;
+      _input.Game.Attack.canceled += DisableAttackInput;
+      
       _input.Game.Switch.performed += SetSwitchInput;
     }
 
     public void Dispose()
     {
-      _input.Game.Attack.performed -= SetAttackInput;
+      _input.Game.Attack.performed -= EnableAttackInput;
+      _input.Game.Attack.canceled -= DisableAttackInput;
+
       _input.Game.Switch.performed -= SetSwitchInput;
       
       _input?.Dispose();
@@ -40,11 +44,8 @@ namespace Code.Gameplay.Input.Service
         _input.Disable();
     }
 
-    public void CleanupInput()
-    {
-       HasSwitchInput = false;
-       HasAttackInput = false;
-    }
+    public void CleanupInput() =>
+      HasSwitchInput = false;
 
     public bool HasAxisInput() => 
       GetInputDirection() != Vector2.zero;
@@ -52,10 +53,13 @@ namespace Code.Gameplay.Input.Service
     public Vector2 GetInputDirection() =>
       _input.Game.MoveDirection.ReadValue<Vector2>();
 
-    private void SetAttackInput(InputAction.CallbackContext obj) =>
+    private void EnableAttackInput(InputAction.CallbackContext _) =>
       HasAttackInput = true;
 
-    private void SetSwitchInput(InputAction.CallbackContext obj) =>
+    private void DisableAttackInput(InputAction.CallbackContext obj) =>
+      HasAttackInput = false;
+
+    private void SetSwitchInput(InputAction.CallbackContext _) =>
       HasSwitchInput = true;
   }
 }

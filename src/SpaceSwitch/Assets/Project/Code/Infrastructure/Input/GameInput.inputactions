@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "f0d8a1b7-3ee5-45ae-a15e-298838ad0d97",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -29,33 +29,11 @@
                     "id": "953155aa-7015-40df-9389-f3f608ddbcae",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap",
-                    "initialStateCheck": false
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "ba7fc5ac-929e-4d5e-af16-6fcc2b2784b5",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Switch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d37825ad-43c6-482d-9c67-56553dfb6a91",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Switch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "WASD",
                     "id": "4a577bd6-b5bb-48d8-a799-c70da351431a",
@@ -168,8 +146,8 @@
                 },
                 {
                     "name": "",
-                    "id": "becc6257-3dc8-4d79-9f49-7f618e51bc1c",
-                    "path": "<Keyboard>/space",
+                    "id": "630e64cb-d7d4-4312-9d6f-abd07bd2d2d3",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -179,12 +157,12 @@
                 },
                 {
                     "name": "",
-                    "id": "630e64cb-d7d4-4312-9d6f-abd07bd2d2d3",
-                    "path": "<Mouse>/leftButton",
+                    "id": "becc6257-3dc8-4d79-9f49-7f618e51bc1c",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Switch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
