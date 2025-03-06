@@ -15,6 +15,4 @@ namespace Code.Gameplay.Common
  
   [Game] public class TransformComponent : IComponent { public Transform Value; }
   [Game] public class SpriteRendererComponent : IComponent { public SpriteRenderer Value; }
-  
-  [Game] public class CameraComponent : IComponent { public Camera Value; }
 }

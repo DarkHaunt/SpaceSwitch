@@ -8,6 +8,7 @@ using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
+using Project.Code.Gameplay.Features.Cameras;
 
 namespace Code.Gameplay
 {
@@ -19,6 +20,7 @@ namespace Code.Gameplay
       Add(systems.Create<BindViewFeature>());
       
       Add(systems.Create<PlayerFeature>());
+      Add(systems.Create<CameraFeature>());
       
       Add(systems.Create<DeathFeature>());
       Add(systems.Create<MovementFeature>());

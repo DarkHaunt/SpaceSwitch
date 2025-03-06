@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 99beab1082cf5b04abd4a8d1e4a53cec
   m_currentHash:
     serializedVersion: 2
-    Hash: b3ed28e7b4ef25ed2788d8f9ecadf40a
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
     - enemy
     - projectile
     - gameplay
+    - camera
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 065bebd8b76276941b8462d927ebbd7f, type: 2}

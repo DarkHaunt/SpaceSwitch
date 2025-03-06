@@ -14,6 +14,7 @@ using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Progress.Provider;
+using Project.Code.Gameplay.Features.Cameras.Factories;
 using VContainer;
 using VContainer.Unity;
 
@@ -54,6 +55,7 @@ namespace Code.Gameplay
 
       private void RegisterGameplayFactories()
       {
+         _builder.Register<CameraFactory>(Lifetime.Singleton);
          _builder.Register<PlayerFactory>(Lifetime.Singleton).As<IPlayerFactory>();
          _builder.Register<EnemyFactory>(Lifetime.Singleton).As<IEnemyFactory>();
          _builder.Register<ProjectileFactory>(Lifetime.Singleton).As<IProjectileFactory>();

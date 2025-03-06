@@ -8,6 +8,7 @@ using Code.Gameplay.Features.Projectiles;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
+using Project.Code.Gameplay.Features.Cameras;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -23,6 +24,7 @@ namespace Code.Gameplay.StaticData
       private Dictionary<EnemyTypeId, EnemyConfig> _enemyConfigs;
 
       public PlayerConfig PlayerConfig { get; private set; }
+      public CameraConfig CameraConfig { get; private set; }
 
       public StaticDataService(IAssetProvider assetProvider)
       {
@@ -34,6 +36,7 @@ namespace Code.Gameplay.StaticData
          return UniTask.WhenAll
          (
             LoadPlayerConfig(),
+            LoadCameraConfig(),
             LoadAllWindows(),
             LoadEnemyConfigs(),
             LoadProjectileConfigs()
@@ -69,6 +72,9 @@ namespace Code.Gameplay.StaticData
 
       private async UniTask LoadPlayerConfig() =>
          PlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetLabel.Player);
+
+      private async UniTask LoadCameraConfig() =>
+         CameraConfig = await _assetProvider.Load<CameraConfig>(AssetLabel.Camera);
 
       private async UniTask LoadEnemyConfigs()
       {

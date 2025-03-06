@@ -15,8 +15,4 @@ MonoBehaviour:
   <Id>k__BackingField: 1
   <Speed>k__BackingField: 6
   <Damage>k__BackingField: 5
-  <Prefab>k__BackingField:
-    m_AssetGUID: 2cbce4db97438dd47a5c562571925e8d
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  <Prefab>k__BackingField: {fileID: 5606547235634266384, guid: 2cbce4db97438dd47a5c562571925e8d, type: 3}

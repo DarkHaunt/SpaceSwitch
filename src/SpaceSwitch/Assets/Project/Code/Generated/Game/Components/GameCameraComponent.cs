@@ -33,28 +33,24 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.CameraComponent camera { get { return (Code.Gameplay.Common.CameraComponent)GetComponent(GameComponentsLookup.Camera); } }
-    public UnityEngine.Camera Camera { get { return camera.Value; } }
-    public bool hasCamera { get { return HasComponent(GameComponentsLookup.Camera); } }
+    static readonly Project.Code.Gameplay.Features.Cameras.CameraComponent cameraComponent = new Project.Code.Gameplay.Features.Cameras.CameraComponent();
 
-    public GameEntity AddCamera(UnityEngine.Camera newValue) {
-        var index = GameComponentsLookup.Camera;
-        var component = (Code.Gameplay.Common.CameraComponent)CreateComponent(index, typeof(Code.Gameplay.Common.CameraComponent));
-        component.Value = newValue;
-        AddComponent(index, component);
-        return this;
-    }
+    public bool isCamera {
+        get { return HasComponent(GameComponentsLookup.Camera); }
+        set {
+            if (value != isCamera) {
+                var index = GameComponentsLookup.Camera;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : cameraComponent;
 
-    public GameEntity ReplaceCamera(UnityEngine.Camera newValue) {
-        var index = GameComponentsLookup.Camera;
-        var component = (Code.Gameplay.Common.CameraComponent)CreateComponent(index, typeof(Code.Gameplay.Common.CameraComponent));
-        component.Value = newValue;
-        ReplaceComponent(index, component);
-        return this;
-    }
-
-    public GameEntity RemoveCamera() {
-        RemoveComponent(GameComponentsLookup.Camera);
-        return this;
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }

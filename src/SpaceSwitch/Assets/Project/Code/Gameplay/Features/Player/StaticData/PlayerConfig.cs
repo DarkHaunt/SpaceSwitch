@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
+﻿using Code.Infrastructure.View;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.StaticData
 {
@@ -7,7 +7,6 @@ namespace Code.Gameplay.Features.Player.StaticData
    public class PlayerConfig : ScriptableObject
    {
       [field: SerializeField] public float Speed { get; private set; }
-      
-      [field: SerializeField] public AssetReferenceGameObject Prefab { get; private set; }
+      [field: SerializeField] public EntityBehaviour Prefab { get; private set; }
    }
 }

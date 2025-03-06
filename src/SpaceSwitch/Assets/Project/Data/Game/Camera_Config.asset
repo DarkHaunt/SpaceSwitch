@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1608a4ae039841afbfa551ce37d57263, type: 3}
-  m_Name: Player_Config
+  m_Script: {fileID: 11500000, guid: d3f06fd39bf04628a008911f2b285420, type: 3}
+  m_Name: Camera_Config
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 3
-  <Prefab>k__BackingField: {fileID: 7463683003651137779, guid: 919f82d0087f6f94ab4072eeb578c397, type: 3}
+  <MoveSpeed>k__BackingField: 10
+  <Prefab>k__BackingField: {fileID: 7770398506053304621, guid: 7f44da489990af54abe49bfb3952be53, type: 3}

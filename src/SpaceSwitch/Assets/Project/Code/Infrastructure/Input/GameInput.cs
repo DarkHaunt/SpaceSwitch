@@ -182,11 +182,22 @@ namespace Code.Infrastructure
                 {
                     ""name"": """",
                     ""id"": ""becc6257-3dc8-4d79-9f49-7f618e51bc1c"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1b4fad5-9baf-4f96-a27f-24622c216720"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }

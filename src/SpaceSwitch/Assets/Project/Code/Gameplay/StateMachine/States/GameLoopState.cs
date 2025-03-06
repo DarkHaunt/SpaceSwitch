@@ -1,5 +1,7 @@
 ﻿using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
+using Cysharp.Threading.Tasks;
+using Project.Code.Common.UI.LoadingCurtain;
 
 namespace Code.Gameplay.StateMachine.States
 {
@@ -7,12 +9,14 @@ namespace Code.Gameplay.StateMachine.States
    {
       private readonly ISystemFactory _systems;
       private readonly GameContext _gameContext;
-    
+      private readonly ILoadingCurtain _curtain;
+
       private GamePlaygroundFeature _gamePlaygroundFeature;
 
-      public GameLoopState(ISystemFactory systems, GameContext gameContext)
+      public GameLoopState(ISystemFactory systems, GameContext gameContext, ILoadingCurtain curtain)
       {
          _gameContext = gameContext;
+         _curtain = curtain;
          _systems = systems;
       }
     
@@ -20,6 +24,8 @@ namespace Code.Gameplay.StateMachine.States
       {
          _gamePlaygroundFeature = _systems.Create<GamePlaygroundFeature>();
          _gamePlaygroundFeature.Initialize();
+
+         _curtain.Hide().Forget();
       }
 
       protected override void OnUpdate()

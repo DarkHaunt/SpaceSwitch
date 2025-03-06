@@ -1,6 +1,5 @@
 using Code.Gameplay.Features.Player.StaticData;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Code.Gameplay.Features.Player.Factories
 {

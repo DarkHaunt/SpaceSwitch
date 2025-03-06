@@ -26,7 +26,7 @@ namespace Code.Gameplay.Features.Player.Factories
                .AddDirection(Vector2.zero)
                .AddVelocity(Vector2.zero)
                
-               .AddAssetReference(config.Prefab)
+               .AddViewPrefab(config.Prefab)
                .AddSpeed(config.Speed)
                .AddColorType(ColorType.Blue)
                

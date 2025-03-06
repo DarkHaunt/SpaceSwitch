@@ -61,7 +61,7 @@ namespace Code.Gameplay.Features.Projectiles.Factories
                .AddDamage(config.Damage)
                .AddSpeed(config.Speed)
                .AddVelocity(Vector2.zero)
-               .AddAssetReference(config.Prefab)
+               .AddViewPrefab(config.Prefab)
             ;
       }
    }
