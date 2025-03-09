@@ -16,6 +16,8 @@ namespace Code.Gameplay.Features.Movement
       Add(systems.Create<UpdateTransformPositionSystem>());
       Add(systems.Create<VelocityUpdateSystem>());
       
+      Add(systems.Create<ClampZPositionSystem>());
+      
       Add(systems.Create<RotateAlongDirectionSystem>());
     }
   }

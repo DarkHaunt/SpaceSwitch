@@ -3,6 +3,7 @@ using System.Threading;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Player.StaticData;
 using Code.Gameplay.Features.Projectiles;
+using Code.Gameplay.Features.Scrolling.StaticData;
 using Code.Gameplay.Windows;
 using Cysharp.Threading.Tasks;
 using Project.Code.Gameplay.Features.Cameras;
@@ -14,7 +15,8 @@ namespace Code.Gameplay.StaticData
   {
     PlayerConfig PlayerConfig { get; }
     CameraConfig CameraConfig { get; }
-    
+    LevelsConfig LevelsConfig { get; }
+
     ProjectileConfig GetProjectileConfigById(ProjectileTypeId id);
     EnemyConfig GetEnemyConfigWithId(EnemyTypeId id);
     

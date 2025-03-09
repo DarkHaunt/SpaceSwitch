@@ -37,37 +37,39 @@ public static class GameComponentsLookup {
     public const int Dead = 26;
     public const int MaxHp = 27;
     public const int ProcessingDeath = 28;
-    public const int Direction = 29;
-    public const int MovementAvailable = 30;
-    public const int Moving = 31;
-    public const int OrbitCenterFollowTarget = 32;
-    public const int OrbitCenterPosition = 33;
-    public const int OrbitPhase = 34;
-    public const int OrbitRadius = 35;
-    public const int RotationAlignedAlongDirection = 36;
-    public const int Speed = 37;
-    public const int TurnedAlongDirection = 38;
-    public const int Velocity = 39;
-    public const int Player = 40;
-    public const int PlayerAnimator = 41;
-    public const int ProducerId = 42;
-    public const int Projectile = 43;
-    public const int ProjectileTypeId = 44;
-    public const int ShootDirection = 45;
-    public const int Shooter = 46;
-    public const int ShootTimer = 47;
-    public const int CollectingTargetsContinuously = 48;
-    public const int CollectTargetsInterval = 49;
-    public const int CollectTargetsTimer = 50;
-    public const int ProcessedTargets = 51;
-    public const int Reached = 52;
-    public const int ReadyToCollectTargets = 53;
-    public const int TargetBuffer = 54;
-    public const int TargetLimit = 55;
-    public const int ProcessingAsyncSpawn = 56;
-    public const int Camera = 57;
+    public const int ClampedZ = 29;
+    public const int Direction = 30;
+    public const int MovementAvailable = 31;
+    public const int Moving = 32;
+    public const int OrbitCenterFollowTarget = 33;
+    public const int OrbitCenterPosition = 34;
+    public const int OrbitPhase = 35;
+    public const int OrbitRadius = 36;
+    public const int RotationAlignedAlongDirection = 37;
+    public const int Speed = 38;
+    public const int TurnedAlongDirection = 39;
+    public const int Velocity = 40;
+    public const int Player = 41;
+    public const int PlayerAnimator = 42;
+    public const int ProducerId = 43;
+    public const int Projectile = 44;
+    public const int ProjectileTypeId = 45;
+    public const int ShootDirection = 46;
+    public const int LevelPart = 47;
+    public const int Shooter = 48;
+    public const int ShootTimer = 49;
+    public const int CollectingTargetsContinuously = 50;
+    public const int CollectTargetsInterval = 51;
+    public const int CollectTargetsTimer = 52;
+    public const int ProcessedTargets = 53;
+    public const int Reached = 54;
+    public const int ReadyToCollectTargets = 55;
+    public const int TargetBuffer = 56;
+    public const int TargetLimit = 57;
+    public const int ProcessingAsyncSpawn = 58;
+    public const int Camera = 59;
 
-    public const int TotalComponents = 58;
+    public const int TotalComponents = 60;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -99,6 +101,7 @@ public static class GameComponentsLookup {
         "Dead",
         "MaxHp",
         "ProcessingDeath",
+        "ClampedZ",
         "Direction",
         "MovementAvailable",
         "Moving",
@@ -116,6 +119,7 @@ public static class GameComponentsLookup {
         "Projectile",
         "ProjectileTypeId",
         "ShootDirection",
+        "LevelPart",
         "Shooter",
         "ShootTimer",
         "CollectingTargetsContinuously",
@@ -160,6 +164,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Lifetime.Dead),
         typeof(Code.Gameplay.Features.Lifetime.MaxHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Movement.ClampedZ),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
@@ -177,6 +182,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Projectiles.Projectile),
         typeof(Code.Gameplay.Features.Projectiles.ProjectileTypeIdComponent),
         typeof(Code.Gameplay.Features.Projectiles.ShootDirection),
+        typeof(Code.Gameplay.Features.Scrolling.LevelPartComponent),
         typeof(Code.Gameplay.Features.Shooting.Shooter),
         typeof(Code.Gameplay.Features.Shooting.ShootTimer),
         typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),

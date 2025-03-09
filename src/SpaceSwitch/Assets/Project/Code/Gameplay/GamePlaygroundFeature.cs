@@ -3,6 +3,7 @@ using Code.Gameplay.Features.ColorSwitch;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
+using Code.Gameplay.Features.Scrolling;
 using Code.Gameplay.Features.Shooting.Systems;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
@@ -28,6 +29,8 @@ namespace Code.Gameplay
  
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<ColorSwitchFeature>());
+      
+      Add(systems.Create<LevelBGMoveFeature>());
       
       Add(systems.Create<ProcessDestructedFeature>());
     }

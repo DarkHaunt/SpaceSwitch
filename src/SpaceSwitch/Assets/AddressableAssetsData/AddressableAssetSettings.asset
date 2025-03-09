@@ -94,6 +94,7 @@ MonoBehaviour:
     - projectile
     - gameplay
     - camera
+    - levels
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 065bebd8b76276941b8462d927ebbd7f, type: 2}

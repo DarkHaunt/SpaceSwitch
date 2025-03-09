@@ -5,12 +5,12 @@ using System.Threading;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Player.StaticData;
 using Code.Gameplay.Features.Projectiles;
+using Code.Gameplay.Features.Scrolling.StaticData;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using Project.Code.Gameplay.Features.Cameras;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Code.Gameplay.StaticData
 {
@@ -25,6 +25,7 @@ namespace Code.Gameplay.StaticData
 
       public PlayerConfig PlayerConfig { get; private set; }
       public CameraConfig CameraConfig { get; private set; }
+      public LevelsConfig LevelsConfig { get; private set; }
 
       public StaticDataService(IAssetProvider assetProvider)
       {
@@ -37,8 +38,9 @@ namespace Code.Gameplay.StaticData
          (
             LoadPlayerConfig(),
             LoadCameraConfig(),
-            LoadAllWindows(),
+            LoadLevelsConfig(),
             LoadEnemyConfigs(),
+            LoadAllWindows(),
             LoadProjectileConfigs()
          );
       }
@@ -72,6 +74,9 @@ namespace Code.Gameplay.StaticData
 
       private async UniTask LoadPlayerConfig() =>
          PlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetLabel.Player);
+
+      private async UniTask LoadLevelsConfig() =>
+         LevelsConfig = await _assetProvider.Load<LevelsConfig>(AssetLabel.Levels);
 
       private async UniTask LoadCameraConfig() =>
          CameraConfig = await _assetProvider.Load<CameraConfig>(AssetLabel.Camera);

@@ -4,6 +4,8 @@
    {
        public const string Player = "player";
        public const string Camera = "camera";
+       public const string Levels = "levels";
+       
        public const string Projectiles = "projectile";
        public const string Enemies = "enemy";
        
