@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
+﻿using Code.Infrastructure.View;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy
 {
@@ -7,6 +7,6 @@ namespace Code.Gameplay.Features.Enemy
    public class EnemyConfig : ScriptableObject
    {
       [field: SerializeField] public EnemyTypeId Id { get; private set; }
-      [field: SerializeField] public AssetReferenceGameObject Prefab { get; private set; }
+      [field: SerializeField] public EntityBehaviour Prefab { get; private set; }
    }
 }

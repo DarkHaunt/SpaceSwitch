@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Movement
       Add(systems.Create<TurnAlongDirectionSystem>());
       
       Add(systems.Create<UpdateTransformPositionSystem>());
+      Add(systems.Create<UpdateTransformRotationSystem>());
       Add(systems.Create<VelocityUpdateSystem>());
       
       Add(systems.Create<ClampZPositionSystem>());

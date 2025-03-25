@@ -3,6 +3,7 @@ using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
+using UnityEngine.Splines;
 
 namespace Code.Gameplay.Features.Enemy
 {
@@ -15,7 +16,7 @@ namespace Code.Gameplay.Features.Enemy
          _identifiers = identifiers;
       }
 
-      public GameEntity CreateEnemy(EnemyTypeId typeId, Vector3 at)
+      public GameEntity CreateEnemy(EnemyTypeId typeId, Spline spline)
       {
          GameEntity entity = typeId switch
          {
@@ -24,18 +25,21 @@ namespace Code.Gameplay.Features.Enemy
             _ => throw new Exception($"Enemy with type id {typeId} does not exist")
          };
          
-         entity = AddSharedComponents(entity, at, typeId);
+         entity = AddSharedComponents(entity, spline, typeId);
 
          return entity;
       }
 
-      private GameEntity AddSharedComponents(GameEntity enemy, Vector3 position, EnemyTypeId typeId)
+      private GameEntity AddSharedComponents(GameEntity enemy, Spline spline, EnemyTypeId typeId)
       {
          enemy
             .AddId(_identifiers.Next())
             .With(x => x.isEnemy = true)
             .AddEnemyTypeId(typeId)
-            .AddWorldPosition(position)
+            .AddSpline(spline)
+            
+            .With(x => x.isMovingSpline = true)
+            
             ;
 
          return enemy;

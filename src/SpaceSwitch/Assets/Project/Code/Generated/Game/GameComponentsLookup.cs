@@ -23,53 +23,58 @@ public static class GameComponentsLookup {
     public const int SpriteRenderer = 12;
     public const int Transform = 13;
     public const int WorldPosition = 14;
-    public const int Bounded = 15;
-    public const int Bounds = 16;
-    public const int ColorSwitchAnimator = 17;
-    public const int ColorSwitchRequest = 18;
-    public const int ColorType = 19;
-    public const int Cooldown = 20;
-    public const int CooldownLeft = 21;
-    public const int CooldownUp = 22;
-    public const int Enemy = 23;
-    public const int EnemyTypeId = 24;
-    public const int CurrentHp = 25;
-    public const int Dead = 26;
-    public const int MaxHp = 27;
-    public const int ProcessingDeath = 28;
-    public const int ClampedZ = 29;
-    public const int Direction = 30;
-    public const int MovementAvailable = 31;
-    public const int Moving = 32;
-    public const int OrbitCenterFollowTarget = 33;
-    public const int OrbitCenterPosition = 34;
-    public const int OrbitPhase = 35;
-    public const int OrbitRadius = 36;
-    public const int RotationAlignedAlongDirection = 37;
-    public const int Speed = 38;
-    public const int TurnedAlongDirection = 39;
-    public const int Velocity = 40;
-    public const int Player = 41;
-    public const int PlayerAnimator = 42;
-    public const int ProducerId = 43;
-    public const int Projectile = 44;
-    public const int ProjectileTypeId = 45;
-    public const int ShootDirection = 46;
-    public const int LevelPart = 47;
-    public const int Shooter = 48;
-    public const int ShootTimer = 49;
-    public const int CollectingTargetsContinuously = 50;
-    public const int CollectTargetsInterval = 51;
-    public const int CollectTargetsTimer = 52;
-    public const int ProcessedTargets = 53;
-    public const int Reached = 54;
-    public const int ReadyToCollectTargets = 55;
-    public const int TargetBuffer = 56;
-    public const int TargetLimit = 57;
-    public const int ProcessingAsyncSpawn = 58;
-    public const int Camera = 59;
+    public const int WorldRotation = 15;
+    public const int Bounded = 16;
+    public const int Bounds = 17;
+    public const int ColorSwitchAnimator = 18;
+    public const int ColorSwitchRequest = 19;
+    public const int ColorType = 20;
+    public const int Cooldown = 21;
+    public const int CooldownLeft = 22;
+    public const int CooldownUp = 23;
+    public const int Enemy = 24;
+    public const int EnemyTypeId = 25;
+    public const int CurrentHp = 26;
+    public const int Dead = 27;
+    public const int MaxHp = 28;
+    public const int ProcessingDeath = 29;
+    public const int ClampedZ = 30;
+    public const int Direction = 31;
+    public const int MovementAvailable = 32;
+    public const int Moving = 33;
+    public const int OrbitCenterFollowTarget = 34;
+    public const int OrbitCenterPosition = 35;
+    public const int OrbitPhase = 36;
+    public const int OrbitRadius = 37;
+    public const int RotationAlignedAlongDirection = 38;
+    public const int Speed = 39;
+    public const int TurnedAlongDirection = 40;
+    public const int Velocity = 41;
+    public const int Player = 42;
+    public const int PlayerAnimator = 43;
+    public const int ProducerId = 44;
+    public const int Projectile = 45;
+    public const int ProjectileTypeId = 46;
+    public const int ShootDirection = 47;
+    public const int LevelPart = 48;
+    public const int Shooter = 49;
+    public const int ShootTimer = 50;
+    public const int MovingSpline = 51;
+    public const int ReachedSplineEnd = 52;
+    public const int Spline = 53;
+    public const int SplineTPosition = 54;
+    public const int CollectingTargetsContinuously = 55;
+    public const int CollectTargetsInterval = 56;
+    public const int CollectTargetsTimer = 57;
+    public const int ProcessedTargets = 58;
+    public const int Reached = 59;
+    public const int ReadyToCollectTargets = 60;
+    public const int TargetBuffer = 61;
+    public const int TargetLimit = 62;
+    public const int ProcessingAsyncSpawn = 63;
+    public const int Camera = 64;
 
-    public const int TotalComponents = 60;
+    public const int TotalComponents = 65;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -87,6 +92,7 @@ public static class GameComponentsLookup {
         "SpriteRenderer",
         "Transform",
         "WorldPosition",
+        "WorldRotation",
         "Bounded",
         "Bounds",
         "ColorSwitchAnimator",
@@ -122,6 +128,10 @@ public static class GameComponentsLookup {
         "LevelPart",
         "Shooter",
         "ShootTimer",
+        "MovingSpline",
+        "ReachedSplineEnd",
+        "Spline",
+        "SplineTPosition",
         "CollectingTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
@@ -150,6 +160,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.SpriteRendererComponent),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Common.WorldRotation),
         typeof(Code.Gameplay.Features.Bounds.Bounded),
         typeof(Code.Gameplay.Features.Bounds.BoundsComponent),
         typeof(Code.Gameplay.Features.ColorSwitch.ColorSwitchAnimatorComponent),
@@ -185,6 +196,10 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Scrolling.LevelPartComponent),
         typeof(Code.Gameplay.Features.Shooting.Shooter),
         typeof(Code.Gameplay.Features.Shooting.ShootTimer),
+        typeof(Code.Gameplay.Features.Splines.MovingSpline),
+        typeof(Code.Gameplay.Features.Splines.ReachedSplineEnd),
+        typeof(Code.Gameplay.Features.Splines.SplineComponent),
+        typeof(Code.Gameplay.Features.Splines.SplineTPosition),
         typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),

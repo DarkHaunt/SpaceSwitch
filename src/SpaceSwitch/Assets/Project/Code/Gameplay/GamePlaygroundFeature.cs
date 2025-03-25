@@ -5,6 +5,7 @@ using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
 using Code.Gameplay.Features.Scrolling;
 using Code.Gameplay.Features.Shooting.Systems;
+using Code.Gameplay.Features.Splines;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
@@ -23,6 +24,7 @@ namespace Code.Gameplay
       Add(systems.Create<PlayerFeature>());
       Add(systems.Create<CameraFeature>());
       
+      Add(systems.Create<SplineFeature>());
       Add(systems.Create<DeathFeature>());
       Add(systems.Create<MovementFeature>());
       Add(systems.Create<ShootingFeature>());

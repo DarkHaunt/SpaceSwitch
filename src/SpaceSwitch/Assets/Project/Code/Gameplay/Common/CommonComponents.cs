@@ -8,6 +8,7 @@ namespace Code.Gameplay.Common
   [Game] public class EntityLink : IComponent { [EntityIndex] public int Value; }
   
   [Game] public class WorldPosition : IComponent { public Vector3 Value; }
+  [Game] public class WorldRotation : IComponent { public Quaternion Value; }
   [Game] public class LayerMask : IComponent { public int Value; }
   
   [Game] public class Damage : IComponent { public float Value; }
