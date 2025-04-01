@@ -7,7 +7,7 @@ using UnityEngine.Splines;
 
 namespace Code.Gameplay.Features.Enemy
 {
-   public class EnemyFactory : IEnemyFactory
+   public class EnemyFactory
    {
       private readonly IIdentifierService _identifiers;
 
@@ -34,10 +34,10 @@ namespace Code.Gameplay.Features.Enemy
       {
          enemy
             .AddId(_identifiers.Next())
-            .With(x => x.isEnemy = true)
             .AddEnemyTypeId(typeId)
             .AddSpline(spline)
             
+            .With(x => x.isEnemy = true)
             .With(x => x.isMovingSpline = true)
             
             ;

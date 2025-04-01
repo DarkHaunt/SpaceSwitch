@@ -1,5 +1,7 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.ColorSwitch;
+using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.EnemyLifetime;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
@@ -28,9 +30,12 @@ namespace Code.Gameplay
       Add(systems.Create<DeathFeature>());
       Add(systems.Create<MovementFeature>());
       Add(systems.Create<ShootingFeature>());
- 
+      
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<ColorSwitchFeature>());
+      
+      Add(systems.Create<EnemyLifetimeFeature>());
+      Add(systems.Create<EnemyFeature>());
       
       Add(systems.Create<LevelBGMoveFeature>());
       

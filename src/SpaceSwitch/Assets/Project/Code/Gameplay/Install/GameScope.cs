@@ -1,6 +1,8 @@
 ﻿using System;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Features.Enemy;
+using Code.Gameplay.Features.Enemy.Services;
+using Code.Gameplay.Features.EnemyLifetime.Factories;
 using Code.Gameplay.Features.Player.Factories;
 using Code.Gameplay.Features.Projectiles.Factories;
 using Code.Gameplay.Features.Scrolling.Factories;
@@ -60,7 +62,8 @@ namespace Code.Gameplay
          _builder.Register<CameraFactory>(Lifetime.Singleton);
          _builder.Register<LevelPartsFactory>(Lifetime.Singleton);
          _builder.Register<PlayerFactory>(Lifetime.Singleton).As<IPlayerFactory>();
-         _builder.Register<EnemyFactory>(Lifetime.Singleton).As<IEnemyFactory>();
+         _builder.Register<EnemyFactory>(Lifetime.Singleton);
+         _builder.Register<EnemyScenarioFactory>(Lifetime.Singleton);
          _builder.Register<ProjectileFactory>(Lifetime.Singleton).As<IProjectileFactory>();
       }
       
@@ -72,6 +75,7 @@ namespace Code.Gameplay
          _builder.Register<CameraProvider>(Lifetime.Singleton).As<ICameraProvider>().AsSelf();
          _builder.Register<StaticDataService>(Lifetime.Singleton).As<IStaticDataService>();
          _builder.Register<LevelDataProvider>(Lifetime.Singleton).As<ILevelDataProvider>();
+         _builder.Register<EnemySpawnService>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
          
          _builder.Register<LevelPartsHandleService>(Lifetime.Singleton);
          _builder.Register<LevelPartProvider>(Lifetime.Singleton);

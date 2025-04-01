@@ -8,6 +8,7 @@
        
        public const string Projectiles = "projectile";
        public const string Enemies = "enemy";
+       public const string EnemySpawnConfigs = "enemy_spawn_configs";
        
        public const string Gameplay = "gameplay";
    }

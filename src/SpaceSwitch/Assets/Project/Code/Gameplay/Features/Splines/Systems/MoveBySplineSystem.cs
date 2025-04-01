@@ -1,8 +1,6 @@
 ﻿using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEditor.Splines;
 using UnityEngine;
-using UnityEngine.Splines;
 
 namespace Code.Gameplay.Features.Splines.Systems
 {

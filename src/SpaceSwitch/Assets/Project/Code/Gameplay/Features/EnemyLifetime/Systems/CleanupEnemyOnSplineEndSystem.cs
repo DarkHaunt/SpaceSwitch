@@ -2,11 +2,11 @@
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
-   public sealed class EnemyDestructOnSplineEndSystem : IExecuteSystem
+   public sealed class CleanupEnemyOnSplineEndSystem : ICleanupSystem
    {
       private readonly IGroup<GameEntity> _enemies;
 
-      public EnemyDestructOnSplineEndSystem(GameContext context)
+      public CleanupEnemyOnSplineEndSystem(GameContext context)
       {
          _enemies = context.GetGroup(GameMatcher
             .AllOf(
@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
             .NoneOf(GameMatcher.Destructed));
       }
 
-      public void Execute()
+      public void Cleanup()
       {
          foreach (GameEntity enemy in _enemies)
             enemy.isDestructed = true;

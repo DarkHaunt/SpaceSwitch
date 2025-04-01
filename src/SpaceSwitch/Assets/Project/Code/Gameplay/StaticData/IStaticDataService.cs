@@ -13,6 +13,7 @@ namespace Code.Gameplay.StaticData
 {
   public interface IStaticDataService
   {
+    EnemySpawnConfig[] EnemySpawnSpawnConfigs { get; }
     PlayerConfig PlayerConfig { get; }
     CameraConfig CameraConfig { get; }
     LevelsConfig LevelsConfig { get; }

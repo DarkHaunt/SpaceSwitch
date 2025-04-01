@@ -23,6 +23,7 @@ namespace Code.Gameplay.StaticData
       private Dictionary<ProjectileTypeId, ProjectileConfig> _projectileConfigs;
       private Dictionary<EnemyTypeId, EnemyConfig> _enemyConfigs;
 
+      public EnemySpawnConfig[] EnemySpawnSpawnConfigs { get; private set; }
       public PlayerConfig PlayerConfig { get; private set; }
       public CameraConfig CameraConfig { get; private set; }
       public LevelsConfig LevelsConfig { get; private set; }
@@ -85,6 +86,8 @@ namespace Code.Gameplay.StaticData
       {
          var enemies = await _assetProvider.LoadAllByLabel<EnemyConfig>(AssetLabel.Enemies);
          _enemyConfigs = enemies.ToDictionary(x => x.Id, y => y);
+         
+         EnemySpawnSpawnConfigs = await _assetProvider.LoadAllByLabel<EnemySpawnConfig>(AssetLabel.EnemySpawnConfigs);
       }
 
       private UniTask LoadAllWindows()

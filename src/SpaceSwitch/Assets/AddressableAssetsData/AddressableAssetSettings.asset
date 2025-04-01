@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 108c0da9f1d9468488093d4d668be553, type: 2}
   - {fileID: 11400000, guid: ca2b80b09d94e1b47b08a36c4fc8a3f3, type: 2}
   - {fileID: 11400000, guid: e599c34216f87a3458cceb6064dc4099, type: 2}
+  - {fileID: 11400000, guid: 9ad1f59d975cf4449b0de6f73ebbb299, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -95,6 +96,7 @@ MonoBehaviour:
     - gameplay
     - camera
     - levels
+    - enemy_spawn_configs
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 065bebd8b76276941b8462d927ebbd7f, type: 2}
