@@ -46,15 +46,6 @@ namespace Code.Infrastructure
                     ""processors"": ""NormalizeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""953155aa-7015-40df-9389-f3f608ddbcae"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -170,34 +161,12 @@ namespace Code.Infrastructure
                 },
                 {
                     ""name"": """",
-                    ""id"": ""630e64cb-d7d4-4312-9d6f-abd07bd2d2d3"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Attack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""becc6257-3dc8-4d79-9f49-7f618e51bc1c"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Switch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c1b4fad5-9baf-4f96-a27f-24622c216720"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""Switch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -210,7 +179,6 @@ namespace Code.Infrastructure
             m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
             m_Game_Switch = m_Game.FindAction("Switch", throwIfNotFound: true);
             m_Game_MoveDirection = m_Game.FindAction("MoveDirection", throwIfNotFound: true);
-            m_Game_Attack = m_Game.FindAction("Attack", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -274,14 +242,12 @@ namespace Code.Infrastructure
         private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
         private readonly InputAction m_Game_Switch;
         private readonly InputAction m_Game_MoveDirection;
-        private readonly InputAction m_Game_Attack;
         public struct GameActions
         {
             private @GameInput m_Wrapper;
             public GameActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Switch => m_Wrapper.m_Game_Switch;
             public InputAction @MoveDirection => m_Wrapper.m_Game_MoveDirection;
-            public InputAction @Attack => m_Wrapper.m_Game_Attack;
             public InputActionMap Get() { return m_Wrapper.m_Game; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -297,9 +263,6 @@ namespace Code.Infrastructure
                 @MoveDirection.started += instance.OnMoveDirection;
                 @MoveDirection.performed += instance.OnMoveDirection;
                 @MoveDirection.canceled += instance.OnMoveDirection;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
             }
 
             private void UnregisterCallbacks(IGameActions instance)
@@ -310,9 +273,6 @@ namespace Code.Infrastructure
                 @MoveDirection.started -= instance.OnMoveDirection;
                 @MoveDirection.performed -= instance.OnMoveDirection;
                 @MoveDirection.canceled -= instance.OnMoveDirection;
-                @Attack.started -= instance.OnAttack;
-                @Attack.performed -= instance.OnAttack;
-                @Attack.canceled -= instance.OnAttack;
             }
 
             public void RemoveCallbacks(IGameActions instance)
@@ -334,7 +294,6 @@ namespace Code.Infrastructure
         {
             void OnSwitch(InputAction.CallbackContext context);
             void OnMoveDirection(InputAction.CallbackContext context);
-            void OnAttack(InputAction.CallbackContext context);
         }
     }
 }

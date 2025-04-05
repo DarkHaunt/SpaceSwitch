@@ -8,7 +8,6 @@ namespace Code.Gameplay.Input.Service
 {
   public class GameInputService : IInputService, IInitializable, IDisposable
   {
-    public bool HasAttackInput { get; private set; }
     public bool HasSwitchInput { get; private set; } 
 
     private readonly GameInput _input;
@@ -20,17 +19,11 @@ namespace Code.Gameplay.Input.Service
 
     public void Initialize()
     {
-      _input.Game.Attack.performed += EnableAttackInput;
-      _input.Game.Attack.canceled += DisableAttackInput;
-      
       _input.Game.Switch.performed += SetSwitchInput;
     }
 
     public void Dispose()
     {
-      _input.Game.Attack.performed -= EnableAttackInput;
-      _input.Game.Attack.canceled -= DisableAttackInput;
-
       _input.Game.Switch.performed -= SetSwitchInput;
       
       _input?.Dispose();
@@ -52,12 +45,6 @@ namespace Code.Gameplay.Input.Service
 
     public Vector2 GetInputDirection() =>
       _input.Game.MoveDirection.ReadValue<Vector2>();
-
-    private void EnableAttackInput(InputAction.CallbackContext _) =>
-      HasAttackInput = true;
-
-    private void DisableAttackInput(InputAction.CallbackContext obj) =>
-      HasAttackInput = false;
 
     private void SetSwitchInput(InputAction.CallbackContext _) =>
       HasSwitchInput = true;

@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Player
          Add(systems.Create<ClampMovementWithCameraBoundsSystem>());
          
          Add(systems.Create<PlayerColorSwitchByInputSystem>());
-         Add(systems.Create<PlayerShootByInputSystem>());
+         Add(systems.Create<PlayerLoopShootSystem>());
          
          Add(systems.Create<UpdatePlayerAnimatorSystem>());
       }
