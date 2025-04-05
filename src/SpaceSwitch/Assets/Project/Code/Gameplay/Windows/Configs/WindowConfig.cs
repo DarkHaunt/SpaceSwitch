@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Gameplay.Windows.Configs
 {
-  [Serializable]
-  public class WindowConfig
+  [CreateAssetMenu(fileName = "Window Config", menuName = "Scriptable Objects/Window Config")]
+  public class WindowConfig : ScriptableObject
   {
-    public WindowId Id;
-    public GameObject Prefab;
+    [field: SerializeField] public WindowId Id { get; private set; }
+    [field: SerializeField] public GameObject Prefab { get; private set; }
   }
 }

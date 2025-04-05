@@ -2,14 +2,12 @@ using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Score;
+using Code.Gameplay.StaticData;
 using Code.Gameplay.Windows;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
-using Code.Infrastructure.States.Factory;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
-using Code.Infrastructure.Systems;
-using Code.Infrastructure.View.Factory;
+using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
 using Project.Code.Common.Infrastructure.CoroutineRunner;
 using Project.Code.Common.Infrastructure.SceneLoader;
@@ -51,10 +49,13 @@ namespace Code.Infrastructure.Installers
 
     private void RegisterInfrastructureServices()
     {
+      _builder.Register<ProgressProvider>(Lifetime.Singleton).As<IProgressProvider>();
+      _builder.Register<StaticDataService>(Lifetime.Singleton).As<IStaticDataService>();
       _builder.Register<SaveLoadService>(Lifetime.Singleton).As<ISaveLoadService>();
       _builder.Register<AssetProvider>(Lifetime.Singleton).As<IAssetProvider>();
       _builder.Register<SceneLoader>(Lifetime.Singleton).As<ISceneLoader>();
       _builder.Register<IdentifierService>(Lifetime.Singleton).As<IIdentifierService>();
+      _builder.Register<ScoreService>(Lifetime.Singleton);
       _builder.RegisterEntryPoint<RootBootstrapper>();
        
       _builder

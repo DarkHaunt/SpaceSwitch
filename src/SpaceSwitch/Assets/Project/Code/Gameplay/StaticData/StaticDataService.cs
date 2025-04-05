@@ -7,6 +7,7 @@ using Code.Gameplay.Features.Player.StaticData;
 using Code.Gameplay.Features.Projectiles;
 using Code.Gameplay.Features.Scrolling.StaticData;
 using Code.Gameplay.Windows;
+using Code.Gameplay.Windows.Configs;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using Project.Code.Gameplay.Features.Cameras;
@@ -90,9 +91,10 @@ namespace Code.Gameplay.StaticData
          EnemySpawnSpawnConfigs = await _assetProvider.LoadAllByLabel<EnemySpawnConfig>(AssetLabel.EnemySpawnConfigs);
       }
 
-      private UniTask LoadAllWindows()
+      private async UniTask LoadAllWindows()
       {
-         return UniTask.CompletedTask;
+         var windows = await _assetProvider.LoadAllByLabel<WindowConfig>(AssetLabel.Windows);
+         _windowPrefabsById = windows.ToDictionary(x => x.Id, y => y.Prefab);
       }
    }
 }
