@@ -29,8 +29,7 @@ namespace Code.Gameplay.Features.Splines.Systems
             mover.Spline.Evaluate(mover.SplineTPosition, out float3 position, out float3 tangent, out float3 upVector);
             
             mover.ReplaceWorldPosition(position);
-            mover.ReplaceWorldRotation(Quaternion.LookRotation(mover.Transform.up, tangent));
-            //mover.ReplaceWorldRotation(Quaternion.LookRotation(mover.Transform.up, Vector3.forward));
+            mover.ReplaceWorldRotation(Quaternion.LookRotation(upVector, tangent));
          }
       }
    }

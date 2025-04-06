@@ -33,7 +33,6 @@ namespace Project.Code.Gameplay.Features.Player.Systems
       {
          foreach (GameEntity player in _players.GetEntities(_buffer))
          {
-            Debug.Log($"<color=white>Shoot</color>");
             _projectileFactory.CreateProjectile(
                ProjectileTypeId.Simple,
                player.WorldPosition,
