@@ -74,20 +74,20 @@ namespace Code.Gameplay.StaticData
       }
 
       private async UniTask LoadPlayerConfig() =>
-         PlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetLabel.Player);
+         PlayerConfig = await _assetProvider.Load<PlayerConfig>(AssetPath.PlayerConfig);
 
       private async UniTask LoadLevelsConfig() =>
-         LevelsConfig = await _assetProvider.Load<LevelsConfig>(AssetLabel.Levels);
+         LevelsConfig = await _assetProvider.Load<LevelsConfig>(AssetPath.LevelPartConfig);
 
       private async UniTask LoadCameraConfig() =>
-         CameraConfig = await _assetProvider.Load<CameraConfig>(AssetLabel.Camera);
+         CameraConfig = await _assetProvider.Load<CameraConfig>(AssetPath.CameraConfig);
 
       private async UniTask LoadEnemyConfigs()
       {
          var enemies = await _assetProvider.LoadAllByLabel<EnemyConfig>(AssetLabel.Enemies);
          _enemyConfigs = enemies.ToDictionary(x => x.Id, y => y);
          
-         EnemySpawnSpawnConfigs = await _assetProvider.LoadAllByLabel<EnemySpawnConfig>(AssetLabel.EnemySpawnConfigs);
+         EnemySpawnSpawnConfigs = await _assetProvider.LoadAllByLabel<EnemySpawnConfig>(AssetLabel.EnemySpawners);
       }
 
       private UniTask LoadAllWindows()

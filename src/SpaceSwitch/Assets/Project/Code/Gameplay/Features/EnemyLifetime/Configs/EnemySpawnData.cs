@@ -9,6 +9,7 @@ namespace Project.Code.Gameplay.Features.Enemy.Configs
    public class EnemySpawnData : SerializationNameReceiver
    {
       public float TimeToSpawn;
+      public bool RotateToPath = true;
       public EnemyTypeId Id;
       public ColorType Color;
       

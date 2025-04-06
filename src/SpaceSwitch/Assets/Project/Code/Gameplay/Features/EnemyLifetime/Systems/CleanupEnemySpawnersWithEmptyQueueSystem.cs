@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
@@ -13,7 +14,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
          _spawners = context.GetGroup(GameMatcher
             .AllOf(
                GameMatcher.EnemySpawnQueue,
-               GameMatcher.EnemySpawner,
+               GameMatcher.EnemySpawnScenario,
                GameMatcher.SpawningEnemies
             )
             .NoneOf(GameMatcher.Destructed));

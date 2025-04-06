@@ -16,7 +16,31 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 99beab1082cf5b04abd4a8d1e4a53cec
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 794e1dbfa230f634e8338cb645a4082d
+    m_Address: Camera_Config
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5b94ddf615fd8949bfdfd5b7e8da094
+    m_Address: Levels_Config
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28499a0c52d50fc42b75154d2365eb60
+    m_Address: Player_Config
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 919f82d0087f6f94ab4072eeb578c397
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - gameplay
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8455031051f8f884b930312bbe7dbea6, type: 2}
   m_SchemaSet:

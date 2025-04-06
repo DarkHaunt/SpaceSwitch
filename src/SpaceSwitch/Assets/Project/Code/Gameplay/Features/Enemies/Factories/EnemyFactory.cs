@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
+using Project.Code.Gameplay.Features.Enemy.Configs;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -10,14 +14,18 @@ namespace Code.Gameplay.Features.Enemy
    public class EnemyFactory
    {
       private readonly IIdentifierService _identifiers;
+      private readonly IStaticDataService _staticData;
 
-      public EnemyFactory(IIdentifierService identifiers)
+      public EnemyFactory(IIdentifierService identifiers, IStaticDataService staticData)
       {
          _identifiers = identifiers;
+         _staticData = staticData;
       }
 
-      public GameEntity CreateEnemy(EnemyTypeId typeId, Spline spline)
+      public GameEntity CreateEnemy(EnemySpawnData data, Spline spline)
       {
+         EnemyTypeId typeId = data.Id;
+         
          GameEntity entity = typeId switch
          {
             EnemyTypeId.Simple => CreateSimple(),
@@ -25,23 +33,38 @@ namespace Code.Gameplay.Features.Enemy
             _ => throw new Exception($"Enemy with type id {typeId} does not exist")
          };
          
-         entity = AddSharedComponents(entity, spline, typeId);
+         entity = AddSharedComponents(entity, data, spline);
 
          return entity;
       }
 
-      private GameEntity AddSharedComponents(GameEntity enemy, Spline spline, EnemyTypeId typeId)
+      private GameEntity AddSharedComponents(GameEntity enemy, EnemySpawnData data, Spline spline)
       {
+         EnemyConfig config = _staticData.GetEnemyConfigWithId(data.Id);
+         float3 startPos = spline.Knots.First().Position;
+         
          enemy
             .AddId(_identifiers.Next())
-            .AddEnemyTypeId(typeId)
-            .AddSpline(spline)
+            .AddViewPrefab(config.Prefab)
+            .AddEnemyTypeId(data.Id)
             
-            .With(x => x.isEnemy = true)
+            .AddColorType(data.Color)
+            
+            .AddWorldPosition(startPos)
+            .AddWorldRotation(Quaternion.identity)
+            
+            .AddSpeed(config.Speed)
+            .With(x => x.isMovementAvailable = true)
+            .With(x => x.isRotationAlignedAlongDirection = data.RotateToPath)
+            
+            .AddSpline(spline)
+            .AddSplineTPosition(0)
             .With(x => x.isMovingSpline = true)
             
+            .With(x => x.isEnemy = true)
+            
             ;
-
+         
          return enemy;
       }
 

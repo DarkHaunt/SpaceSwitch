@@ -1,8 +1,9 @@
 ﻿using System;
 using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.GameStates;
 using Project.Code.Common.Infrastructure.SceneLoader;
 using Project.Code.Common.UI.LoadingCurtain;
+using Project.Code.Infrastructure.Save;
+using UnityEngine;
 using VContainer.Unity;
 
 namespace Code.Menu
@@ -27,12 +28,20 @@ namespace Code.Menu
       {
          _view.StartButton.onClick.AddListener(StartGame);
          _view.QuitButton.onClick.AddListener(QuitGame);
+
+         LoadLastScore();
       }
 
       public void Dispose()
       {
          _view.StartButton.onClick.RemoveListener(StartGame);
          _view.QuitButton.onClick.RemoveListener(QuitGame);
+      }
+
+      private void LoadLastScore()
+      {
+         var lastScore = PlayerPrefs.GetInt(PrefsKeys.ScoreKey, 0);
+         _view.ScoreField.text = $"Highest Score - {lastScore.ToString()}";
       }
 
       private async void StartGame()

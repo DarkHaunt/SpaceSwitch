@@ -8,7 +8,6 @@ namespace Code.Gameplay.Features.EnemyLifetime
       public EnemyLifetimeFeature(ISystemFactory systems)
       {
          Add(systems.Create<ProcessEnemySpawnQueueSystem>());
-         Add(systems.Create<ProcessEnemySpawnTimerSystem>());
          
          Add(systems.Create<CleanupEnemyOnSplineEndSystem>());
          Add(systems.Create<CleanupEnemySpawnersWithEmptyQueueSystem>());

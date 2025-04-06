@@ -19,12 +19,14 @@ namespace Code.Gameplay.Features.EnemyLifetime.Factories
 
       public GameEntity CreateSpawnScenario(EnemySpawnScenario scenario)
       {
+         var firstTimer = scenario.Enemies[0].TimeToSpawn;
+         
          return CreateGameEntity.Empty()
                .AddId(_identifiers.Next())
                
                .AddSpline(scenario.Spline.Spline)
-               .AddEnemySpawnTimer(scenario.TimeToSpawn)
-               .AddEnemySpawnTimeLeft(scenario.TimeToSpawn)
+               .AddEnemySpawnTimer(firstTimer)
+               .AddEnemySpawnTimeLeft(firstTimer)
                .AddEnemySpawnQueue(new Queue<EnemySpawnData>(scenario.Enemies))
 
                .With(x => x.isEnemySpawnScenario = true)

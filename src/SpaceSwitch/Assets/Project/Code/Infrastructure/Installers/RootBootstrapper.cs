@@ -44,11 +44,13 @@ namespace Code.Infrastructure.Installers
 
          await UniTask.WhenAll
          (
-            _assetProvider.WarmupAssetsByLabel(AssetLabel.Player),
             _assetProvider.WarmupAssetsByLabel(AssetLabel.Enemies),
+            _assetProvider.WarmupAssetsByLabel(AssetLabel.EnemySpawners),
+            
             _assetProvider.WarmupAssetsByLabel(AssetLabel.Projectiles),
             
-            _assetProvider.WarmupAssetsByLabel(AssetLabel.Gameplay)
+            _assetProvider.WarmupAssetsByLabel(AssetLabel.Gameplay),
+            _assetProvider.WarmupAssetsByLabel(AssetLabel.Configs)
          );
       }
 

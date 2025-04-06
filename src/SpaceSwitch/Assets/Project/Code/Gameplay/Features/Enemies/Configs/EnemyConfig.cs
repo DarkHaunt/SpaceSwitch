@@ -8,5 +8,8 @@ namespace Code.Gameplay.Features.Enemy
    {
       [field: SerializeField] public EnemyTypeId Id { get; private set; }
       [field: SerializeField] public EntityBehaviour Prefab { get; private set; }
+
+      [field: Space]
+      [field: SerializeField] public float Speed { get; private set; }
    }
 }

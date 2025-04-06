@@ -32,6 +32,8 @@ public sealed partial class GameEntity : INamedEntity
       {
         switch (component.GetType().Name)
         {
+          case "EnemySpawnScenarioComponent":
+            return PrintEnemySpawnScenario();
           case "LevelPartComponent":
             return PrintLevelPart();
           case "Projectile":
@@ -49,6 +51,13 @@ public sealed partial class GameEntity : INamedEntity
     }
 
     return components.First().GetType().Name;
+  }
+
+  private string PrintEnemySpawnScenario()
+  {
+    return new StringBuilder($"EnemySpawner ")
+      .With(s => s.Append($"Id:{Id}"), when: hasId)
+      .ToString();
   }
 
   private string PrintLevelPart()
