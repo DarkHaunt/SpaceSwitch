@@ -6,6 +6,8 @@
        
        public const string EnemySpawners = "enemy_spawner";
        public const string Enemies = "enemy";
+
+       public const string Windows = "window";
        
        public const string Gameplay = "gameplay";
        public const string Configs = "config";

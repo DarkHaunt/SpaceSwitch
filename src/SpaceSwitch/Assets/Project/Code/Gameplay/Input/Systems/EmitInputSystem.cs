@@ -24,9 +24,6 @@ namespace Code.Gameplay.Input.Systems
         else if (input.hasAxisInput)
           input.RemoveAxisInput();
 
-        if (_inputService.HasAttackInput)
-          input.isAttackRequested = true;
-        
         if(_inputService.HasSwitchInput)
           input.isSwitchRequested = true;
       }

@@ -6,6 +6,7 @@ namespace Code.Progress.Provider
   {
     public ProgressData ProgressData { get; private set; }
     public EntityData EntityData => ProgressData.EntityData;
+    public int HighScore => ProgressData.HighScore;
 
     public void SetProgressData(ProgressData data)
     {

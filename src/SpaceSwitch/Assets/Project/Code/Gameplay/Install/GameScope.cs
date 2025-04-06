@@ -12,6 +12,7 @@ using Code.Gameplay.Levels;
 using Code.Gameplay.StateMachine.States;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure;
+using Code.Infrastructure.Installers;
 using Code.Infrastructure.States.Factory;
 using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
@@ -19,6 +20,7 @@ using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
 using Code.Progress.Provider;
 using Project.Code.Gameplay.Features.Cameras.Factories;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
@@ -26,12 +28,15 @@ namespace Code.Gameplay
 {
    public class GameScope : LifetimeScope
    {
+      [SerializeField] private UIInitializer _uiInitializer;
+      
       private IContainerBuilder _builder;
       
       protected override void Configure(IContainerBuilder builder)
       {
          _builder = builder;
-         
+
+         RegisterInitializers();
          RegisterGameplayFactories();
          RegisterGameplayServices();
 
@@ -40,7 +45,12 @@ namespace Code.Gameplay
          
          _builder.RegisterEntryPoint<GameBootstrapper>();
       }
-      
+
+      private void RegisterInitializers()
+      {
+         _builder.RegisterComponent(_uiInitializer).AsImplementedInterfaces().AsSelf();
+      }
+
       private void RegisterCoreFactories()
       {
          _builder.Register<EntityViewFactory>(Lifetime.Singleton).As<IEntityViewFactory>();
@@ -71,9 +81,7 @@ namespace Code.Gameplay
       {
          _builder.Register<GameInput>(Lifetime.Singleton).As<IDisposable>().AsSelf();
          _builder.Register<GameInputService>(Lifetime.Singleton).AsImplementedInterfaces();
-         _builder.Register<ProgressProvider>(Lifetime.Singleton).As<IProgressProvider>();
          _builder.Register<CameraProvider>(Lifetime.Singleton).As<ICameraProvider>().AsSelf();
-         _builder.Register<StaticDataService>(Lifetime.Singleton).As<IStaticDataService>();
          _builder.Register<LevelDataProvider>(Lifetime.Singleton).As<ILevelDataProvider>();
          _builder.Register<EnemySpawnService>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
          

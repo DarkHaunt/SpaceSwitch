@@ -7,5 +7,6 @@ namespace Code.Progress.Data
   {
     [JsonProperty("e")] public EntityData EntityData = new();
     [JsonProperty("at")] public DateTime LastSimulationTickTime;
+    [JsonProperty("s")] public int HighScore;
   }
 }

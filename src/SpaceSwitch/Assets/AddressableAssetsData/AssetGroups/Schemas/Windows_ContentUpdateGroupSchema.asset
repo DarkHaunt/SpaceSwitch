@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: Enemies_ContentUpdateGroupSchema
+  m_Name: Windows_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: 1788ec483bd6a63459ae016a7ffc3bb0, type: 2}
+  m_Group: {fileID: 11400000, guid: cf83ce961cdd14f469e74f902fa2753d, type: 2}
   m_StaticContent: 0

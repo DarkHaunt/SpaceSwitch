@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Enemies
+  m_Name: Windows
   m_EditorClassIdentifier: 
-  m_GroupName: Enemies
+  m_GroupName: Windows
   m_Data:
     m_SerializedData: []
-  m_GUID: 1157bde533e546545b0cbfae742ebc94
-  m_SerializeEntries: []
+  m_GUID: 6912c4223d4d710429a3d1563699f464
+  m_SerializeEntries:
+  - m_GUID: a06709dc7bd7cef4da9d8bd883e8698d
+    m_Address: GameOver_WindowConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - window
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8455031051f8f884b930312bbe7dbea6, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 3ce2e434cdc50024985aa03c2e5f918b, type: 2}
-    - {fileID: 11400000, guid: f7162913d16e5c0408a9979394dc5d34, type: 2}
+    - {fileID: 11400000, guid: 5b9b08ed75d7ca94c95ad2838397d9e0, type: 2}
+    - {fileID: 11400000, guid: 41261a9dfab1aa74c83e926d414cbc4d, type: 2}

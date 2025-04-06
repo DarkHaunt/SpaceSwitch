@@ -7,18 +7,16 @@ using UnityEngine;
 
 namespace Project.Code.Gameplay.Features.Player.Systems
 {
-   public sealed class PlayerShootByInputSystem : IExecuteSystem
+   public sealed class PlayerLoopShootSystem : IExecuteSystem
    {
       private readonly IProjectileFactory _projectileFactory;
-      private readonly List<GameEntity> _buffer = new (1);
+      private readonly List<GameEntity> _buffer = new(1);
 
       private readonly IGroup<GameEntity> _players;
-      private readonly IGroup<InputEntity> _inputs;
 
-      public PlayerShootByInputSystem(GameContext context, InputContext inputContext, IProjectileFactory projectileFactory)
+      public PlayerLoopShootSystem(GameContext context, IProjectileFactory projectileFactory)
       {
          _projectileFactory = projectileFactory;
-         _inputs = inputContext.GetGroup(InputMatcher.Input);
 
          _players = context.GetGroup(GameMatcher
             .AllOf(
@@ -33,21 +31,17 @@ namespace Project.Code.Gameplay.Features.Player.Systems
 
       public void Execute()
       {
-         foreach (InputEntity input in _inputs)
          foreach (GameEntity player in _players.GetEntities(_buffer))
          {
-            if (input.isAttackRequested)
-            {
-               Debug.Log($"<color=white>Shoot</color>");
-               _projectileFactory.CreateProjectile(
-                  ProjectileTypeId.Simple,
-                  player.WorldPosition,
-                  player.ColorType,
-                  player.Id,
-                  player.ShootDirection);
+            Debug.Log($"<color=white>Shoot</color>");
+            _projectileFactory.CreateProjectile(
+               ProjectileTypeId.Simple,
+               player.WorldPosition,
+               player.ColorType,
+               player.Id,
+               player.ShootDirection);
 
-               player.AddShootTimer(GameplayConstants.PlayerShootDelay);
-            }
+            player.AddShootTimer(GameplayConstants.PlayerShootDelay);
          }
       }
    }

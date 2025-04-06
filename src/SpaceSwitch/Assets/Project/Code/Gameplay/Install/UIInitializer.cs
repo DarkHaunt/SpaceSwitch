@@ -12,9 +12,9 @@ namespace Code.Infrastructure.Installers
     public RectTransform UIRoot;
 
     [Inject]
-    private void Construct(IWindowFactory windowFactory) => 
+    private void Construct(IWindowFactory windowFactory) =>
       _windowFactory = windowFactory;
-    
+
     public void Initialize() => 
       _windowFactory.SetUIRoot(UIRoot);
   }
