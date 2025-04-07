@@ -24,8 +24,8 @@ namespace Code.Infrastructure.View
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.RegisterComponents();
 
-      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
-        _collisionRegistry.Register(collider2d.GetInstanceID(), _entity);
+      foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true)) 
+        _collisionRegistry.Register(col.GetInstanceID(), _entity);
     }
 
     public void ReleaseEntity()
@@ -33,8 +33,8 @@ namespace Code.Infrastructure.View
       foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>()) 
         registrar.UnregisterComponents();
 
-      foreach (Collider2D collider2d in GetComponentsInChildren<Collider2D>(includeInactive: true)) 
-        _collisionRegistry.Unregister(collider2d.GetInstanceID());
+      foreach (Collider col in GetComponentsInChildren<Collider>(includeInactive: true)) 
+        _collisionRegistry.Unregister(col.GetInstanceID());
       
       _entity.Release(this);
       _entity = null;

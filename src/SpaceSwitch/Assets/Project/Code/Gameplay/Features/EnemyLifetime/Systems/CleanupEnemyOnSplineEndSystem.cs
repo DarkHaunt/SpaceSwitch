@@ -1,10 +1,12 @@
-﻿using Entitas;
+﻿using System.Collections.Generic;
+using Entitas;
 
 namespace Code.Gameplay.Features.Enemy.Systems
 {
    public sealed class CleanupEnemyOnSplineEndSystem : ICleanupSystem
    {
       private readonly IGroup<GameEntity> _enemies;
+      private readonly List<GameEntity> _buffer = new(16);
 
       public CleanupEnemyOnSplineEndSystem(GameContext context)
       {
@@ -19,7 +21,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
       public void Cleanup()
       {
-         foreach (GameEntity enemy in _enemies)
+         foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
             enemy.isDestructed = true;
       }
    }

@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
-using Code.Gameplay.Common.Physics;
 using Entitas;
+using Project.Code.Gameplay.Common.Physic;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -54,7 +55,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
     private int TargetCountInRadius(GameEntity entity)
     {
-      return _physicsService.CircleCastNonAlloc(entity.WorldPosition, radius: entity.Radius, entity.LayerMask, _targetCastBuffer);
+      return _physicsService.SphereCastNonAlloc(entity.WorldPosition, radius: entity.Radius, entity.LayerMask, _targetCastBuffer);
     }
 
     public void TearDown()

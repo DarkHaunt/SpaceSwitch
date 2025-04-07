@@ -15,6 +15,8 @@ namespace Code.Gameplay.Features.Enemy
    {
       private readonly IIdentifierService _identifiers;
       private readonly IStaticDataService _staticData;
+      
+      private Transform _root;
 
       public EnemyFactory(IIdentifierService identifiers, IStaticDataService staticData)
       {
@@ -54,6 +56,9 @@ namespace Code.Gameplay.Features.Enemy
             .AddWorldRotation(Quaternion.identity)
             
             .AddSpeed(config.Speed)
+            .AddCurrentHp(config.Health)
+            .AddMaxHp(config.Health)
+            
             .With(x => x.isMovementAvailable = true)
             .With(x => x.isRotationAlignedAlongDirection = data.RotateToPath)
             

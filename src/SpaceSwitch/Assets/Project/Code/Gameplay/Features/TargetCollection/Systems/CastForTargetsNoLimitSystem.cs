@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Code.Gameplay.Common.Physics;
 using Entitas;
+using Project.Code.Gameplay.Common.Physic;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -38,7 +39,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
     
     private IEnumerable<int> TargetsInRadius(GameEntity entity)
     {
-      return _physicsService.CircleCast(entity.WorldPosition, radius: entity.Radius, entity.LayerMask)
+      return _physicsService.SphereCast(entity.WorldPosition, radius: entity.Radius, entity.LayerMask)
         .Select(x => x.Id);
     }
   }

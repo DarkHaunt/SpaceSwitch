@@ -11,5 +11,6 @@ namespace Code.Gameplay.Features.Enemy
 
       [field: Space]
       [field: SerializeField] public float Speed { get; private set; }
+      [field: SerializeField] public float Health { get; private set; }
    }
 }

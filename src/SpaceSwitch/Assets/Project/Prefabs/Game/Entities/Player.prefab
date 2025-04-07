@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3001419885126641559}
   - component: {fileID: 4062653424542732047}
   - component: {fileID: 6280547237500670402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,6 +192,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship Flame Trail
       objectReference: {fileID: 0}
+    - target: {fileID: 1543846696049267074, guid: f52ac5d6e158a304d8bfb5303c83ec42, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543846696049345522, guid: f52ac5d6e158a304d8bfb5303c83ec42, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -216,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 247766e192f437c4680b63372b7cb017, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 247766e192f437c4680b63372b7cb017, type: 3}
       propertyPath: m_LocalScale.x

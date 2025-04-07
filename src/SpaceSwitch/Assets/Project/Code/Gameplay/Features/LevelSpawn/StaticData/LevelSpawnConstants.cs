@@ -2,6 +2,6 @@
 {
    public static class LevelSpawnConstants
    {
-      public const float CommonZPos = 10f;
+      public const float CommonZPos = 5f;
    }
 }

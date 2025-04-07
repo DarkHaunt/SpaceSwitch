@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Gameplay.Cameras.Provider;
+using Code.Gameplay.Features.Effects.Factory;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.Enemy.Services;
 using Code.Gameplay.Features.EnemyLifetime.Factories;
@@ -28,7 +29,7 @@ namespace Code.Gameplay
 {
    public class GameScope : LifetimeScope
    {
-      [SerializeField] private UIInitializer _uiInitializer;
+      [SerializeField] private ParentsInitializer _parentsInitializer;
       
       private IContainerBuilder _builder;
       
@@ -48,7 +49,7 @@ namespace Code.Gameplay
 
       private void RegisterInitializers()
       {
-         _builder.RegisterComponent(_uiInitializer).AsImplementedInterfaces().AsSelf();
+         _builder.RegisterComponent(_parentsInitializer).AsImplementedInterfaces().AsSelf();
       }
 
       private void RegisterCoreFactories()
@@ -71,10 +72,11 @@ namespace Code.Gameplay
       {
          _builder.Register<CameraFactory>(Lifetime.Singleton);
          _builder.Register<LevelPartsFactory>(Lifetime.Singleton);
-         _builder.Register<PlayerFactory>(Lifetime.Singleton).As<IPlayerFactory>();
+         _builder.Register<PlayerFactory>(Lifetime.Singleton);
          _builder.Register<EnemyFactory>(Lifetime.Singleton);
+         _builder.Register<EffectFactory>(Lifetime.Singleton);
          _builder.Register<EnemyScenarioFactory>(Lifetime.Singleton);
-         _builder.Register<ProjectileFactory>(Lifetime.Singleton).As<IProjectileFactory>();
+         _builder.Register<ProjectileFactory>(Lifetime.Singleton);
       }
       
       private void RegisterGameplayServices()

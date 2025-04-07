@@ -6,7 +6,8 @@ namespace Code.Common.Extensions
   {
     Default  = 0,
     
-    
+    Player = 6,
+    Enemy  = 7
   }
   
   public static class CollisionExtensions

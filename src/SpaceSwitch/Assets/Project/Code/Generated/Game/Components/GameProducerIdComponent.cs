@@ -33,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Projectiles.ProducerId producerId { get { return (Code.Gameplay.Features.Projectiles.ProducerId)GetComponent(GameComponentsLookup.ProducerId); } }
+    public Code.Gameplay.Features.Effects.ProducerId producerId { get { return (Code.Gameplay.Features.Effects.ProducerId)GetComponent(GameComponentsLookup.ProducerId); } }
     public int ProducerId { get { return producerId.Value; } }
     public bool hasProducerId { get { return HasComponent(GameComponentsLookup.ProducerId); } }
 
     public GameEntity AddProducerId(int newValue) {
         var index = GameComponentsLookup.ProducerId;
-        var component = (Code.Gameplay.Features.Projectiles.ProducerId)CreateComponent(index, typeof(Code.Gameplay.Features.Projectiles.ProducerId));
+        var component = (Code.Gameplay.Features.Effects.ProducerId)CreateComponent(index, typeof(Code.Gameplay.Features.Effects.ProducerId));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceProducerId(int newValue) {
         var index = GameComponentsLookup.ProducerId;
-        var component = (Code.Gameplay.Features.Projectiles.ProducerId)CreateComponent(index, typeof(Code.Gameplay.Features.Projectiles.ProducerId));
+        var component = (Code.Gameplay.Features.Effects.ProducerId)CreateComponent(index, typeof(Code.Gameplay.Features.Effects.ProducerId));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

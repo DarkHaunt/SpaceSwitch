@@ -32,54 +32,63 @@ public static class GameComponentsLookup {
     public const int Cooldown = 21;
     public const int CooldownLeft = 22;
     public const int CooldownUp = 23;
-    public const int Enemy = 24;
-    public const int EnemyTypeId = 25;
-    public const int EnemySpawnQueue = 26;
-    public const int EnemySpawnScenario = 27;
-    public const int EnemySpawnTimeLeft = 28;
-    public const int EnemySpawnTimer = 29;
-    public const int SpawningEnemies = 30;
-    public const int CurrentHp = 31;
-    public const int Dead = 32;
-    public const int MaxHp = 33;
-    public const int ProcessingDeath = 34;
-    public const int ClampedZ = 35;
-    public const int Direction = 36;
-    public const int MovementAvailable = 37;
-    public const int Moving = 38;
-    public const int OrbitCenterFollowTarget = 39;
-    public const int OrbitCenterPosition = 40;
-    public const int OrbitPhase = 41;
-    public const int OrbitRadius = 42;
-    public const int RotationAlignedAlongDirection = 43;
-    public const int Speed = 44;
-    public const int TurnedAlongDirection = 45;
-    public const int Velocity = 46;
-    public const int Player = 47;
-    public const int PlayerAnimator = 48;
-    public const int ProducerId = 49;
-    public const int Projectile = 50;
-    public const int ProjectileTypeId = 51;
-    public const int ShootDirection = 52;
-    public const int LevelPart = 53;
-    public const int Shooter = 54;
-    public const int ShootTimer = 55;
-    public const int MovingSpline = 56;
-    public const int ReachedSplineEnd = 57;
-    public const int Spline = 58;
-    public const int SplineTPosition = 59;
-    public const int CollectingTargetsContinuously = 60;
-    public const int CollectTargetsInterval = 61;
-    public const int CollectTargetsTimer = 62;
-    public const int ProcessedTargets = 63;
-    public const int Reached = 64;
-    public const int ReadyToCollectTargets = 65;
-    public const int TargetBuffer = 66;
-    public const int TargetLimit = 67;
-    public const int ProcessingAsyncSpawn = 68;
-    public const int Camera = 69;
+    public const int DamageEffect = 24;
+    public const int Effect = 25;
+    public const int EffectSetups = 26;
+    public const int EffectValue = 27;
+    public const int HealEffect = 28;
+    public const int Processed = 29;
+    public const int ProducerId = 30;
+    public const int TargetId = 31;
+    public const int Enemy = 32;
+    public const int EnemyTypeId = 33;
+    public const int EnemySpawnQueue = 34;
+    public const int EnemySpawnScenario = 35;
+    public const int EnemySpawnTimeLeft = 36;
+    public const int EnemySpawnTimer = 37;
+    public const int SpawningEnemies = 38;
+    public const int CurrentHp = 39;
+    public const int Dead = 40;
+    public const int MaxHp = 41;
+    public const int ProcessingDeath = 42;
+    public const int ClampedZ = 43;
+    public const int Direction = 44;
+    public const int MovementAvailable = 45;
+    public const int Moving = 46;
+    public const int OrbitCenterFollowTarget = 47;
+    public const int OrbitCenterPosition = 48;
+    public const int OrbitPhase = 49;
+    public const int OrbitRadius = 50;
+    public const int RotationAlignedAlongDirection = 51;
+    public const int Speed = 52;
+    public const int TurnedAlongDirection = 53;
+    public const int Velocity = 54;
+    public const int Player = 55;
+    public const int PlayerAnimator = 56;
+    public const int EnemyProjectile = 57;
+    public const int PlayerProjectile = 58;
+    public const int Projectile = 59;
+    public const int ProjectileTypeId = 60;
+    public const int ShootDirection = 61;
+    public const int LevelPart = 62;
+    public const int Shooter = 63;
+    public const int ShootTimer = 64;
+    public const int MovingSpline = 65;
+    public const int ReachedSplineEnd = 66;
+    public const int Spline = 67;
+    public const int SplineTPosition = 68;
+    public const int CollectingTargetsContinuously = 69;
+    public const int CollectTargetsInterval = 70;
+    public const int CollectTargetsTimer = 71;
+    public const int ProcessedTargets = 72;
+    public const int Reached = 73;
+    public const int ReadyToCollectTargets = 74;
+    public const int TargetBuffer = 75;
+    public const int TargetLimit = 76;
+    public const int ProcessingAsyncSpawn = 77;
+    public const int Camera = 78;
 
-    public const int TotalComponents = 70;
+    public const int TotalComponents = 79;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -106,6 +115,14 @@ public static class GameComponentsLookup {
         "Cooldown",
         "CooldownLeft",
         "CooldownUp",
+        "DamageEffect",
+        "Effect",
+        "EffectSetups",
+        "EffectValue",
+        "HealEffect",
+        "Processed",
+        "ProducerId",
+        "TargetId",
         "Enemy",
         "EnemyTypeId",
         "EnemySpawnQueue",
@@ -131,7 +148,8 @@ public static class GameComponentsLookup {
         "Velocity",
         "Player",
         "PlayerAnimator",
-        "ProducerId",
+        "EnemyProjectile",
+        "PlayerProjectile",
         "Projectile",
         "ProjectileTypeId",
         "ShootDirection",
@@ -179,6 +197,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Cooldowns.Cooldown),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownLeft),
         typeof(Code.Gameplay.Features.Cooldowns.CooldownUp),
+        typeof(Code.Gameplay.Features.Effects.DamageEffect),
+        typeof(Code.Gameplay.Features.Effects.Effect),
+        typeof(Code.Gameplay.Features.Effects.EffectSetups),
+        typeof(Code.Gameplay.Features.Effects.EffectValue),
+        typeof(Code.Gameplay.Features.Effects.HealEffect),
+        typeof(Code.Gameplay.Features.Effects.Processed),
+        typeof(Code.Gameplay.Features.Effects.ProducerId),
+        typeof(Code.Gameplay.Features.Effects.TargetId),
         typeof(Code.Gameplay.Features.Enemy.EnemyComponents.Enemy),
         typeof(Code.Gameplay.Features.Enemy.EnemyComponents.EnemyTypeIdComponent),
         typeof(Code.Gameplay.Features.EnemyLifetime.EnemySpawnQueueComponent),
@@ -204,7 +230,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Velocity),
         typeof(Code.Gameplay.Features.Player.Player),
         typeof(Code.Gameplay.Features.Player.PlayerAnimatorComponent),
-        typeof(Code.Gameplay.Features.Projectiles.ProducerId),
+        typeof(Code.Gameplay.Features.Projectiles.EnemyProjectile),
+        typeof(Code.Gameplay.Features.Projectiles.PlayerProjectile),
         typeof(Code.Gameplay.Features.Projectiles.Projectile),
         typeof(Code.Gameplay.Features.Projectiles.ProjectileTypeIdComponent),
         typeof(Code.Gameplay.Features.Projectiles.ShootDirection),

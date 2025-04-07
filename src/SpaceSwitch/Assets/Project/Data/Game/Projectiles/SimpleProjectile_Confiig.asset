@@ -15,4 +15,9 @@ MonoBehaviour:
   <Id>k__BackingField: 1
   <Speed>k__BackingField: 6
   <Damage>k__BackingField: 5
+  <ContactRadius>k__BackingField: 0.1
   <Prefab>k__BackingField: {fileID: 5606547235634266384, guid: 2cbce4db97438dd47a5c562571925e8d, type: 3}
+  <Effects>k__BackingField:
+  - Name: Damage - 1
+    EffectTypeId: 1
+    Value: 1

@@ -9,12 +9,12 @@ namespace Project.Code.Gameplay.Features.Player.Systems
 {
    public sealed class PlayerLoopShootSystem : IExecuteSystem
    {
-      private readonly IProjectileFactory _projectileFactory;
+      private readonly ProjectileFactory _projectileFactory;
       private readonly List<GameEntity> _buffer = new(1);
 
       private readonly IGroup<GameEntity> _players;
 
-      public PlayerLoopShootSystem(GameContext context, IProjectileFactory projectileFactory)
+      public PlayerLoopShootSystem(GameContext context, ProjectileFactory projectileFactory)
       {
          _projectileFactory = projectileFactory;
 
@@ -35,9 +35,10 @@ namespace Project.Code.Gameplay.Features.Player.Systems
          {
             _projectileFactory.CreateProjectile(
                ProjectileTypeId.Simple,
+               player.Id,
+               isPlayer: true,
                player.WorldPosition,
                player.ColorType,
-               player.Id,
                player.ShootDirection);
 
             player.AddShootTimer(GameplayConstants.PlayerShootDelay);

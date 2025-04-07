@@ -15,11 +15,11 @@ namespace Code.Gameplay.StateMachine.States
       private readonly IStaticDataService _staticDataService;
       private readonly LevelPartsHandleService _levelService;
       private readonly IGameStateMachine _stateMachine;
-      private readonly IPlayerFactory _playerFactory;
+      private readonly PlayerFactory _playerFactory;
       private readonly ILoadingCurtain _curtain;
       private readonly ICameraProvider _cameraProvider;
 
-      public GameBootstrapState(IGameStateMachine stateMachine, IPlayerFactory playerFactory, CameraFactory cameraFactory,
+      public GameBootstrapState(IGameStateMachine stateMachine, PlayerFactory playerFactory, CameraFactory cameraFactory,
          ILoadingCurtain curtain, ICameraProvider cameraProvider, IStaticDataService staticDataService, LevelPartsHandleService levelService)
       {
          _stateMachine = stateMachine;

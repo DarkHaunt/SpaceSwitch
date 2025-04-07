@@ -1,10 +1,13 @@
 ﻿using Code.Common.Destruct;
 using Code.Gameplay.Features.ColorSwitch;
+using Code.Gameplay.Features.EffectApplication;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.EnemyLifetime;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
+using Code.Gameplay.Features.Projectiles;
 using Code.Gameplay.Features.Scrolling;
 using Code.Gameplay.Features.Shooting.Systems;
 using Code.Gameplay.Features.Splines;
@@ -26,16 +29,22 @@ namespace Code.Gameplay
       Add(systems.Create<PlayerFeature>());
       Add(systems.Create<CameraFeature>());
       
+      Add(systems.Create<EnemyLifetimeFeature>());
+      Add(systems.Create<EnemyFeature>());
+      
       Add(systems.Create<SplineFeature>());
       Add(systems.Create<DeathFeature>());
+      
       Add(systems.Create<MovementFeature>());
-      Add(systems.Create<ShootingFeature>());
       
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<ColorSwitchFeature>());
       
-      Add(systems.Create<EnemyLifetimeFeature>());
-      Add(systems.Create<EnemyFeature>());
+      Add(systems.Create<ShootingFeature>());
+      Add(systems.Create<ProjectileFeature>());
+      
+      Add(systems.Create<EffectFeature>());
+      Add(systems.Create<EffectApplicationFeature>());
       
       Add(systems.Create<LevelBGMoveFeature>());
       

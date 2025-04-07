@@ -1,5 +1,4 @@
 using Code.Gameplay.Common.Collisions;
-using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Random;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Score;
@@ -12,6 +11,7 @@ using Code.Progress.SaveLoad;
 using Project.Code.Common.Infrastructure.CoroutineRunner;
 using Project.Code.Common.Infrastructure.SceneLoader;
 using Project.Code.Common.UI.LoadingCurtain;
+using Project.Code.Gameplay.Common.Physic;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
