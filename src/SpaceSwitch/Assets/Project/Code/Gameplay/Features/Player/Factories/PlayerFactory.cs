@@ -28,7 +28,11 @@ namespace Code.Gameplay.Features.Player.Factories
                .AddSpeed(config.Speed)
                .AddColorType(ColorType.Blue)
                
+               .AddCurrentHp(config.HP)
+               .AddMaxHp(config.HP)
+               
                .AddShootDirection(Vector3.up)
+               .With(x => x.isShooter = true)
                
                .With(x => x.isPlayer = true)
                .With(x => x.isMovementAvailable = true)

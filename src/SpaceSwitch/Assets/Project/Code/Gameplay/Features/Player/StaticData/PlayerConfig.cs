@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Player.StaticData
    public class PlayerConfig : ScriptableObject
    {
       [field: SerializeField] public float Speed { get; private set; }
+      [field: SerializeField] public int HP { get; private set; }
       [field: SerializeField] public EntityBehaviour Prefab { get; private set; }
    }
 }

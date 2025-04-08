@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Effects;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.Identifiers;
 using Project.Code.Gameplay.Features.Enemy.Configs;
@@ -55,9 +57,16 @@ namespace Code.Gameplay.Features.Enemy
             .AddWorldPosition(startPos)
             .AddWorldRotation(Quaternion.identity)
             
+            .AddLayerMask(CollisionLayer.Player.AsMask())
+            .AddRadius(config.ContactRadius)
+            
             .AddSpeed(config.Speed)
             .AddCurrentHp(config.Health)
             .AddMaxHp(config.Health)
+            
+            .AddTargetBuffer(new List<int>(1))
+            .AddProcessedTargets(new List<int>(1))
+            .AddEffectSetups(new List<EffectSetup>{ new(EffectTypeId.Damage, float.MaxValue) }) // Insta kill for player
             
             .With(x => x.isMovementAvailable = true)
             .With(x => x.isRotationAlignedAlongDirection = data.RotateToPath)
@@ -66,6 +75,8 @@ namespace Code.Gameplay.Features.Enemy
             .AddSplineTPosition(0)
             .With(x => x.isMovingSpline = true)
             
+            .With(x => x.isCollectingTargetsContinuously = true)
+            .With(x => x.isReadyToCollectTargets = true)
             .With(x => x.isEnemy = true)
             
             ;

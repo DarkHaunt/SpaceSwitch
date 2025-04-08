@@ -4,6 +4,7 @@ using Code.Gameplay.Features.EffectApplication;
 using Code.Gameplay.Features.Effects;
 using Code.Gameplay.Features.Enemy;
 using Code.Gameplay.Features.EnemyLifetime;
+using Code.Gameplay.Features.GameOver;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Player;
@@ -43,10 +44,11 @@ namespace Code.Gameplay
       Add(systems.Create<ShootingFeature>());
       Add(systems.Create<ProjectileFeature>());
       
-      Add(systems.Create<EffectFeature>());
       Add(systems.Create<EffectApplicationFeature>());
+      Add(systems.Create<EffectFeature>());
       
       Add(systems.Create<LevelBGMoveFeature>());
+      Add(systems.Create<GameOverFeature>());
       
       Add(systems.Create<ProcessDestructedFeature>());
     }

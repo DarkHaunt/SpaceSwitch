@@ -25,6 +25,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
           GameMatcher.TargetLimit,
           GameMatcher.WorldPosition,
           GameMatcher.LayerMask)
+        .NoneOf(GameMatcher.ConsideringColorMatch)
       );
     }
 

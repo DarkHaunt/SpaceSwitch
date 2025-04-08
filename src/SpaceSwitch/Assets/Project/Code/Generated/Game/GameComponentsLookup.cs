@@ -80,15 +80,16 @@ public static class GameComponentsLookup {
     public const int CollectingTargetsContinuously = 69;
     public const int CollectTargetsInterval = 70;
     public const int CollectTargetsTimer = 71;
-    public const int ProcessedTargets = 72;
-    public const int Reached = 73;
-    public const int ReadyToCollectTargets = 74;
-    public const int TargetBuffer = 75;
-    public const int TargetLimit = 76;
-    public const int ProcessingAsyncSpawn = 77;
-    public const int Camera = 78;
+    public const int ConsideringColorMatch = 72;
+    public const int ProcessedTargets = 73;
+    public const int Reached = 74;
+    public const int ReadyToCollectTargets = 75;
+    public const int TargetBuffer = 76;
+    public const int TargetLimit = 77;
+    public const int ProcessingAsyncSpawn = 78;
+    public const int Camera = 79;
 
-    public const int TotalComponents = 79;
+    public const int TotalComponents = 80;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -163,6 +164,7 @@ public static class GameComponentsLookup {
         "CollectingTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
+        "ConsideringColorMatch",
         "ProcessedTargets",
         "Reached",
         "ReadyToCollectTargets",
@@ -245,6 +247,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.ConsideringColorMatch),
         typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Reached),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),

@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: EnemySpawnConfig_0
   m_EditorClassIdentifier: 
   <SpawnScenarios>k__BackingField:
-  - TimeToSpawn: 20
+  - TimeToSpawn: 10
     Spline: {fileID: 3769798933642361477, guid: d8fe6250438a3704fa1f95739bd243a1, type: 3}
     Enemies:
     - Name: Simple
       TimeToSpawn: 2
+      RotateToPath: 1
       Id: 1
       Color: 1
     - Name: Simple
       TimeToSpawn: 2
+      RotateToPath: 1
       Id: 1
       Color: 2
     - Name: Simple
       TimeToSpawn: 2
+      RotateToPath: 1
       Id: 1
       Color: 1

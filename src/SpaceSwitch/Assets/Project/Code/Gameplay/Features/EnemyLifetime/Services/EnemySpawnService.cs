@@ -22,6 +22,8 @@ namespace Code.Gameplay.Features.Enemy.Services
       private EnemySpawnConfig _spawnConfig;
       private Queue<EnemySpawnScenario> _currentScenarios = new Queue<EnemySpawnScenario>();
 
+      private EnemySpawnScenario _nextScenario;
+
 
       public EnemySpawnService(EnemyScenarioFactory factory, ITimeService time, IStaticDataService staticData)
       {
@@ -34,26 +36,29 @@ namespace Code.Gameplay.Features.Enemy.Services
       {
          RefreshNewScenarios();
 
-         EnemySpawnScenario nextScenario = _currentScenarios.Peek();
-         _lastPassedTime = nextScenario.TimeToSpawn;
+         _nextScenario = _currentScenarios.Peek();
+         _lastPassedTime = _nextScenario.TimeToSpawn;
          
          _isSpawning = true;
       }
 
       public void Tick()
       {
-         if(_isSpawning == false || _currentScenarios.Count == 0) return;
+         if(_isSpawning == false) 
+            return;
          
          _lastPassedTime += _time.DeltaTime;
          
-         EnemySpawnScenario nextScenario = _currentScenarios.Peek();
-         
-         if (_lastPassedTime >= nextScenario.TimeToSpawn)
+         if (_lastPassedTime >= _nextScenario.TimeToSpawn)
          {
-            Debug.Log($"<color=white>Spawn scenario: {nextScenario.Enemies.Count}</color>");
+            Debug.Log($"<color=white>Spawn scenario: {_nextScenario.Enemies.Count}</color>");
+            _factory.CreateSpawnScenario(_nextScenario);
+            
             _lastPassedTime = 0;
-            _factory.CreateSpawnScenario(nextScenario);
-            _currentScenarios.Dequeue();
+            _nextScenario = _currentScenarios.Dequeue();
+
+            if (_currentScenarios.Count == 0)
+               RefreshNewScenarios();
          }
       }
 
@@ -63,6 +68,8 @@ namespace Code.Gameplay.Features.Enemy.Services
          
          _currentScenarios.Clear();
          _currentScenarios = new Queue<EnemySpawnScenario>(_spawnConfig.SpawnScenarios);
+         
+         _nextScenario = _currentScenarios.Peek();
       }
    }
 }

@@ -57,6 +57,8 @@ namespace Code.Gameplay.Features.Projectiles.Factories
             .AddProjectileTypeId(typeId)
             .AddProducerId(producerId)
             .AddWorldPosition(position)
+            
+            .With(x => x.isConsideringColorMatch = true)
             .AddColorType(colorType)
             
             .AddTargetBuffer(new List<int>(TargetBufferSize))

@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code.Common.Extensions
 {
@@ -25,6 +26,9 @@ namespace Code.Common.Extensions
       T[] enumerable = collection as T[] ?? collection.ToArray();
       return enumerable[Random.Range(0, enumerable.Length)];
     }
+    
+    public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source) =>
+      source.OrderBy(x => Guid.NewGuid());
 
     public static IEnumerable<T> Except<T>(this IEnumerable<T> enumerable, T toExcept) =>
       enumerable.Except(new[] { toExcept });

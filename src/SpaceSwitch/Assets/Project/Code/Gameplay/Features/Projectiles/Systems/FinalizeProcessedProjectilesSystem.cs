@@ -3,13 +3,13 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Projectiles.Systems
 {
-   public sealed class FinalizeProcessedArmamentsSystem : ICleanupSystem
+   public sealed class FinalizeProcessedProjectilesSystem : ICleanupSystem
    {
-      private readonly IGroup<GameEntity> _armaments;
+      private readonly IGroup<GameEntity> _projectiles;
 
-      public FinalizeProcessedArmamentsSystem(GameContext game)
+      public FinalizeProcessedProjectilesSystem(GameContext game)
       {
-         _armaments = game.GetGroup(GameMatcher
+         _projectiles = game.GetGroup(GameMatcher
             .AllOf(
                GameMatcher.Projectile,
                GameMatcher.Processed));
@@ -17,7 +17,7 @@ namespace Code.Gameplay.Features.Projectiles.Systems
 
       public void Cleanup()
       {
-         foreach (GameEntity armament in _armaments)
+         foreach (GameEntity armament in _projectiles)
          {
             armament.RemoveTargetCollectionComponents();
             armament.isDestructed = true;

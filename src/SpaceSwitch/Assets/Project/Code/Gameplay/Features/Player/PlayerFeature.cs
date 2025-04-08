@@ -19,6 +19,7 @@ namespace Code.Gameplay.Features.Player
          Add(systems.Create<PlayerLoopShootSystem>());
          
          Add(systems.Create<UpdatePlayerAnimatorSystem>());
+         Add(systems.Create<PlayerDeathSystem>());
       }
    }
 }

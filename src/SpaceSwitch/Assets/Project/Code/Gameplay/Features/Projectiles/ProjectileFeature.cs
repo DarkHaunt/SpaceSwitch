@@ -8,7 +8,7 @@ namespace Code.Gameplay.Features.Projectiles
       public ProjectileFeature(ISystemFactory systems)
       {
          Add(systems.Create<MarkProcessedOnTargetLimitExceededSystem>());
-         Add(systems.Create<FinalizeProcessedArmamentsSystem>());
+         Add(systems.Create<FinalizeProcessedProjectilesSystem>());
       }
    }
 }
