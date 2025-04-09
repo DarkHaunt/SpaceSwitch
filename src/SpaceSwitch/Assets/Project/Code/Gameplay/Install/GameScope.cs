@@ -11,7 +11,6 @@ using Code.Gameplay.Features.Scrolling.Services;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StateMachine.States;
-using Code.Gameplay.StaticData;
 using Code.Infrastructure;
 using Code.Infrastructure.Installers;
 using Code.Infrastructure.States.Factory;
@@ -19,8 +18,8 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
-using Code.Progress.Provider;
 using Project.Code.Gameplay.Features.Cameras.Factories;
+using Project.Code.Pause;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -30,6 +29,7 @@ namespace Code.Gameplay
    public class GameScope : LifetimeScope
    {
       [SerializeField] private ParentsInitializer _parentsInitializer;
+      [SerializeField] private PauseView _pauseView;
       
       private IContainerBuilder _builder;
       
@@ -37,19 +37,16 @@ namespace Code.Gameplay
       {
          _builder = builder;
 
-         RegisterInitializers();
          RegisterGameplayFactories();
          RegisterGameplayServices();
 
          RegisterCoreFactories();
          RegisterGameStateMachine();
          
+         RegisterInitializers();
+         RegisterPauseSystems();
+         
          _builder.RegisterEntryPoint<GameBootstrapper>();
-      }
-
-      private void RegisterInitializers()
-      {
-         _builder.RegisterComponent(_parentsInitializer).AsImplementedInterfaces().AsSelf();
       }
 
       private void RegisterCoreFactories()
@@ -78,7 +75,7 @@ namespace Code.Gameplay
          _builder.Register<EnemyScenarioFactory>(Lifetime.Singleton);
          _builder.Register<ProjectileFactory>(Lifetime.Singleton);
       }
-      
+
       private void RegisterGameplayServices()
       {
          _builder.Register<GameInput>(Lifetime.Singleton).As<IDisposable>().AsSelf();
@@ -89,6 +86,17 @@ namespace Code.Gameplay
          
          _builder.Register<LevelPartsHandleService>(Lifetime.Singleton);
          _builder.Register<LevelPartProvider>(Lifetime.Singleton);
+      }
+
+      private void RegisterPauseSystems()
+      {
+         _builder.Register<PauseService>(Lifetime.Singleton).AsImplementedInterfaces();
+         _builder.RegisterComponent(_pauseView);
+      }
+
+      private void RegisterInitializers()
+      {
+         _builder.RegisterComponent(_parentsInitializer).AsImplementedInterfaces().AsSelf();
       }
    }
 }
