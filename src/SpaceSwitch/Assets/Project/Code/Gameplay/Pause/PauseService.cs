@@ -37,7 +37,7 @@ namespace Project.Code.Pause
       public void Dispose()
       {
          if (_isPaused)
-            ResumeGame();
+            _time.StartTime();
          
          _view.PauseButton.onClick.RemoveListener(ChangePauseState);
          
@@ -67,10 +67,16 @@ namespace Project.Code.Pause
          HidePanel();
       }
 
-      private void GoToMenu() =>
+      private void GoToMenu()
+      {
+         ResumeGame();
          _sceneLoader.Load(SceneName.Menu, force: true).Forget();
+      }
 
-      private void ReloadScene() =>
+      private void ReloadScene()
+      {
+         ResumeGame();
          _sceneLoader.Load(SceneName.Game, force: true).Forget();
+      }
    }
 }

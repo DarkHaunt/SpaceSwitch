@@ -3,8 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Loading;
-using Code.Infrastructure.States.GameStates;
-using Code.Infrastructure.States.StateMachine;
+using Code.Progress.SaveLoad;
 using Cysharp.Threading.Tasks;
 using Project.Code.Common.Infrastructure.SceneLoader;
 using Project.Code.Common.UI.LoadingCurtain;
@@ -19,12 +18,14 @@ namespace Code.Infrastructure.Installers
       private readonly ISceneLoader _sceneLoader;
       private readonly ILoadingCurtain _loadingCurtain;
       private readonly IAssetProvider _assetProvider;
+      private readonly ISaveLoadService _saveLoadService;
 
-      public RootBootstrapper(ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, IAssetProvider assetProvider)
+      public RootBootstrapper(ISceneLoader sceneLoader, ILoadingCurtain loadingCurtain, IAssetProvider assetProvider, ISaveLoadService saveLoadService)
       {
          _sceneLoader = sceneLoader;
          _loadingCurtain = loadingCurtain;
          _assetProvider = assetProvider;
+         _saveLoadService = saveLoadService;
       }
 
       public async UniTask StartAsync(CancellationToken cancellation = new CancellationToken())
@@ -34,8 +35,17 @@ namespace Code.Infrastructure.Installers
          Promise.UnhandledException += LogPromiseException;
       
          await LoadAddressables();
+         await LoadProgress();
       
          await _sceneLoader.Load(SceneName.Game);  
+      }
+
+      private async UniTask LoadProgress()
+      {
+         if (_saveLoadService.HasSavedProgress)
+            _saveLoadService.LoadProgress();
+         else
+            _saveLoadService.CreateProgress();
       }
 
       private async UniTask LoadAddressables()
