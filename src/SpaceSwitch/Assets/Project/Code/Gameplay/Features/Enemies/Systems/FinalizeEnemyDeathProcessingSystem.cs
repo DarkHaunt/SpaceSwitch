@@ -21,6 +21,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
       {
          foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
          {
+            enemy.isDestructed = true;
             enemy.isProcessingDeath = false;
          }
       }

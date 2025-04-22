@@ -20,6 +20,9 @@ namespace Code.Gameplay.Score
       public void AddScore(int score) =>
          Score += score;
 
+      public void ClearCurrentScore() =>
+         Score = 0;
+
       public void CheckScoreSave()
       {
          if (_progress.HighScore < Score)

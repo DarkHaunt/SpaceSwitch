@@ -41,6 +41,11 @@ namespace Code.Gameplay.Features.Enemy.Services
          
          _isSpawning = true;
       }
+      
+      public void StopEnemySpawning()
+      {
+         _isSpawning = false;
+      }
 
       public void Tick()
       {

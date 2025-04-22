@@ -4,6 +4,7 @@ using Code.Infrastructure.Loading;
 using Code.Infrastructure.States.GameStates;
 using Project.Code.Common.Infrastructure.SceneLoader;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 
@@ -23,17 +24,17 @@ namespace Code.Gameplay.GameOver.UI
     [Inject]
     private void Construct(ISceneLoader sceneLoader, ScoreService scoreService, IWindowService windowService)
     {
+      Id = WindowId.GameOverWindow;
+      
       _sceneLoader = sceneLoader;
       _scoreService = scoreService;
-      Id = WindowId.GameOverWindow;
-
       _windowService = windowService;
     }
 
     protected override void Initialize()
     {
       ScoreText.text = $"Your score: {_scoreService.Score}";
-      
+
       ReturnHomeButton.onClick.AddListener(ReturnHome);
       RestartLevelButton.onClick.AddListener(RestartLevel);
     }

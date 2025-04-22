@@ -25,7 +25,8 @@ namespace Code.Gameplay.Features.Enemy.Systems
         
             enemy.RemoveTargetCollectionComponents();
         
-            enemy.isDestructed = true;
+            enemy.isDead = true;
+            enemy.isProcessingDeath = true;
             
             /*if(enemy.hasEnemyAnimator)
                enemy.EnemyAnimator.PlayDied();

@@ -42,54 +42,55 @@ public static class GameComponentsLookup {
     public const int TargetId = 31;
     public const int Enemy = 32;
     public const int EnemyTypeId = 33;
-    public const int EnemySpawnQueue = 34;
-    public const int EnemySpawnScenario = 35;
-    public const int EnemySpawnTimeLeft = 36;
-    public const int EnemySpawnTimer = 37;
-    public const int SpawningEnemies = 38;
-    public const int CurrentHp = 39;
-    public const int Dead = 40;
-    public const int MaxHp = 41;
-    public const int ProcessingDeath = 42;
-    public const int ClampedZ = 43;
-    public const int Direction = 44;
-    public const int MovementAvailable = 45;
-    public const int Moving = 46;
-    public const int OrbitCenterFollowTarget = 47;
-    public const int OrbitCenterPosition = 48;
-    public const int OrbitPhase = 49;
-    public const int OrbitRadius = 50;
-    public const int RotationAlignedAlongDirection = 51;
-    public const int Speed = 52;
-    public const int TurnedAlongDirection = 53;
-    public const int Velocity = 54;
-    public const int Player = 55;
-    public const int PlayerAnimator = 56;
-    public const int EnemyProjectile = 57;
-    public const int PlayerProjectile = 58;
-    public const int Projectile = 59;
-    public const int ProjectileTypeId = 60;
-    public const int ShootDirection = 61;
-    public const int LevelPart = 62;
-    public const int Shooter = 63;
-    public const int ShootTimer = 64;
-    public const int MovingSpline = 65;
-    public const int ReachedSplineEnd = 66;
-    public const int Spline = 67;
-    public const int SplineTPosition = 68;
-    public const int CollectingTargetsContinuously = 69;
-    public const int CollectTargetsInterval = 70;
-    public const int CollectTargetsTimer = 71;
-    public const int ConsideringColorMatch = 72;
-    public const int ProcessedTargets = 73;
-    public const int Reached = 74;
-    public const int ReadyToCollectTargets = 75;
-    public const int TargetBuffer = 76;
-    public const int TargetLimit = 77;
-    public const int ProcessingAsyncSpawn = 78;
-    public const int Camera = 79;
+    public const int Score = 34;
+    public const int EnemySpawnQueue = 35;
+    public const int EnemySpawnScenario = 36;
+    public const int EnemySpawnTimeLeft = 37;
+    public const int EnemySpawnTimer = 38;
+    public const int SpawningEnemies = 39;
+    public const int CurrentHp = 40;
+    public const int Dead = 41;
+    public const int MaxHp = 42;
+    public const int ProcessingDeath = 43;
+    public const int ClampedZ = 44;
+    public const int Direction = 45;
+    public const int MovementAvailable = 46;
+    public const int Moving = 47;
+    public const int OrbitCenterFollowTarget = 48;
+    public const int OrbitCenterPosition = 49;
+    public const int OrbitPhase = 50;
+    public const int OrbitRadius = 51;
+    public const int RotationAlignedAlongDirection = 52;
+    public const int Speed = 53;
+    public const int TurnedAlongDirection = 54;
+    public const int Velocity = 55;
+    public const int Player = 56;
+    public const int PlayerAnimator = 57;
+    public const int EnemyProjectile = 58;
+    public const int PlayerProjectile = 59;
+    public const int Projectile = 60;
+    public const int ProjectileTypeId = 61;
+    public const int ShootDirection = 62;
+    public const int LevelPart = 63;
+    public const int Shooter = 64;
+    public const int ShootTimer = 65;
+    public const int MovingSpline = 66;
+    public const int ReachedSplineEnd = 67;
+    public const int Spline = 68;
+    public const int SplineTPosition = 69;
+    public const int CollectingTargetsContinuously = 70;
+    public const int CollectTargetsInterval = 71;
+    public const int CollectTargetsTimer = 72;
+    public const int ConsideringColorMatch = 73;
+    public const int ProcessedTargets = 74;
+    public const int Reached = 75;
+    public const int ReadyToCollectTargets = 76;
+    public const int TargetBuffer = 77;
+    public const int TargetLimit = 78;
+    public const int ProcessingAsyncSpawn = 79;
+    public const int Camera = 80;
 
-    public const int TotalComponents = 80;
+    public const int TotalComponents = 81;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -126,6 +127,7 @@ public static class GameComponentsLookup {
         "TargetId",
         "Enemy",
         "EnemyTypeId",
+        "Score",
         "EnemySpawnQueue",
         "EnemySpawnScenario",
         "EnemySpawnTimeLeft",
@@ -209,6 +211,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Effects.TargetId),
         typeof(Code.Gameplay.Features.Enemy.EnemyComponents.Enemy),
         typeof(Code.Gameplay.Features.Enemy.EnemyComponents.EnemyTypeIdComponent),
+        typeof(Code.Gameplay.Features.Enemy.EnemyComponents.Score),
         typeof(Code.Gameplay.Features.EnemyLifetime.EnemySpawnQueueComponent),
         typeof(Code.Gameplay.Features.EnemyLifetime.EnemySpawnScenarioComponent),
         typeof(Code.Gameplay.Features.EnemyLifetime.EnemySpawnTimeLeft),

@@ -13,5 +13,6 @@ namespace Code.Gameplay.Features.Enemy
       [field: SerializeField] public float ContactRadius { get; private set; }
       [field: SerializeField] public float Speed { get; private set; }
       [field: SerializeField] public float Health { get; private set; }
+      [field: SerializeField] public int Score { get; private set; }
    }
 }

@@ -64,6 +64,8 @@ namespace Code.Gameplay.Features.Enemy
             .AddCurrentHp(config.Health)
             .AddMaxHp(config.Health)
             
+            .AddScore(config.Score)
+            
             .AddTargetBuffer(new List<int>(1))
             .AddProcessedTargets(new List<int>(1))
             .AddEffectSetups(new List<EffectSetup>{ new(EffectTypeId.Damage, float.MaxValue) }) // Insta kill for player

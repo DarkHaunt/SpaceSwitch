@@ -6,5 +6,6 @@ namespace Code.Gameplay.Features.Enemy
    {
       [Game] public class Enemy : IComponent { }
       [Game] public class EnemyTypeIdComponent : IComponent { public EnemyTypeId Value; }
+      [Game] public class Score : IComponent { public int Value; }
    }
 }

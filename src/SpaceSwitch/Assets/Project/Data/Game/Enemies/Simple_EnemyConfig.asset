@@ -17,3 +17,4 @@ MonoBehaviour:
   <ContactRadius>k__BackingField: 0.4
   <Speed>k__BackingField: 5
   <Health>k__BackingField: 1
+  <Score>k__BackingField: 1

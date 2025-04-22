@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Features.Enemy.Services;
+using Code.Gameplay.Score;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
 using Cysharp.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace Code.Gameplay.StateMachine.States
 
       private GamePlaygroundFeature _gamePlaygroundFeature;
 
-      public GameLoopState(ISystemFactory systems, GameContext gameContext, EnemySpawnService spawnService, ILoadingCurtain curtain)
+      public GameLoopState(ISystemFactory systems, GameContext gameContext, EnemySpawnService spawnService, 
+         ILoadingCurtain curtain)
       {
          _gameContext = gameContext;
          _spawnService = spawnService;
@@ -40,6 +42,8 @@ namespace Code.Gameplay.StateMachine.States
 
       protected override void ExitOnEndOfFrame()
       {
+         _spawnService.StopEnemySpawning();
+         
          _gamePlaygroundFeature.DeactivateReactiveSystems();
          _gamePlaygroundFeature.ClearReactiveSystems();
 
