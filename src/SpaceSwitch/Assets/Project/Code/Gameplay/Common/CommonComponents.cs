@@ -15,5 +15,6 @@ namespace Code.Gameplay.Common
   [Game] public class Active : IComponent { }
  
   [Game] public class TransformComponent : IComponent { public Transform Value; }
+  [Game] public class ColliderComponent : IComponent { public Collider Value; }
   [Game] public class SpriteRendererComponent : IComponent { public SpriteRenderer Value; }
 }

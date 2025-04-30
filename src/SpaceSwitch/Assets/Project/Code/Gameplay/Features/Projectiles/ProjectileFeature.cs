@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Projectiles
       {
          Add(systems.Create<MarkProcessedOnTargetLimitExceededSystem>());
          Add(systems.Create<FinalizeProcessedProjectilesSystem>());
+         
+         Add(systems.Create<ProjectilesDeathSystem>());
       }
    }
 }

@@ -20,7 +20,8 @@ namespace Code.Gameplay.Features.Projectiles.Systems
          foreach (GameEntity armament in _projectiles)
          {
             armament.RemoveTargetCollectionComponents();
-            armament.isDestructed = true;
+            armament.isDead = true;
+            armament.isProcessingDeath = true;
          }
       }
    }

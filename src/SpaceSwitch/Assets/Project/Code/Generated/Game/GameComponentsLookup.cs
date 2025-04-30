@@ -16,81 +16,83 @@ public static class GameComponentsLookup {
     public const int ViewPath = 5;
     public const int ViewPrefab = 6;
     public const int Active = 7;
-    public const int Damage = 8;
-    public const int EntityLink = 9;
-    public const int Id = 10;
-    public const int LayerMask = 11;
-    public const int SpriteRenderer = 12;
-    public const int Transform = 13;
-    public const int WorldPosition = 14;
-    public const int WorldRotation = 15;
-    public const int Bounded = 16;
-    public const int Bounds = 17;
-    public const int ColorSwitchAnimator = 18;
-    public const int ColorSwitchRequest = 19;
-    public const int ColorType = 20;
-    public const int Cooldown = 21;
-    public const int CooldownLeft = 22;
-    public const int CooldownUp = 23;
-    public const int DamageEffect = 24;
-    public const int Effect = 25;
-    public const int EffectSetups = 26;
-    public const int EffectValue = 27;
-    public const int HealEffect = 28;
-    public const int Processed = 29;
-    public const int ProducerId = 30;
-    public const int TargetId = 31;
-    public const int Enemy = 32;
-    public const int EnemyTypeId = 33;
-    public const int Score = 34;
-    public const int EnemySpawnQueue = 35;
-    public const int EnemySpawnScenario = 36;
-    public const int EnemySpawnTimeLeft = 37;
-    public const int EnemySpawnTimer = 38;
-    public const int SpawningEnemies = 39;
-    public const int CurrentHp = 40;
-    public const int Dead = 41;
-    public const int MaxHp = 42;
-    public const int ProcessingDeath = 43;
-    public const int ClampedZ = 44;
-    public const int Direction = 45;
-    public const int MovementAvailable = 46;
-    public const int Moving = 47;
-    public const int OrbitCenterFollowTarget = 48;
-    public const int OrbitCenterPosition = 49;
-    public const int OrbitPhase = 50;
-    public const int OrbitRadius = 51;
-    public const int RotationAlignedAlongDirection = 52;
-    public const int Speed = 53;
-    public const int TurnedAlongDirection = 54;
-    public const int Velocity = 55;
-    public const int Player = 56;
-    public const int PlayerAnimator = 57;
-    public const int EnemyProjectile = 58;
-    public const int PlayerProjectile = 59;
-    public const int Projectile = 60;
-    public const int ProjectileTypeId = 61;
-    public const int ShootDirection = 62;
-    public const int LevelPart = 63;
-    public const int Shooter = 64;
-    public const int ShootTimer = 65;
-    public const int MovingSpline = 66;
-    public const int ReachedSplineEnd = 67;
-    public const int Spline = 68;
-    public const int SplineTPosition = 69;
-    public const int CollectingTargetsContinuously = 70;
-    public const int CollectTargetsInterval = 71;
-    public const int CollectTargetsTimer = 72;
-    public const int ConsideringColorMatch = 73;
-    public const int ProcessedTargets = 74;
-    public const int Reached = 75;
-    public const int ReadyToCollectTargets = 76;
-    public const int TargetBuffer = 77;
-    public const int TargetLimit = 78;
-    public const int ProcessingAsyncSpawn = 79;
-    public const int Camera = 80;
+    public const int Collider = 8;
+    public const int Damage = 9;
+    public const int EntityLink = 10;
+    public const int Id = 11;
+    public const int LayerMask = 12;
+    public const int SpriteRenderer = 13;
+    public const int Transform = 14;
+    public const int WorldPosition = 15;
+    public const int WorldRotation = 16;
+    public const int Bounded = 17;
+    public const int Bounds = 18;
+    public const int ColorSwitchAnimator = 19;
+    public const int ColorSwitchRequest = 20;
+    public const int ColorType = 21;
+    public const int Cooldown = 22;
+    public const int CooldownLeft = 23;
+    public const int CooldownUp = 24;
+    public const int DamageEffect = 25;
+    public const int Effect = 26;
+    public const int EffectSetups = 27;
+    public const int EffectValue = 28;
+    public const int HealEffect = 29;
+    public const int Processed = 30;
+    public const int ProducerId = 31;
+    public const int TargetId = 32;
+    public const int Enemy = 33;
+    public const int EnemyTypeId = 34;
+    public const int Score = 35;
+    public const int EnemySpawnQueue = 36;
+    public const int EnemySpawnScenario = 37;
+    public const int EnemySpawnTimeLeft = 38;
+    public const int EnemySpawnTimer = 39;
+    public const int SpawningEnemies = 40;
+    public const int CurrentHp = 41;
+    public const int Dead = 42;
+    public const int MaxHp = 43;
+    public const int ProcessingDeath = 44;
+    public const int ClampedZ = 45;
+    public const int Direction = 46;
+    public const int MovementAvailable = 47;
+    public const int Moving = 48;
+    public const int OrbitCenterFollowTarget = 49;
+    public const int OrbitCenterPosition = 50;
+    public const int OrbitPhase = 51;
+    public const int OrbitRadius = 52;
+    public const int RotationAlignedAlongDirection = 53;
+    public const int Speed = 54;
+    public const int TurnedAlongDirection = 55;
+    public const int Velocity = 56;
+    public const int Player = 57;
+    public const int PlayerAnimator = 58;
+    public const int EnemyProjectile = 59;
+    public const int PlayerProjectile = 60;
+    public const int Projectile = 61;
+    public const int ProjectileAnimator = 62;
+    public const int ProjectileTypeId = 63;
+    public const int ShootDirection = 64;
+    public const int LevelPart = 65;
+    public const int Shooter = 66;
+    public const int ShootTimer = 67;
+    public const int MovingSpline = 68;
+    public const int ReachedSplineEnd = 69;
+    public const int Spline = 70;
+    public const int SplineTPosition = 71;
+    public const int CollectingTargetsContinuously = 72;
+    public const int CollectTargetsInterval = 73;
+    public const int CollectTargetsTimer = 74;
+    public const int ConsideringColorMatch = 75;
+    public const int ProcessedTargets = 76;
+    public const int Reached = 77;
+    public const int ReadyToCollectTargets = 78;
+    public const int TargetBuffer = 79;
+    public const int TargetLimit = 80;
+    public const int ProcessingAsyncSpawn = 81;
+    public const int Camera = 82;
 
-    public const int TotalComponents = 81;
+    public const int TotalComponents = 83;
 
     public static readonly string[] componentNames = {
         "AssetReference",
@@ -101,6 +103,7 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Active",
+        "Collider",
         "Damage",
         "EntityLink",
         "Id",
@@ -154,6 +157,7 @@ public static class GameComponentsLookup {
         "EnemyProjectile",
         "PlayerProjectile",
         "Projectile",
+        "ProjectileAnimator",
         "ProjectileTypeId",
         "ShootDirection",
         "LevelPart",
@@ -185,6 +189,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Active),
+        typeof(Code.Gameplay.Common.ColliderComponent),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.EntityLink),
         typeof(Code.Gameplay.Common.Id),
@@ -238,6 +243,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Projectiles.EnemyProjectile),
         typeof(Code.Gameplay.Features.Projectiles.PlayerProjectile),
         typeof(Code.Gameplay.Features.Projectiles.Projectile),
+        typeof(Code.Gameplay.Features.Projectiles.ProjectileAnimatorComponent),
         typeof(Code.Gameplay.Features.Projectiles.ProjectileTypeIdComponent),
         typeof(Code.Gameplay.Features.Projectiles.ShootDirection),
         typeof(Code.Gameplay.Features.Scrolling.LevelPartComponent),

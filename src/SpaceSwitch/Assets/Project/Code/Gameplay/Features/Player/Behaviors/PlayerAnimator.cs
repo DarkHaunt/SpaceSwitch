@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Behaviors
 {
@@ -10,6 +11,11 @@ namespace Code.Gameplay.Features.Player.Behaviors
       [SerializeField] private float _dampSpeed;
       [SerializeField] private float _maxAngle;
 
+      [field: Header("--- Death ---")]
+      [SerializeField] private float _deathTime;
+      [SerializeField] private ParticleSystem _deathParticle;
+      [SerializeField] private List<GameObject> _viewsToDisable;
+
       private float _velocity;
       private float _maxSpeed;
       private float _lastAngle;
@@ -17,6 +23,15 @@ namespace Code.Gameplay.Features.Player.Behaviors
       public void Init(float speed)
       {
          _maxSpeed = speed;
+      }
+      
+      public float PlayDeathParticle()
+      {
+         foreach (GameObject view in _viewsToDisable)
+            view.SetActive(false);
+         
+         _deathParticle.Play();
+         return _deathTime;
       }
 
       public void UpdateViewRotationFromVelocity(Vector2 velocity, float timeStep)

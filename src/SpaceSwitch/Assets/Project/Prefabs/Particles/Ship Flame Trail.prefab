@@ -112,6 +112,22 @@ PrefabInstance:
       propertyPath: startDelay.maxCurve.m_Curve.Array.data[1].value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19913616, guid: 4e84120dab5fa4342b13417a3ff8964c, type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19913616, guid: 4e84120dab5fa4342b13417a3ff8964c, type: 3}
+      propertyPath: m_VertexStreams.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19913616, guid: 4e84120dab5fa4342b13417a3ff8964c, type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19913616, guid: 4e84120dab5fa4342b13417a3ff8964c, type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 175020, guid: 4e84120dab5fa4342b13417a3ff8964c, type: 3}
