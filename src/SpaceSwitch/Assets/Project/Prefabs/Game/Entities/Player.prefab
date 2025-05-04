@@ -133,6 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d49fb8382fd744bdabeb00e63abb2250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _switchMode: 1
+  _redObject: {fileID: 0}
+  _blueObject: {fileID: 0}
+  _disableObjects: []
   _renderer: {fileID: 8625281509008324114}
   _redMaterials:
   - {fileID: 2100000, guid: f09422a185e4ef049a1aed469927026a, type: 2}

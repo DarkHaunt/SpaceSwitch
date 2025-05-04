@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.Enemy
       {
          Add(systems.Create<EnemyDeathSystem>());
          Add(systems.Create<EnemyAddScoreOnDeathSystem>());
-         Add(systems.Create<FinalizeEnemyDeathProcessingSystem>());
       }
    }
 }

@@ -1,0 +1,26 @@
+﻿using Entitas;
+
+namespace Code.Gameplay.Features.Enemy.Systems
+{
+   public sealed class EnemyDeathPrepareSystem : IExecuteSystem
+   {
+      private readonly IGroup<GameEntity> _enemies;
+
+      public EnemyDeathPrepareSystem(GameContext context)
+      {
+         _enemies = context.GetGroup(GameMatcher
+            .AllOf(
+               GameMatcher.Enemy,
+               GameMatcher.Collider
+            ));
+      }
+
+      public void Execute()
+      {
+         foreach (GameEntity enemy in _enemies)
+         {
+            
+         }
+      }
+   }
+}

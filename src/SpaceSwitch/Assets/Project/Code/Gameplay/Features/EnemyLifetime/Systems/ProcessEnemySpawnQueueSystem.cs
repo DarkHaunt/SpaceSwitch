@@ -38,7 +38,6 @@ namespace Code.Gameplay.Features.Enemy.Systems
             EnemySpawnData nextEnemy = spawner.EnemySpawnQueue.Dequeue();
             spawner.ReplaceEnemySpawnTimeLeft(nextEnemy.TimeToSpawn);
 
-            Debug.Log($"<color=white>Crreate enemy - {nextEnemy.Id} - {nextEnemy.Color}</color>");
             _factory.CreateEnemy(nextEnemy, spawner.Spline);
          }
       }

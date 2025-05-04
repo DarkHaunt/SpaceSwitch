@@ -1,4 +1,6 @@
-﻿using Code.Gameplay.Features.TargetCollection;
+﻿using System.Collections.Generic;
+using Code.Gameplay.Common;
+using Code.Gameplay.Features.TargetCollection;
 using Entitas;
 
 namespace Code.Gameplay.Features.Enemy.Systems
@@ -6,6 +8,7 @@ namespace Code.Gameplay.Features.Enemy.Systems
    public sealed class EnemyDeathSystem : IExecuteSystem
    {
       private readonly IGroup<GameEntity> _enemies;
+      private readonly List<GameEntity> _buffer = new(16);
 
       public EnemyDeathSystem(GameContext context)
       {
@@ -18,20 +21,23 @@ namespace Code.Gameplay.Features.Enemy.Systems
 
       public void Execute()
       {
-         foreach (GameEntity enemy in _enemies)
+         foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
          {
+            enemy.isMoving = false;
+            enemy.isMovingSpline = false;
             enemy.isMovementAvailable = false;
             enemy.isTurnedAlongDirection = false;
-        
-            enemy.RemoveTargetCollectionComponents();
-        
-            enemy.isDead = true;
-            enemy.isProcessingDeath = true;
-            
-            /*if(enemy.hasEnemyAnimator)
-               enemy.EnemyAnimator.PlayDied();
 
-            enemy.ReplaceSelfDestructTimer(DeathAnimationTime);*/
+            enemy.RemoveTargetCollectionComponents();
+            enemy.RemoveAndDisableCollider();
+
+            if (enemy.hasEnemyAnimator && enemy.hasColorType)
+            {
+               var animationTime = enemy.EnemyAnimator.PlayDeathParticle(enemy.ColorType);
+               enemy.ReplaceSelfDestructTimer(animationTime);
+            }
+
+            enemy.isProcessingDeath = false;
          }
       }
    }

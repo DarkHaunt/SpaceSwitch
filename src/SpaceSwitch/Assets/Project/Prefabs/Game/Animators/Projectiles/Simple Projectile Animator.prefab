@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 237265567234944534}
   - component: {fileID: 4668012676022142895}
   m_Layer: 0
-  m_Name: Projectile Death Particle
+  m_Name: Simple Projectile Animator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

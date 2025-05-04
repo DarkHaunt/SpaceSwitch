@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Code.Gameplay.Common;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Projectiles.Systems
 {
@@ -15,7 +17,6 @@ namespace Code.Gameplay.Features.Projectiles.Systems
                GameMatcher.Projectile,
                GameMatcher.ProcessingDeath,
                GameMatcher.Dead,
-               GameMatcher.Collider,
                GameMatcher.ColorType
             ));
       }
@@ -35,7 +36,7 @@ namespace Code.Gameplay.Features.Projectiles.Systems
             projectile.isMovementAvailable = false;
             projectile.isTurnedAlongDirection = false;
  
-            projectile.RemoveCollider();
+            projectile.RemoveAndDisableCollider();
          }
       }
    }
