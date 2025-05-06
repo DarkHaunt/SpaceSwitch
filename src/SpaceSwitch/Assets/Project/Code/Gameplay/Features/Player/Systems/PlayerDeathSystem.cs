@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Common;
 using Entitas;
 
 namespace Code.Gameplay.Features.Player.Systems
@@ -22,9 +23,16 @@ namespace Code.Gameplay.Features.Player.Systems
          foreach (GameEntity player in _players.GetEntities(_buffer))
          {
             player.isMovementAvailable = false;
-            player.isDestructed = true;
-        
-            //hero.HeroAnimator.PlayDied();
+            player.isShooter = false;
+            
+            if (player.hasPlayerAnimator)
+            {
+               var animationTime = player.PlayerAnimator.PlayDeathParticle();
+               player.ReplaceSelfDestructTimer(animationTime);
+            }
+            
+            player.RemoveAndDisableCollider();
+            player.isProcessingDeath = false;
          }
       }
    }

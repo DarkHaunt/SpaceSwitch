@@ -17,7 +17,8 @@ namespace Code.Gameplay.Features.Shooting.Systems
          _time = time;
          _timers = context.GetGroup(GameMatcher
             .AllOf(
-               GameMatcher.ShootTimer
+               GameMatcher.ShootTimer,
+               GameMatcher.Shooter
             ));
       }
 

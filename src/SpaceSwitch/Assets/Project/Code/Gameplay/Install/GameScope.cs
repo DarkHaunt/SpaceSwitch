@@ -14,7 +14,6 @@ using Code.Gameplay.StateMachine.States;
 using Code.Infrastructure;
 using Code.Infrastructure.Installers;
 using Code.Infrastructure.States.Factory;
-using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
@@ -62,7 +61,6 @@ namespace Code.Gameplay
          
          _builder.Register<GameBootstrapState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
          _builder.Register<GameLoopState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
-         _builder.Register<GameOverState>(Lifetime.Singleton).AsImplementedInterfaces().AsSelf();
       }
 
       private void RegisterGameplayFactories()
