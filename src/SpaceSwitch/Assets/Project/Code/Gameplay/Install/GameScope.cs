@@ -11,6 +11,7 @@ using Code.Gameplay.Features.Scrolling.Services;
 using Code.Gameplay.Input.Service;
 using Code.Gameplay.Levels;
 using Code.Gameplay.StateMachine.States;
+using Code.Gameplay.UI;
 using Code.Infrastructure;
 using Code.Infrastructure.Installers;
 using Code.Infrastructure.States.Factory;
@@ -29,6 +30,7 @@ namespace Code.Gameplay
    {
       [SerializeField] private ParentsInitializer _parentsInitializer;
       [SerializeField] private PauseView _pauseView;
+      [SerializeField] private GameView _gameView;
       
       private IContainerBuilder _builder;
       
@@ -45,7 +47,15 @@ namespace Code.Gameplay
          RegisterInitializers();
          RegisterPauseSystems();
          
+         RegisterGameUI();
+
          _builder.RegisterEntryPoint<GameBootstrapper>();
+      }
+
+      private void RegisterGameUI()
+      {
+         _builder.Register<GameUIController>(Lifetime.Singleton).AsImplementedInterfaces();
+         _builder.RegisterComponent(_gameView);
       }
 
       private void RegisterCoreFactories()

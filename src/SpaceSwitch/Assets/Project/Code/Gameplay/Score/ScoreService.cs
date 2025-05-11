@@ -1,10 +1,14 @@
-﻿using Code.Progress.Provider;
+﻿using System;
+using Code.Progress.Provider;
 using Code.Progress.SaveLoad;
+using UnityEngine;
 
 namespace Code.Gameplay.Score
 {
    public class ScoreService
    {
+      public event Action OnScoreUpdated;
+      
       private readonly IProgressProvider _progress;
       private readonly ISaveLoadService _saver;
 
@@ -17,8 +21,11 @@ namespace Code.Gameplay.Score
       }
 
 
-      public void AddScore(int score) =>
+      public void AddScore(int score)
+      {
          Score += score;
+         OnScoreUpdated?.Invoke();
+      }
 
       public void ClearCurrentScore() =>
          Score = 0;
