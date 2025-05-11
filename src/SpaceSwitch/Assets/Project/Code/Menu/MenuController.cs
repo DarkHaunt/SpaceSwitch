@@ -14,7 +14,7 @@ namespace Code.Menu
       private readonly ILoadingCurtain _loadingCurtain;
       private readonly IProgressProvider _progress;
       private readonly ISceneLoader _sceneLoader;
-      
+
       private readonly MenuView _view;
 
       public MenuController(MenuView view, ILoadingCurtain loadingCurtain, IProgressProvider progress, ISceneLoader sceneLoader)
@@ -22,13 +22,15 @@ namespace Code.Menu
          _loadingCurtain = loadingCurtain;
          _progress = progress;
          _sceneLoader = sceneLoader;
-         
+
          _view = view;
       }
 
 
       public void Initialize()
       {
+         _loadingCurtain.Hide();
+         
          _view.StartButton.onClick.AddListener(StartGame);
          _view.QuitButton.onClick.AddListener(QuitGame);
 

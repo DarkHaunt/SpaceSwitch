@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.GameOver;
 using Code.Infrastructure.Loading;
 using Cysharp.Threading.Tasks;
 using Project.Code.Common.Infrastructure.SceneLoader;
@@ -70,13 +71,15 @@ namespace Project.Code.Pause
       private void GoToMenu()
       {
          ResumeGame();
-         _sceneLoader.Load(SceneName.Menu, force: true).Forget();
+         GameOverSignalBus.NotifyGameplaySceneUnload();         
+         _sceneLoader.LoadWithCurtain(SceneName.Menu).Forget();
       }
 
       private void ReloadScene()
       {
          ResumeGame();
-         _sceneLoader.Load(SceneName.Game, force: true).Forget();
+         GameOverSignalBus.NotifyGameplaySceneUnload();
+         _sceneLoader.LoadWithCurtain(SceneName.Game, force: true).Forget();
       }
    }
 }

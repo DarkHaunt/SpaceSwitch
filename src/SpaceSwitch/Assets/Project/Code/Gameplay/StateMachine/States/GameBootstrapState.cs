@@ -5,6 +5,7 @@ using Code.Gameplay.Score;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.States.StateMachine;
+using Cysharp.Threading.Tasks;
 using Project.Code.Common.UI.LoadingCurtain;
 using UnityEngine;
 
@@ -34,7 +35,6 @@ namespace Code.Gameplay.StateMachine.States
 
       public override async void Enter()
       {
-         _curtain.ShowImmediate();
          _scoreService.ClearCurrentScore();
          
          await _staticDataService.LoadAll();
@@ -42,6 +42,8 @@ namespace Code.Gameplay.StateMachine.States
          _cameraProvider.SetMainCamera(Camera.main);
          _playerFactory.CreateHero(Vector3.zero, _staticDataService.PlayerConfig);
          _levelService.Setup();
+         
+         _curtain.Hide().Forget();
 
          _stateMachine.Enter<GameLoopState>();
       }

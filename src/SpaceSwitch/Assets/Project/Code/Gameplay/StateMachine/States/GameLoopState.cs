@@ -40,7 +40,7 @@ namespace Code.Gameplay.StateMachine.States
          _gamePlaygroundFeature.Initialize();
 
          GameOverSignalBus.OnGameOver += GameOver;
-         GameOverSignalBus.OnRestart += Restart;
+         GameOverSignalBus.OnGameplaySceneUnloaded += GameplaySceneUnloaded;
          
          _spawnService.StartEnemySpawning();
          _curtain.Hide().Forget();
@@ -70,10 +70,10 @@ namespace Code.Gameplay.StateMachine.States
          _gamePlaygroundFeature = null;
       }
 
-      private void Restart()
+      private void GameplaySceneUnloaded()
       {
          GameOverSignalBus.OnGameOver -= GameOver;
-         GameOverSignalBus.OnRestart -= Restart;
+         GameOverSignalBus.OnGameplaySceneUnloaded -= GameplaySceneUnloaded;
 
          ExitOnEndOfFrame();
       }

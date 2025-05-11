@@ -67,15 +67,15 @@ namespace Code.Gameplay.GameOver.UI
 
       private void ReturnHome()
       {
-         _sceneLoader.Load(SceneName.Menu);
-         GameOverSignalBus.NotifyRestart();
+         GameOverSignalBus.NotifyGameplaySceneUnload();
+         _sceneLoader.LoadWithCurtain(SceneName.Menu);
          _windowService.Close(Id);
       }
 
       private void RestartLevel()
       {
-         _sceneLoader.Load(SceneName.Game, force: true);
-         GameOverSignalBus.NotifyRestart();
+         GameOverSignalBus.NotifyGameplaySceneUnload();
+         _sceneLoader.LoadWithCurtain(SceneName.Game, force: true);
          _windowService.Close(Id);
       }
    }
