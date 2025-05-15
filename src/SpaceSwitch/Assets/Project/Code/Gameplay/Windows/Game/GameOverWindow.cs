@@ -58,11 +58,11 @@ namespace Code.Gameplay.GameOver.UI
       {
          await Group.DOFade(1, 0.5f)
             .ToUniTask();
-         
+
          Panel.SetActive(true);
          await Panel.transform.DOScale(1, 0.5f)
             .SetEase(Ease.OutBack)
-            .ToUniTask(); 
+            .ToUniTask();
       }
 
       private void ReturnHome()

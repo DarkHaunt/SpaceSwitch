@@ -13,21 +13,89 @@ MonoBehaviour:
   m_Name: EnemySpawnConfig_0
   m_EditorClassIdentifier: 
   <SpawnScenarios>k__BackingField:
-  - TimeToSpawn: 10
+  - Name: EnemyPath_0
+    TimeToSpawn: 0
     Spline: {fileID: 3769798933642361477, guid: d8fe6250438a3704fa1f95739bd243a1, type: 3}
     Enemies:
     - Name: Simple
-      TimeToSpawn: 2
-      RotateToPath: 1
-      Id: 1
-      Color: 1
-    - Name: Simple
-      TimeToSpawn: 2
+      TimeToSpawn: 0.75
       RotateToPath: 1
       Id: 1
       Color: 2
     - Name: Simple
-      TimeToSpawn: 2
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.75
       RotateToPath: 1
       Id: 1
       Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+  - Name: EnemyPath_1
+    TimeToSpawn: 0
+    Spline: {fileID: 3769798933642361477, guid: ef1a91a1d8e539b4c86a8cf5b8305531, type: 3}
+    Enemies:
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+  - Name: EnemyPath_8
+    TimeToSpawn: 5
+    Spline: {fileID: 2608590863449325082, guid: 4bf5210bbff1c1c41ba7ea85dddf7fd8, type: 3}
+    Enemies:
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+  - Name: EnemyPath_9
+    TimeToSpawn: 2
+    Spline: {fileID: 4626057048321575730, guid: 93cb99a4f971cab4ea6df9dc59407305, type: 3}
+    Enemies:
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.5
+      RotateToPath: 1
+      Id: 1
+      Color: 2

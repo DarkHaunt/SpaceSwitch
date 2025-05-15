@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7137473732471871764
+--- !u!1 &164241901587179090
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3393495326836918817}
-  - component: {fileID: 8438367037101486155}
-  - component: {fileID: 3769798933642361477}
+  - component: {fileID: 8370341300098555868}
+  - component: {fileID: 4600172216727850460}
+  - component: {fileID: 2040664255706370109}
   m_Layer: 0
-  m_Name: EnemyPath_0
+  m_Name: EnemyPath_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3393495326836918817
+--- !u!4 &8370341300098555868
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137473732471871764}
+  m_GameObject: {fileID: 164241901587179090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,26 +33,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8438367037101486155
+--- !u!114 &4600172216727850460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137473732471871764}
+  m_GameObject: {fileID: 164241901587179090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d31fdac8ba942cabb193be29243777a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Path>k__BackingField: {fileID: 3769798933642361477}
---- !u!114 &3769798933642361477
+  <Path>k__BackingField: {fileID: 2040664255706370109}
+--- !u!114 &2040664255706370109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7137473732471871764}
+  m_GameObject: {fileID: 164241901587179090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
@@ -75,42 +75,82 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -2
-        y: 7
+        x: -7.59
+        y: 6.38
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -1.4
+        z: -1.660646
       TangentOut:
         x: 0
         y: 0
-        z: 1.837417
+        z: 14.0204
       Rotation:
         value:
-          x: -0.24395745
-          y: -0.6636903
-          z: 0.66369027
-          w: 0.24395716
+          x: 0.47625655
+          y: 0.5226658
+          z: 0.52266747
+          w: 0.47625503
     - Position:
-        x: -2
-        y: -7
+        x: 7.79
+        y: 0.86
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -11.803599
+        z: -3.10316
       TangentOut:
         x: 0
         y: 0
-        z: 1.4
+        z: 1.3630211
       Rotation:
         value:
-          x: 0.3398638
-          y: -0.62007475
-          z: 0.620075
-          w: -0.339863
+          x: 0.70692676
+          y: 0.015953925
+          z: 0.015952978
+          w: 0.7069268
+    - Position:
+        x: 3.81
+        y: -3.5
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -2.847033
+      TangentOut:
+        x: 0
+        y: 0
+        z: 6.0353365
+      Rotation:
+        value:
+          x: 0.5172642
+          y: -0.48211828
+          z: -0.48211792
+          w: 0.517264
+    - Position:
+        x: -10.38
+        y: 4.16
+        z: 0
+      TangentIn:
+        x: 0
+        y: 0
+        z: -7.539847
+      TangentOut:
+        x: 0
+        y: 0
+        z: 7.143024
+      Rotation:
+        value:
+          x: -0.40389243
+          y: 0.58040583
+          z: 0.5804072
+          w: -0.40389043
     m_MetaData:
+    - Mode: 3
+      Tension: 0.5
+    - Mode: 3
+      Tension: 0.5
     - Mode: 3
       Tension: 0.5
     - Mode: 3

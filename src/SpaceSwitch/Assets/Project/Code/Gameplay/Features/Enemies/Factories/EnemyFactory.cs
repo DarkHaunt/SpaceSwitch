@@ -66,7 +66,7 @@ namespace Code.Gameplay.Features.Enemy
             
             .AddScore(config.Score)
             
-            .AddTargetBuffer(new List<int>(1))
+            .AddTargetBuffer(new List<int>(5))
             .AddProcessedTargets(new List<int>(1))
             .AddEffectSetups(new List<EffectSetup>{ new(EffectTypeId.Damage, float.MaxValue) }) // Insta kill for player
             
@@ -89,7 +89,7 @@ namespace Code.Gameplay.Features.Enemy
       private GameEntity CreateSimple()
       {
          return CreateGameEntity.Empty()
-            
+               .AddTargetLimit(1)
             ;
       }
    }

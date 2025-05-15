@@ -33,11 +33,6 @@ namespace Code.Gameplay
       Add(systems.Create<EnemyLifetimeFeature>());
       Add(systems.Create<EnemyFeature>());
       
-      Add(systems.Create<SplineFeature>());
-      Add(systems.Create<DeathFeature>());
-      
-      Add(systems.Create<MovementFeature>());
-      
       Add(systems.Create<CollectTargetsFeature>());
       Add(systems.Create<ColorSwitchFeature>());
       
@@ -46,6 +41,11 @@ namespace Code.Gameplay
       
       Add(systems.Create<EffectApplicationFeature>());
       Add(systems.Create<EffectFeature>());
+      
+      Add(systems.Create<SplineFeature>());
+      Add(systems.Create<DeathFeature>());
+      
+      Add(systems.Create<MovementFeature>());
       
       Add(systems.Create<LevelBGMoveFeature>());
       Add(systems.Create<GameOverFeature>());

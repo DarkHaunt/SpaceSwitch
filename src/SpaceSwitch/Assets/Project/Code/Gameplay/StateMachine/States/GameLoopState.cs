@@ -13,6 +13,7 @@ namespace Code.Gameplay.StateMachine.States
    public class GameLoopState : EndOfFrameExitState
    {
       private readonly ISystemFactory _systems;
+      private readonly InputContext _inputContext;
       private readonly GameContext _gameContext;
       
       private readonly EnemySpawnService _spawnService;
@@ -23,7 +24,7 @@ namespace Code.Gameplay.StateMachine.States
       private GamePlaygroundFeature _gamePlaygroundFeature;
       private bool _isGameLoopActive = true;
 
-      public GameLoopState(ISystemFactory systems, GameContext gameContext, EnemySpawnService spawnService, 
+      public GameLoopState(ISystemFactory systems, InputContext inputContext, GameContext gameContext, EnemySpawnService spawnService, 
          ILoadingCurtain curtain, IWindowService windowService, ScoreService scoreService)
       {
          _gameContext = gameContext;
@@ -32,6 +33,7 @@ namespace Code.Gameplay.StateMachine.States
          _windowService = windowService;
          _scoreService = scoreService;
          _systems = systems;
+         _inputContext = inputContext;
       }
     
       public override void Enter()
@@ -88,6 +90,9 @@ namespace Code.Gameplay.StateMachine.States
       private void DestructEntities()
       {
          foreach (GameEntity entity in _gameContext.GetEntities()) 
+            entity.isDestructed = true; 
+         
+         foreach (InputEntity entity in _inputContext.GetEntities())
             entity.isDestructed = true;
       }
    }

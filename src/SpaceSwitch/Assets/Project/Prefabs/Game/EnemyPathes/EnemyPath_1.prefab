@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8438367037101486155}
   - component: {fileID: 3769798933642361477}
   m_Layer: 0
-  m_Name: EnemyPath_0
+  m_Name: EnemyPath_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -2
+        x: 2
         y: 7
         z: 0
       TangentIn:
@@ -88,12 +88,12 @@ MonoBehaviour:
         z: 1.837417
       Rotation:
         value:
-          x: -0.24395745
-          y: -0.6636903
-          z: 0.66369027
-          w: 0.24395716
+          x: 0.66369015
+          y: 0.24395731
+          z: 0.24395697
+          w: 0.66369057
     - Position:
-        x: -2
+        x: 2
         y: -7
         z: 0
       TangentIn:
@@ -106,10 +106,10 @@ MonoBehaviour:
         z: 1.4
       Rotation:
         value:
-          x: 0.3398638
-          y: -0.62007475
-          z: 0.620075
-          w: -0.339863
+          x: 0.6200749
+          y: -0.33986282
+          z: -0.33986396
+          w: 0.62007487
     m_MetaData:
     - Mode: 3
       Tension: 0.5
