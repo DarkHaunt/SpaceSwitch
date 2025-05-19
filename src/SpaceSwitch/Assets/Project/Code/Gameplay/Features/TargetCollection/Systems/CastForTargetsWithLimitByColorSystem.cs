@@ -26,6 +26,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
                GameMatcher.TargetLimit,
                GameMatcher.WorldPosition,
                GameMatcher.LayerMask,
+               GameMatcher.Collider,
                GameMatcher.ConsideringColorMatch,
                GameMatcher.ColorType)
          );
@@ -75,7 +76,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
 
       private int TargetCountInRadius(GameEntity entity)
       {
-         return _physicsService.SphereCastNonAlloc(entity.WorldPosition, radius: entity.Radius, entity.LayerMask, _targetCastBuffer);
+         return _physicsService.OverlapCollider(entity.Collider, entity.LayerMask, _targetCastBuffer);
       }
 
       public void TearDown()

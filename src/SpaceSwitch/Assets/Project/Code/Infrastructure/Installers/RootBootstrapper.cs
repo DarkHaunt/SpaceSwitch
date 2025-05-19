@@ -41,6 +41,8 @@ namespace Code.Infrastructure.Installers
             _saveLoadService.LoadProgress();
          else
             _saveLoadService.CreateProgress();
+
+         Debug.Log($"<color=magenta>Progress loaded!</color>");
       }
 
       private async UniTask LoadAddressables()

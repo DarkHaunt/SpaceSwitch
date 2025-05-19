@@ -37,7 +37,7 @@ namespace Project.Code.Gameplay.Common.Physic
 
     public int OverlapSphere(Vector3 worldPos, float radius, Collider[] hits, int layerMask) =>
       Physics.OverlapSphereNonAlloc(worldPos, radius, hits, layerMask);
-
+    
     public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask)
     {
       int hitCount = Physics.RaycastNonAlloc(worldPosition, direction, Hits, float.MaxValue, layerMask);
@@ -114,10 +114,35 @@ namespace Project.Code.Gameplay.Common.Physic
       return hitCount;
     }
 
+    public int OverlapCollider(Collider collider, int layerMask, GameEntity[] hitBuffer)
+    {
+      var hitCount = PhysicTools.OverlapCollider3DNonAlloc(collider, OverlapHits, layerMask);
+
+      DrawDebug(collider.transform.position, 0.1f, 1f, Color.yellow);
+      
+      for (int i = 0; i < hitCount; i++)
+      {
+        Collider hit = OverlapHits[i];
+        
+        if (hit == false)
+          continue;
+
+        var entity = _collisionRegistry.Get<GameEntity>(hit.GetInstanceID());
+        
+        if (entity == null)
+          continue;
+
+        if (i < hitBuffer.Length)
+          hitBuffer[i] = entity;
+      }
+      
+      return hitCount;
+    }
+
     public TEntity OverlapPoint<TEntity>(Vector3 worldPosition, int layerMask) where TEntity : class
     {
       int hitCount = Physics.OverlapSphereNonAlloc(worldPosition, 0.1f, OverlapHits, layerMask);
-
+      
       for (int i = 0; i < hitCount; i++)
       {
         Collider hit = OverlapHits[i];

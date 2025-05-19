@@ -12,5 +12,6 @@ namespace Project.Code.Gameplay.Common.Physic
     IEnumerable<GameEntity> SphereCast(Vector3 position, float radius, int layerMask);
     int SphereCastNonAlloc(Vector3 position, float radius, int layerMask, GameEntity[] hitBuffer);
     TEntity OverlapPoint<TEntity>(Vector3 worldPosition, int layerMask) where TEntity : class;
+    int OverlapCollider(Collider collider, int layerMask, GameEntity[] hitBuffer);
   }
 }

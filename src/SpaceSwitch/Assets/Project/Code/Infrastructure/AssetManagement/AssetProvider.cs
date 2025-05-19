@@ -15,8 +15,11 @@ namespace Code.Infrastructure.AssetManagement
       private readonly Dictionary<string, Object> _cachedObjects = new();
       private readonly Dictionary<string, AsyncOperationHandle> _assetsRequests = new();
 
-      public async UniTask InitializeAsync() =>
+      public async UniTask InitializeAsync()
+      {
          await Addressables.InitializeAsync().ToUniTask();
+         Debug.Log($"<color=yellow>Addressables initialized!</color>");
+      }
 
       public async UniTask<TAsset> Load<TAsset>(AssetReference assetReference) where TAsset : MonoBehaviour =>
          await LoadAndGetComponent<TAsset>(assetReference.AssetGUID);
@@ -67,6 +70,8 @@ namespace Code.Infrastructure.AssetManagement
       {
          List<string> assetKeys = await FetchAssetKeysByLabel(label);
          await LoadAll<object>(assetKeys);
+         
+         Debug.Log($"<color=cyan>Addressables label '{label}' warmup completed!</color>");
       }
 
       public async UniTask ReleaseAssetsByLabel(string label)
