@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.Gameplay.Features.ColorSwitch.StaticData;
 using Entitas;
 using Project.Code.Gameplay.Common.Physic;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
@@ -42,6 +43,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
                {
                   if (ColorMatched(entity, _targetCastBuffer[i]))
                   {
+                     Debug.Log($"<color=white>{entity.Id} proj {entity.isProjectile} collected target {targetId} lim {entity.TargetLimit} target in radius {TargetCountInRadius(entity)}</color>");
                      entity.TargetBuffer.Add(targetId);
                      entity.ProcessedTargets.Add(targetId);
                   }

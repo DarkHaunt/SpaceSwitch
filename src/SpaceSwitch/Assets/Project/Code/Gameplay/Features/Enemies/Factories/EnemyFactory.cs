@@ -33,6 +33,7 @@ namespace Code.Gameplay.Features.Enemy
          GameEntity entity = typeId switch
          {
             EnemyTypeId.Simple => CreateSimple(),
+            EnemyTypeId.Big => CreateSimple(),
 
             _ => throw new Exception($"Enemy with type id {typeId} does not exist")
          };

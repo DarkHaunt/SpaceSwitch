@@ -27,8 +27,11 @@ namespace Code.Gameplay.Score
          OnScoreUpdated?.Invoke();
       }
 
-      public void ClearCurrentScore() =>
+      public void ClearCurrentScore()
+      {
          Score = 0;
+         OnScoreUpdated?.Invoke();
+      }
 
       public void CheckScoreSave()
       {

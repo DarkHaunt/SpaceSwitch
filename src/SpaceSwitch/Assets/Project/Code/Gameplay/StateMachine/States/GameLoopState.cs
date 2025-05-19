@@ -60,6 +60,8 @@ namespace Code.Gameplay.StateMachine.States
 
       protected override void ExitOnEndOfFrame()
       {
+         _scoreService.CheckScoreSave();
+         
          _isGameLoopActive = false;
          
          _gamePlaygroundFeature.DeactivateReactiveSystems();

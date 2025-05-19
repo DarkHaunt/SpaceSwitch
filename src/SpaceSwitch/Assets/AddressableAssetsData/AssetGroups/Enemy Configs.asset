@@ -24,6 +24,13 @@ MonoBehaviour:
     - enemy
     - config
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c093b5cc5dfc9934684b903171b562df
+    m_Address: Big_EnemyConfig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemy
+    - config
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8455031051f8f884b930312bbe7dbea6, type: 2}
   m_SchemaSet:

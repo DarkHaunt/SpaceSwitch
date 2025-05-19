@@ -37,8 +37,10 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
         {
           int targetId = _targetCastBuffer[i].Id;
 
+                     Debug.Log($"<color=white>Add {entity.Id} enemy {entity.isEnemy} collected target {targetId} lim {entity.TargetLimit} target in radius {TargetCountInRadius(entity)}</color>");
           if (!AlreadyProcessed(entity, targetId))
           {
+            
             entity.TargetBuffer.Add(targetId);
             entity.ProcessedTargets.Add(targetId);
           }

@@ -35,10 +35,6 @@ namespace Code.Gameplay.Features.Enemy.Services
       public void StartEnemySpawning()
       {
          RefreshNewScenarios();
-
-         _nextScenario = _currentScenarios.Dequeue();
-         _lastPassedTime = _nextScenario.TimeToSpawn;
-         
          _isSpawning = true;
       }
       
@@ -51,29 +47,31 @@ namespace Code.Gameplay.Features.Enemy.Services
       {
          if(_isSpawning == false) 
             return;
+
+         if (_currentScenarios.Count == 0)
+            RefreshNewScenarios();
          
          _lastPassedTime += _time.DeltaTime;
          
          if (_lastPassedTime >= _nextScenario.TimeToSpawn)
          {
             _factory.CreateSpawnScenario(_nextScenario);
+            Debug.Log($"<color=white>Spawned { _nextScenario.Name} _</color>");
             
             _lastPassedTime = 0;
             _nextScenario = _currentScenarios.Dequeue();
-
-            if (_currentScenarios.Count == 0)
-               RefreshNewScenarios();
          }
       }
 
       private void RefreshNewScenarios()
       {
          _spawnConfig = _staticData.EnemySpawnSpawnConfigs.PickRandom();
+         Debug.Log($"<color=white>Refrshed scenarios   { _spawnConfig.name}</color>");
          
          _currentScenarios.Clear();
          _currentScenarios = new Queue<EnemySpawnScenario>(_spawnConfig.SpawnScenarios);
          
-         _nextScenario = _currentScenarios.Peek();
+         _nextScenario = _currentScenarios.Dequeue();
       }
    }
 }

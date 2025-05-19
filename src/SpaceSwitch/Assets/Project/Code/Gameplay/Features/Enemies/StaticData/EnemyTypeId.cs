@@ -4,6 +4,7 @@
    {
       Unknown = 0,
       
-      Simple = 1
+      Simple = 1,
+      Big = 2
    }
 }

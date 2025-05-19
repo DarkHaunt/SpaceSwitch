@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SpawnScenarios>k__BackingField:
   - Name: EnemyPath_0
-    TimeToSpawn: 0
+    TimeToSpawn: 5
     Spline: {fileID: 3769798933642361477, guid: d8fe6250438a3704fa1f95739bd243a1, type: 3}
     Enemies:
     - Name: Simple
@@ -65,37 +65,93 @@ MonoBehaviour:
     TimeToSpawn: 5
     Spline: {fileID: 2608590863449325082, guid: 4bf5210bbff1c1c41ba7ea85dddf7fd8, type: 3}
     Enemies:
-    - Name: Simple
-      TimeToSpawn: 0.5
+    - Name: Big
+      TimeToSpawn: 3
       RotateToPath: 1
-      Id: 1
+      Id: 2
       Color: 1
-    - Name: Simple
-      TimeToSpawn: 0.5
+    - Name: Big
+      TimeToSpawn: 3
       RotateToPath: 1
-      Id: 1
-      Color: 1
-    - Name: Simple
-      TimeToSpawn: 0.5
-      RotateToPath: 1
-      Id: 1
-      Color: 1
+      Id: 2
+      Color: 2
   - Name: EnemyPath_9
     TimeToSpawn: 2
     Spline: {fileID: 4626057048321575730, guid: 93cb99a4f971cab4ea6df9dc59407305, type: 3}
     Enemies:
+    - Name: Big
+      TimeToSpawn: 3
+      RotateToPath: 1
+      Id: 2
+      Color: 2
+    - Name: Big
+      TimeToSpawn: 3
+      RotateToPath: 1
+      Id: 2
+      Color: 1
+  - Name: EnemyPath_2
+    TimeToSpawn: 8
+    Spline: {fileID: 3769798933642361477, guid: 0eebbb52243383547b87bf7a9eac4766, type: 3}
+    Enemies:
     - Name: Simple
-      TimeToSpawn: 0.5
+      TimeToSpawn: 1
       RotateToPath: 1
       Id: 1
       Color: 2
     - Name: Simple
-      TimeToSpawn: 0.5
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 1
       RotateToPath: 1
       Id: 1
       Color: 2
     - Name: Simple
-      TimeToSpawn: 0.5
+      TimeToSpawn: 1
       RotateToPath: 1
       Id: 1
+      Color: 1
+  - Name: EnemyPath_3
+    TimeToSpawn: 0
+    Spline: {fileID: 2040664255706370109, guid: a8fb7b6bde7d017488167e735d8c6413, type: 3}
+    Enemies:
+    - Name: Simple
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+  - Name: EnemyPath_6
+    TimeToSpawn: 5
+    Spline: {fileID: 3369050978690476840, guid: d161948b822511e41bb570f6e62d3357, type: 3}
+    Enemies:
+    - Name: Big
+      TimeToSpawn: 0
+      RotateToPath: 1
+      Id: 2
+      Color: 1
+  - Name: EnemyPath_7
+    TimeToSpawn: 5
+    Spline: {fileID: 4837865758907324909, guid: 64ba353e227ba5243839acbeac958884, type: 3}
+    Enemies:
+    - Name: Big
+      TimeToSpawn: 0
+      RotateToPath: 1
+      Id: 2
       Color: 2

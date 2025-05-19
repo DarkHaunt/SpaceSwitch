@@ -32,7 +32,7 @@ namespace Code.Infrastructure.Installers
          await LoadAddressables();
          await LoadProgress();
       
-         await _sceneLoader.LoadWithCurtain(SceneName.Menu);  
+         await _sceneLoader.LoadWithCurtain(SceneName.Game);  
       }
 
       private async UniTask LoadProgress()

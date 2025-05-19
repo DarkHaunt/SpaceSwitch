@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2215170606348399313}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5349150868077100339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,41 +75,41 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: -10
+        x: 12
         y: 4
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -1.4
+        z: -1.3999999
       TangentOut:
         x: 0
         y: 0
-        z: 1.837417
+        z: 11.803599
       Rotation:
         value:
-          x: -0.49999994
-          y: 0.5
-          z: -0.5
-          w: 0.50000006
+          x: -0.5000003
+          y: -0.49999875
+          z: 0.50000125
+          w: 0.4999997
     - Position:
-        x: 10
+        x: -12
         y: 4
         z: 0
       TangentIn:
         x: 0
         y: 0
-        z: -11.803599
+        z: -1.837417
       TangentOut:
         x: 0
         y: 0
         z: 1.4
       Rotation:
         value:
-          x: 0.5000012
-          y: -0.5000001
-          z: 0.49999994
-          w: -0.49999887
+          x: -0.49999994
+          y: -0.5
+          z: 0.5
+          w: 0.50000006
     m_MetaData:
     - Mode: 3
       Tension: 0.5

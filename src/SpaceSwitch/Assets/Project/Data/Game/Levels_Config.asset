@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457566039149430daff2c2190abeb587, type: 3}
   m_Name: Levels_Config
   m_EditorClassIdentifier: 
-  <LevelMoveSpeed>k__BackingField: 2
+  <LevelMoveSpeed>k__BackingField: 0.75
   <LevelParts>k__BackingField:
   - {fileID: 4973961522876916159, guid: 4178f2ddc2c09bf4c95e7ec8ad3e3b93, type: 3}
   - {fileID: 4973961522876916159, guid: 32ad10aacf5521e4c9c96976471b00b5, type: 3}
