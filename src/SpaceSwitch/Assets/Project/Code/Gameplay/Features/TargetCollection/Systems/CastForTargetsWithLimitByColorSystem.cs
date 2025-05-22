@@ -20,7 +20,6 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
          _ready = game.GetGroup(GameMatcher
             .AllOf(
                GameMatcher.ReadyToCollectTargets,
-               GameMatcher.Radius,
                GameMatcher.TargetBuffer,
                GameMatcher.ProcessedTargets,
                GameMatcher.TargetLimit,
@@ -44,7 +43,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
                {
                   if (ColorMatched(entity, _targetCastBuffer[i]))
                   {
-                     Debug.Log($"<color=white>{entity.Id} proj {entity.isProjectile} collected target {targetId} lim {entity.TargetLimit} target in radius {TargetCountInRadius(entity)}</color>");
+                     //Debug.Log($"<color=white>{entity.Id} proj {entity.isProjectile} collected target {targetId} lim {entity.TargetLimit} target in radius {TargetCountInRadius(entity)}</color>");
                      entity.TargetBuffer.Add(targetId);
                      entity.ProcessedTargets.Add(targetId);
                   }

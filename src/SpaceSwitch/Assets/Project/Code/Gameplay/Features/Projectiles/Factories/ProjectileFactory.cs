@@ -27,7 +27,8 @@ namespace Code.Gameplay.Features.Projectiles.Factories
       {
          GameEntity entity = typeId switch
          {
-            ProjectileTypeId.Simple => CreateSimple(producerShootDirection),
+            ProjectileTypeId.Simple_Player => CreateSimplePlayer(producerShootDirection),
+            ProjectileTypeId.Simple_Enemy => CreateSimpleEnemy(producerShootDirection),
 
             _ => throw new Exception($"Projectile with type id {typeId} does not exist")
          };
@@ -75,15 +76,29 @@ namespace Code.Gameplay.Features.Projectiles.Factories
          return projectile;
       }
 
-      private GameEntity CreateSimple(Vector2 direction)
+      private GameEntity CreateSimpleEnemy(Vector2 direction)
       {
-         ProjectileConfig config = _staticDataService.GetProjectileConfigById(ProjectileTypeId.Simple);
+         ProjectileConfig config = _staticDataService.GetProjectileConfigById(ProjectileTypeId.Simple_Enemy);
 
          return CreateGameEntity.Empty()
                .AddTargetLimit(1)
                .AddDirection(direction)
                .AddDamage(config.Damage)
-               .AddRadius(config.ContactRadius)
+               .AddSpeed(config.Speed)
+               .AddVelocity(Vector2.zero)
+               .AddViewPrefab(config.Prefab)
+               .With(x => x.AddEffectSetups(config.Effects), when: !config.Effects.IsNullOrEmpty())
+            ;
+      }
+
+      private GameEntity CreateSimplePlayer(Vector2 direction)
+      {
+         ProjectileConfig config = _staticDataService.GetProjectileConfigById(ProjectileTypeId.Simple_Player);
+
+         return CreateGameEntity.Empty()
+               .AddTargetLimit(1)
+               .AddDirection(direction)
+               .AddDamage(config.Damage)
                .AddSpeed(config.Speed)
                .AddVelocity(Vector2.zero)
                .AddViewPrefab(config.Prefab)

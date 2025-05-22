@@ -3,24 +3,23 @@ using Code.Gameplay.Common;
 using Code.Gameplay.Features.Projectiles;
 using Code.Gameplay.Features.Projectiles.Factories;
 using Entitas;
-using UnityEngine;
 
-namespace Project.Code.Gameplay.Features.Player.Systems
+namespace Code.Gameplay.Features.Enemy.Systems
 {
-   public sealed class PlayerLoopShootSystem : IExecuteSystem
+   public class EnemyShootSystem : IExecuteSystem
    {
       private readonly ProjectileFactory _projectileFactory;
       private readonly List<GameEntity> _buffer = new(1);
 
-      private readonly IGroup<GameEntity> _players;
+      private readonly IGroup<GameEntity> _enemies;
 
-      public PlayerLoopShootSystem(GameContext context, ProjectileFactory projectileFactory)
+      public EnemyShootSystem(GameContext context, ProjectileFactory projectileFactory)
       {
          _projectileFactory = projectileFactory;
 
-         _players = context.GetGroup(GameMatcher
+         _enemies = context.GetGroup(GameMatcher
             .AllOf(
-               GameMatcher.Player,
+               GameMatcher.Enemy,
                GameMatcher.Id,
                GameMatcher.WorldPosition,
                GameMatcher.ColorType,
@@ -31,17 +30,17 @@ namespace Project.Code.Gameplay.Features.Player.Systems
 
       public void Execute()
       {
-         foreach (GameEntity player in _players.GetEntities(_buffer))
+         foreach (GameEntity enemy in _enemies.GetEntities(_buffer))
          {
             _projectileFactory.CreateProjectile(
-               ProjectileTypeId.Simple_Player,
-               player.Id,
-               isPlayer: true,
-               player.WorldPosition,
-               player.ColorType,
-               player.ShootDirection);
+               ProjectileTypeId.Simple_Enemy,
+               enemy.Id,
+               isPlayer: false,
+               enemy.WorldPosition,
+               enemy.ColorType,
+               enemy.ShootDirection);
 
-            player.AddShootTimer(GameplayConstants.PlayerShootDelay);
+            enemy.AddShootTimer(GameplayConstants.EnemyShootDelay);
          }
       }
    }

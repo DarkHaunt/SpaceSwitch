@@ -3,6 +3,8 @@
    public enum ProjectileTypeId
    {
       Unknown = 0,
-      Simple = 1
+      
+      Simple_Player = 1,
+      Simple_Enemy = 2
    }
 }

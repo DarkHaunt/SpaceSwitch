@@ -34,6 +34,7 @@ namespace Code.Gameplay.Features.Enemy
          {
             EnemyTypeId.Simple => CreateSimple(),
             EnemyTypeId.Big => CreateSimple(),
+            EnemyTypeId.Shooting => CreateShooting(),
 
             _ => throw new Exception($"Enemy with type id {typeId} does not exist")
          };
@@ -59,7 +60,6 @@ namespace Code.Gameplay.Features.Enemy
             .AddWorldRotation(Quaternion.identity)
             
             .AddLayerMask(CollisionLayer.Player.AsMask())
-            .AddRadius(config.ContactRadius)
             
             .AddSpeed(config.Speed)
             .AddCurrentHp(config.Health)
@@ -67,6 +67,7 @@ namespace Code.Gameplay.Features.Enemy
             
             .AddScore(config.Score)
             
+            .AddTargetLimit(1)
             .AddTargetBuffer(new List<int>(5))
             .AddProcessedTargets(new List<int>(1))
             .AddEffectSetups(new List<EffectSetup>{ new(EffectTypeId.Damage, float.MaxValue) }) // Insta kill for player
@@ -87,10 +88,17 @@ namespace Code.Gameplay.Features.Enemy
          return enemy;
       }
 
+      private GameEntity CreateShooting()
+      {
+         return CreateGameEntity.Empty()
+               .AddShootDirection(Vector3.down)
+               .With(x => x.isShooter = true)
+            ;
+      }
+
       private GameEntity CreateSimple()
       {
          return CreateGameEntity.Empty()
-               .AddTargetLimit(1)
             ;
       }
    }

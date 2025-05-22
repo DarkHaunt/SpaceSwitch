@@ -19,7 +19,6 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       _ready = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.ReadyToCollectTargets,
-          GameMatcher.Radius,
           GameMatcher.TargetBuffer,
           GameMatcher.ProcessedTargets,
           GameMatcher.TargetLimit,
@@ -34,14 +33,12 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
     {
       foreach (GameEntity entity in _ready.GetEntities(_buffer))
       {
-        for (int i = 0; i < Math.Min(TargetCountInRadius(entity), entity.TargetLimit); i++)
+        for (int i = 0; i < Math.Min(TargetCountByEntityCollider(entity), entity.TargetLimit); i++)
         {
           int targetId = _targetCastBuffer[i].Id;
 
-                     Debug.Log($"<color=white>Add {entity.Id} enemy {entity.isEnemy} collected target {targetId} lim {entity.TargetLimit} target in radius {TargetCountInRadius(entity)}</color>");
           if (!AlreadyProcessed(entity, targetId))
           {
-            
             entity.TargetBuffer.Add(targetId);
             entity.ProcessedTargets.Add(targetId);
           }
@@ -57,7 +54,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       return entity.ProcessedTargets.Contains(targetId);
     }
 
-    private int TargetCountInRadius(GameEntity entity)
+    private int TargetCountByEntityCollider(GameEntity entity)
     {
       return _physicsService.OverlapCollider(entity.Collider, entity.LayerMask, _targetCastBuffer);
     }

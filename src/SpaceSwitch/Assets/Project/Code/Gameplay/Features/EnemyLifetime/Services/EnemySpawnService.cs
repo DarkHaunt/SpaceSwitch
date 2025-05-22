@@ -56,7 +56,6 @@ namespace Code.Gameplay.Features.Enemy.Services
          if (_lastPassedTime >= _nextScenario.TimeToSpawn)
          {
             _factory.CreateSpawnScenario(_nextScenario);
-            Debug.Log($"<color=white>Spawned { _nextScenario.Name} _</color>");
             
             _lastPassedTime = 0;
             _nextScenario = _currentScenarios.Dequeue();
@@ -66,7 +65,6 @@ namespace Code.Gameplay.Features.Enemy.Services
       private void RefreshNewScenarios()
       {
          _spawnConfig = _staticData.EnemySpawnSpawnConfigs.PickRandom();
-         Debug.Log($"<color=white>Refrshed scenarios   { _spawnConfig.name}</color>");
          
          _currentScenarios.Clear();
          _currentScenarios = new Queue<EnemySpawnScenario>(_spawnConfig.SpawnScenarios);

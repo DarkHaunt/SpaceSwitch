@@ -18,7 +18,14 @@ MonoBehaviour:
   m_GUID: 665a88026d240cc46a4aae6b80c76e07
   m_SerializeEntries:
   - m_GUID: 97c3701cfd1127d4b8ab4d468a10b64b
-    m_Address: Simple Projectile Config
+    m_Address: Simple PlayerProjectile Confiig
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - projectile
+    - config
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab1d8d6c092847c47a1d1124eb965df7
+    m_Address: Simple EnemyProjectile Confiig
     m_ReadOnly: 0
     m_SerializedLabels:
     - projectile

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 32d1d7f9ff308744fae6ed2dfc49aca7
   m_SerializeEntries:
   - m_GUID: 2cbce4db97438dd47a5c562571925e8d
-    m_Address: Simple Projectile
+    m_Address: Simple Projectile Player
     m_ReadOnly: 0
     m_SerializedLabels:
     - gameplay
