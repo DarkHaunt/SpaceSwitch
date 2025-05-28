@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Code.Gameplay.Features.ColorSwitch.StaticData;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Player.Behaviors
@@ -16,6 +17,10 @@ namespace Code.Gameplay.Features.Player.Behaviors
       [SerializeField] private ParticleSystem _deathParticle;
       [SerializeField] private List<GameObject> _viewsToDisable;
 
+      [field: Header("--- Color Switch ---")]
+      [SerializeField] private ParticleSystem _blueColorSwitch;
+      [SerializeField] private ParticleSystem _redColorSwitch;
+
       private float _velocity;
       private float _maxSpeed;
       private float _lastAngle;
@@ -32,6 +37,19 @@ namespace Code.Gameplay.Features.Player.Behaviors
          
          _deathParticle.Play();
          return _deathTime;
+      }
+      
+      public void PlayColorSwitch(ColorType colorType)
+      {
+         switch (colorType)
+         {
+            case ColorType.Red:
+               _redColorSwitch.Play();
+               break;
+            case ColorType.Blue:
+               _blueColorSwitch.Play();
+               break;
+         }
       }
 
       public void UpdateViewRotationFromVelocity(Vector2 velocity, float timeStep)

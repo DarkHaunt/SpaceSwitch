@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Player.Behaviors
       [SerializeField] private AudioClip _shootSound;
       [SerializeField] private AudioClip _deathSound;
       [SerializeField] private AudioClip _ambientSound;
+      [SerializeField] private AudioClip _colorSwitchSound;
       
       private AudioPlayer _ambient;
 
@@ -18,6 +19,10 @@ namespace Code.Gameplay.Features.Player.Behaviors
       public void PlayDeathSound() =>
          LucidAudio.PlaySE(_deathSound)
             .SetVolume(2f);
+      
+      public void PlayColorSwitchSound() =>
+         LucidAudio.PlaySE(_colorSwitchSound)
+            .SetVolume(0.5f);
       
       public void PlayAmbientSound()
       {

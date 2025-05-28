@@ -26,7 +26,15 @@ namespace Project.Code.Gameplay.Features.Player.Systems
             ColorType colorType = ColorSwitchProvider.NextColorAfter(player.ColorType);
 
             if (input.isSwitchRequested)
+            {
                player.AddColorSwitchRequest(colorType);
+
+               if (player.hasPlayerSoundPlayer)
+                  player.PlayerSoundPlayer.PlayColorSwitchSound();
+               
+               if(player.hasPlayerAnimator)
+                  player.PlayerAnimator.PlayColorSwitch(colorType);
+            }
          }
       }
    }

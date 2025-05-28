@@ -6,11 +6,13 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
 {
-  public class CastForTargetsNoLimitSystem : IExecuteSystem
+  public class CastForTargetsNoLimitSystem : IExecuteSystem, ITearDownSystem
   {
     private readonly IPhysicsService _physicsService;
     private readonly IGroup<GameEntity> _ready;
     private readonly List<GameEntity> _buffer = new(64);
+    
+    private GameEntity[] _targetCastBuffer = new GameEntity[1048];
 
     public CastForTargetsNoLimitSystem(GameContext game, IPhysicsService physicsService)
     {
@@ -18,10 +20,10 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
       _ready = game.GetGroup(GameMatcher
         .AllOf(
           GameMatcher.ReadyToCollectTargets,
-          GameMatcher.Radius,
           GameMatcher.TargetBuffer,
           GameMatcher.WorldPosition,
-          GameMatcher.LayerMask)
+          GameMatcher.LayerMask,
+          GameMatcher.Collider)
         .NoneOf(GameMatcher.TargetLimit)
       );
     }
@@ -39,8 +41,19 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
     
     private IEnumerable<int> TargetsInRadius(GameEntity entity)
     {
-      return _physicsService.SphereCast(entity.WorldPosition, radius: entity.Radius, entity.LayerMask)
+      var count = _physicsService.OverlapCollider(entity.Collider, entity.LayerMask, _targetCastBuffer);
+      
+      if (count == 0)
+        return Enumerable.Empty<int>();
+        
+      return _targetCastBuffer
+        .TakeWhile(x => x != null)
         .Select(x => x.Id);
+    }
+
+    public void TearDown()
+    {
+      _targetCastBuffer = null;
     }
   }
 }

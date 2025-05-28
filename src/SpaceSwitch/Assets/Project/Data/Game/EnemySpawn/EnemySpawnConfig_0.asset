@@ -13,14 +13,38 @@ MonoBehaviour:
   m_Name: EnemySpawnConfig_0
   m_EditorClassIdentifier: 
   <SpawnScenarios>k__BackingField:
+  - Name: EnemyPath_2
+    TimeToSpawn: 0
+    Spline: {fileID: 3769798933642361477, guid: 0eebbb52243383547b87bf7a9eac4766, type: 3}
+    Enemies:
+    - Name: Shooting
+      TimeToSpawn: 1
+      RotateToPath: 1
+      Id: 3
+      Color: 2
+    - Name: Shooting
+      TimeToSpawn: 3
+      RotateToPath: 1
+      Id: 3
+      Color: 1
+    - Name: Shooting
+      TimeToSpawn: 3
+      RotateToPath: 1
+      Id: 3
+      Color: 2
+    - Name: Shooting
+      TimeToSpawn: 3
+      RotateToPath: 1
+      Id: 3
+      Color: 1
   - Name: EnemyPath_1
     TimeToSpawn: 3
     Spline: {fileID: 3769798933642361477, guid: ef1a91a1d8e539b4c86a8cf5b8305531, type: 3}
     Enemies:
-    - Name: Shooting
+    - Name: Simple
       TimeToSpawn: 0.75
       RotateToPath: 1
-      Id: 3
+      Id: 1
       Color: 1
     - Name: Simple
       TimeToSpawn: 0.75
@@ -32,11 +56,35 @@ MonoBehaviour:
       RotateToPath: 1
       Id: 1
       Color: 2
-    - Name: Shooting
+    - Name: Simple
       TimeToSpawn: 0.75
       RotateToPath: 1
-      Id: 3
+      Id: 1
       Color: 2
+  - Name: EnemyPath_0
+    TimeToSpawn: 5
+    Spline: {fileID: 3769798933642361477, guid: d8fe6250438a3704fa1f95739bd243a1, type: 3}
+    Enemies:
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 1
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 2
+    - Name: Simple
+      TimeToSpawn: 0.75
+      RotateToPath: 1
+      Id: 1
+      Color: 1
   - Name: EnemyPath_8
     TimeToSpawn: 5
     Spline: {fileID: 2608590863449325082, guid: 4bf5210bbff1c1c41ba7ea85dddf7fd8, type: 3}
@@ -65,53 +113,29 @@ MonoBehaviour:
       RotateToPath: 1
       Id: 2
       Color: 1
-  - Name: EnemyPath_2
-    TimeToSpawn: 8
-    Spline: {fileID: 3769798933642361477, guid: 0eebbb52243383547b87bf7a9eac4766, type: 3}
-    Enemies:
-    - Name: Simple
-      TimeToSpawn: 1
-      RotateToPath: 1
-      Id: 1
-      Color: 2
-    - Name: Simple
-      TimeToSpawn: 1
-      RotateToPath: 1
-      Id: 1
-      Color: 1
-    - Name: Simple
-      TimeToSpawn: 1
-      RotateToPath: 1
-      Id: 1
-      Color: 2
-    - Name: Simple
-      TimeToSpawn: 1
-      RotateToPath: 1
-      Id: 1
-      Color: 1
   - Name: EnemyPath_3
-    TimeToSpawn: 0
+    TimeToSpawn: 5
     Spline: {fileID: 2040664255706370109, guid: a8fb7b6bde7d017488167e735d8c6413, type: 3}
     Enemies:
-    - Name: Simple
+    - Name: Shooting
       TimeToSpawn: 1
       RotateToPath: 1
-      Id: 1
+      Id: 3
       Color: 1
-    - Name: Simple
-      TimeToSpawn: 1
+    - Name: Shooting
+      TimeToSpawn: 3
       RotateToPath: 1
-      Id: 1
+      Id: 3
       Color: 2
-    - Name: Simple
-      TimeToSpawn: 1
+    - Name: Shooting
+      TimeToSpawn: 3
       RotateToPath: 1
-      Id: 1
+      Id: 3
       Color: 1
-    - Name: Simple
-      TimeToSpawn: 1
+    - Name: Shooting
+      TimeToSpawn: 3
       RotateToPath: 1
-      Id: 1
+      Id: 3
       Color: 2
   - Name: EnemyPath_6
     TimeToSpawn: 5
