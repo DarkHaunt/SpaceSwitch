@@ -67,9 +67,8 @@ namespace Code.Gameplay.Features.Enemy
             
             .AddScore(config.Score)
             
-            .AddTargetLimit(1)
             .AddTargetBuffer(new List<int>(5))
-            .AddProcessedTargets(new List<int>(1))
+            .AddProcessedTargets(new List<int>(5))
             .AddEffectSetups(new List<EffectSetup>{ new(EffectTypeId.Damage, float.MaxValue) }) // Insta kill for player
             
             .With(x => x.isMovementAvailable = true)

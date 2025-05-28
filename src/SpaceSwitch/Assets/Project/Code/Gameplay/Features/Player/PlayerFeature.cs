@@ -11,6 +11,7 @@ namespace Code.Gameplay.Features.Player
       {
          //Add(systems.Create<InitializePlayerSystem>());
          Add(systems.Create<PlayerAnimatorInitSystem>());
+         Add(systems.Create<PlayerSoundPlayerInitSystem>());
          
          Add(systems.Create<SetPlayerDirectionByInputSystem>());
          Add(systems.Create<ClampMovementWithCameraBoundsSystem>());

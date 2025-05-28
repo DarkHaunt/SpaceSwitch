@@ -39,6 +39,9 @@ namespace Code.Gameplay.Features.Enemy.Systems
                enemy.WorldPosition,
                enemy.ColorType,
                enemy.ShootDirection);
+            
+            if (enemy.hasEnemySoundPlayer)
+               enemy.EnemySoundPlayer.PlayShootSound();
 
             enemy.AddShootTimer(GameplayConstants.EnemyShootDelay);
          }

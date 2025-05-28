@@ -30,6 +30,12 @@ namespace Code.Gameplay.Features.Player.Systems
                var animationTime = player.PlayerAnimator.PlayDeathParticle();
                player.ReplaceSelfDestructTimer(animationTime);
             }
+
+            if (player.hasPlayerSoundPlayer)
+            {
+               player.PlayerSoundPlayer.PlayDeathSound();        
+               player.PlayerSoundPlayer.StopAmbientSound();        
+            }
             
             player.RemoveAndDisableCollider();
             player.isProcessingDeath = false;

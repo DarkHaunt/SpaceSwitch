@@ -36,6 +36,9 @@ namespace Code.Gameplay.Features.Enemy.Systems
                var animationTime = enemy.EnemyAnimator.PlayDeathParticle(enemy.ColorType);
                enemy.ReplaceSelfDestructTimer(animationTime);
             }
+            
+            if (enemy.hasEnemySoundPlayer)
+               enemy.EnemySoundPlayer.PlayDeathSound();
 
             enemy.isProcessingDeath = false;
          }

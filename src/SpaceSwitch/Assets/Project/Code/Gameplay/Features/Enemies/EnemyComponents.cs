@@ -9,5 +9,6 @@ namespace Code.Gameplay.Features.Enemy
       [Game] public class EnemyTypeIdComponent : IComponent { public EnemyTypeId Value; }
       [Game] public class Score : IComponent { public int Value; }
       [Game] public class EnemyAnimatorComponent : IComponent { public EnemyAnimator Value; }
+      [Game] public class EnemySoundPlayerComponent : IComponent { public EnemySoundPlayer Value; }
    }
 }

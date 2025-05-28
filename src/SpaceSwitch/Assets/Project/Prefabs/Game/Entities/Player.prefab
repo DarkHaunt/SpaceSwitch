@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 3001419885126641559}
   - component: {fileID: 4062653424542732047}
   - component: {fileID: 6280547237500670402}
+  - component: {fileID: 8239138530574397961}
+  - component: {fileID: 7644514261844699679}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -186,6 +188,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EntityView: {fileID: 7463683003651137779}
+--- !u!114 &8239138530574397961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450615754181144752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2d950534004a20b324ffc1d4b7669a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 7463683003651137779}
+  PlayerSoundPlayer: {fileID: 7644514261844699679}
+--- !u!114 &7644514261844699679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7450615754181144752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c728cdf90a643dfb2aa7ca199e7b244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shootSound: {fileID: 8300000, guid: 943a35c0780551f4ea1d01b62e285b17, type: 3}
+  _deathSound: {fileID: 8300000, guid: b174e29530d17e24f82efa28cccf118c, type: 3}
+  _ambientSound: {fileID: 8300000, guid: 8933eca4695876f40b4acce3ede3b9cb, type: 3}
 --- !u!1001 &2610800197094042750
 PrefabInstance:
   m_ObjectHideFlags: 0

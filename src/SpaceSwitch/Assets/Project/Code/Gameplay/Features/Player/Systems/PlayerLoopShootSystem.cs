@@ -42,6 +42,9 @@ namespace Project.Code.Gameplay.Features.Player.Systems
                player.ShootDirection);
 
             player.AddShootTimer(GameplayConstants.PlayerShootDelay);
+            
+            if(player.hasPlayerSoundPlayer)
+               player.PlayerSoundPlayer.PlayShootSound();
          }
       }
    }

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 4144660727389350575}
   - component: {fileID: 5038218990164489080}
   - component: {fileID: 7680206045638247752}
+  - component: {fileID: 897422422538758297}
+  - component: {fileID: 3390200448883542153}
   m_Layer: 7
   m_Name: Shooting Enemy
   m_TagString: Untagged
@@ -180,6 +182,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EntityView: {fileID: 5544519613580899025}
   Colllider: {fileID: 4743509577578827759}
+--- !u!114 &897422422538758297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822356980851407489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e37fa0dd8a742978a7e7391341ec357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 5544519613580899025}
+  EnemySoundPlayer: {fileID: 3390200448883542153}
+--- !u!114 &3390200448883542153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822356980851407489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de17987fe5a4d919b7794829eb3eb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathClip: {fileID: 8300000, guid: b174e29530d17e24f82efa28cccf118c, type: 3}
+  _shootClip: {fileID: 8300000, guid: 0a2b7b7f135bb9d4fb136cb63ccf3a37, type: 3}
 --- !u!1001 &6500586832059919455
 PrefabInstance:
   m_ObjectHideFlags: 0

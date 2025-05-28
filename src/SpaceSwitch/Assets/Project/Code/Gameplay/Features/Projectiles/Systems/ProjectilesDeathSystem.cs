@@ -31,6 +31,9 @@ namespace Code.Gameplay.Features.Projectiles.Systems
                projectile.ReplaceSelfDestructTimer(deathTime);
             }
             
+            if (projectile.hasProjectileSoundPlayer)
+               projectile.ProjectileSoundPlayer.PlayDeathSound();
+            
             projectile.isProcessingDeath = false;
             
             projectile.isMovementAvailable = false;
