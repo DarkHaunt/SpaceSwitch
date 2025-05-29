@@ -43,9 +43,12 @@ namespace Project.Code.Gameplay.Common.Physic
          for (int i = 0; i < count; i++)
          {
             Collider col = TempBuffer[i];
-            
+
             if (col != collider)
+            {
                results[i] = col;
+               TempBuffer[i] = null;  
+            }
          }
 
          return count;

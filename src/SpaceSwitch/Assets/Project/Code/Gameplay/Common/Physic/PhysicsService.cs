@@ -133,7 +133,10 @@ namespace Project.Code.Gameplay.Common.Physic
           continue;
 
         if (i < hitBuffer.Length)
+        {
           hitBuffer[i] = entity;
+          OverlapHits[i] = null;
+        }
       }
       
       return hitCount;
