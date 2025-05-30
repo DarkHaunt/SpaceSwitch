@@ -1,7 +1,4 @@
 # SpaceSwitch
-ECS based scroller with spaceships
-
-# SpaceSwitch
 
 Project for bachelor's diploma. Spaceships scroller based on hybrid ECS architecture using Entitas and traditional service-based approach
 
