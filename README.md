@@ -12,6 +12,8 @@ The project had several objectives, namely:
   
 - **Entitas integrartion with service architecture:** Project have core of service arhicteture on infrastructure side, and ECS on gamplay side.
 
+- **Design Patterns:** Architecture based on usage of FSM pattern, DI integration & SOLID principles.
+
 ## Demonstation
 
 ![SpaceSwitch Demo](https://github.com/user-attachments/assets/f772fd36-a5a5-4659-ab8d-8d5173a1ccf6)
